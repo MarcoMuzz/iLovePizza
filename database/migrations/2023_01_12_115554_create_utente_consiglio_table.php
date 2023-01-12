@@ -13,6 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
+
         Schema::create('utente_consiglio', function (Blueprint $table) {
             $table->index('utente_id');
             $table-> foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
