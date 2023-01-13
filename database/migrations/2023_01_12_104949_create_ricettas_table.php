@@ -27,7 +27,7 @@ return new class extends Migration
             $table->boolean('senzaglutine');
             $table->boolean('senzalattosio');
             $table->string('cottura');
-            $table->float('votomedio');
+            //$table->float('votomedio');
             $table->string('immagine');
             $table->index('id_autore');
             $table->foreignId('id_autore')->references('id')->on('utentes')->onDelete('cascade');

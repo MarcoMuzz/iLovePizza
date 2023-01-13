@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             AssociazioneUtenteSeeder::class, //popolazione tabella associazione_utente
             ConsiglioSeeder::class, //popolazione tabella consiglio
             UtenteConsiglioSeeder::class, //popolazione tabella utente_consiglio
+            RicettaSeeder::class, //popolazione tabella ricettas
         ]);
 
     }
