@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('associazione_utente', function (Blueprint $table) {
+        Schema::create('associazione_utentes', function (Blueprint $table) {
             $table->index('associazione_id')->unique();
             $table->foreignId('associazione_id')->references('id')->on('associaziones');
             $table->index('utente_id');
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('associazione_utente');
+        Schema::dropIfExists('associazione_utentes');
     }
 };
