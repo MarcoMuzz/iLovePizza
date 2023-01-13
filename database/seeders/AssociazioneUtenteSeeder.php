@@ -16,7 +16,7 @@ class AssociazioneUtenteSeeder extends Seeder
     public function run()
     {
         // ----------- CREAZIONE DELLE PRIME 4 TUPLE (CAPI) -----------
-//test
+
         for($i=1;$i<=4;$i++) {
             Associazione_Utente::create([
                 'associazione_id' => $i,
