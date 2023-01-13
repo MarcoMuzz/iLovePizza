@@ -15,6 +15,6 @@ class UtenteSeeder extends Seeder
      */
     public function run()
     {
-        Utente::factory(10)->create();
+        Utente::factory(50)->create();
     }
 }
