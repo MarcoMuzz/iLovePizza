@@ -21,7 +21,7 @@ return new class extends Migration
             $table->boolean('resto');
             $table->boolean('internazionale');
             $table->index('capo');
-            $table->foreignId('capo')->references('id')->on('utentes');
+            $table->foreignId('capo')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();
         });
     }

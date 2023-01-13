@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('commentos', function (Blueprint $table) {
             $table->id();
             $table->index('id_ricetta');
-            $table->foreignId('id_ricetta')->references('id')->on('ricettas');
+            $table->foreignId('id_ricetta')->references('id')->on('ricettas')->onDelete('cascade');
             $table->index('id_autore');
-            $table->foreignId('id_autore')->references('id')->on('utentes');
+            $table->foreignId('id_autore')->references('id')->on('utentes')->onDelete('cascade');
             $table->string('contenuto');
             $table->timestamps();
         });

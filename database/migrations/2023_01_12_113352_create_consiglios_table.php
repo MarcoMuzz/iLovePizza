@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('immagine');
             $table->string('contenuto');
             $table->index('autore')->usigned();
-            $table->foreignId('autore')->references('id')->on('utentes');
+            $table->foreignId('autore')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();
         });
     }
