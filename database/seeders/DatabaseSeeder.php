@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UtenteSeeder::class, //popolazione tabella utente
+            AssociazioneSeeder::class, //popolazione tabella associazione
+           // AssociazioneUtenteSeeder::class, //popolazione tabella associazione_utente
         ]);
 
     }
