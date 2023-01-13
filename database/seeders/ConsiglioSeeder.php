@@ -17,10 +17,10 @@ class ConsiglioSeeder extends Seeder
     {
         for($i=1;$i<=10;$i++){
             Consiglio::create([
-                //'nome' => "consiglio".$i,
+                'nome' => "consiglio {$i}",
                 'contenuto' => "blablabla",
                 'immagine'=> "https://images.emojiterra.com/google/android-oreo/512px/1f601.png",
-                'autore'=> rand(1,32)
+                'autore'=> rand(1,32) //
             ]);
         }
     }

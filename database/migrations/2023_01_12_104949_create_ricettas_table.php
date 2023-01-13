@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('ricettas', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('ingredienti');
-            $table->string('preparazione');
+            $table->text('ingredienti');
+            $table->longText('preparazione');
             $table->boolean('romana');
             $table->boolean('napoletana');
             $table->boolean('resto');
