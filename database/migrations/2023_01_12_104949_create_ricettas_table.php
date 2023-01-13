@@ -30,7 +30,7 @@ return new class extends Migration
             $table->float('votomedio');
             $table->string('immagine');
             $table->index('id_autore');
-            $table->foreignId('id_autore')->references('id')->on('utentes');
+            $table->foreignId('id_autore')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();
         });
     }
