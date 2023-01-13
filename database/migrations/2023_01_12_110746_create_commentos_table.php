@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('id_ricetta')->references('id')->on('ricettas')->onDelete('cascade');
             $table->index('id_autore');
             $table->foreignId('id_autore')->references('id')->on('utentes')->onDelete('cascade');
-            $table->string('contenuto');
+            $table->longText('contenuto');
             $table->timestamps();
         });
     }
