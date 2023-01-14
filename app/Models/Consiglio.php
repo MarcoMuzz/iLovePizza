@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Consiglio extends Model
 {
+    //we
     //use HasFactory;
     protected $table = 'consiglios';
 

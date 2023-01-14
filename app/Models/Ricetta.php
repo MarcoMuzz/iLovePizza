@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ricetta extends Model
 {
+    //we
     protected $table = 'ricettas';
     //use HasFactory;
     protected $fillable =[

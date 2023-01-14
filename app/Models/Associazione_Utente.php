@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Associazione_Utente extends Model
 {
+    //we
     protected $table = 'associazione_utentes';
 
     protected $fillable =[

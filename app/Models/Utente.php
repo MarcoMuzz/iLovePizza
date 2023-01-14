@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Utente extends Model
 {
+    //we
     use HasFactory;
 
     protected $fillable =[

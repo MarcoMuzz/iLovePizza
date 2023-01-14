@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Commento extends Model
 {
+    //we
     protected $table = 'commentos';
     //use HasFactory;
 
