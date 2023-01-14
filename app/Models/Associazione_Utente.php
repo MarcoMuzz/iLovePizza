@@ -8,4 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class Associazione_Utente extends Model
 {
     protected $table = 'associazione_utentes';
+
+    protected $fillable =[
+        'associazione_id',
+        'utente_id',
+        'ruolo',
+    ];
+
+    public function Utente()
+    {
+        return $this->belongsToMany('App\Utente');
+    }
+
+    public function Associazione()
+    {
+        return $this->belongsToMany('App\Associazione');
+    }
 }

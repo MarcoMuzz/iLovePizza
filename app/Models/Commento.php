@@ -9,4 +9,20 @@ class Commento extends Model
 {
     protected $table = 'commentos';
     //use HasFactory;
+
+    protected $fillable =[
+        'id_ricetta',
+        'id_autore',
+        'contenuto',
+    ];
+
+    public function Utente()
+    {
+        return $this->belongsTo('App\Utente');
+    }
+
+    public function Ricetta()
+    {
+        return $this->belongsTo('App\Ricetta');
+    }
 }
