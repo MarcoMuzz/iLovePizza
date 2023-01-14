@@ -8,7 +8,8 @@ use Laravel\Sanctum\HasApiTokens;
 
 class Associazione extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+
 //we
     protected $fillable = [
         'nome',
