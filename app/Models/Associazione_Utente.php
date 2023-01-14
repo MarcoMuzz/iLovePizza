@@ -15,6 +15,7 @@ class Associazione_Utente extends Model
         'utente_id',
         'ruolo',
     ];
+    protected $primaryKey = 'utente_id';
 
     public function Utente()
     {

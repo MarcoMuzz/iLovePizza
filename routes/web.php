@@ -15,7 +15,7 @@ use App\Http\Controllers\testController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
