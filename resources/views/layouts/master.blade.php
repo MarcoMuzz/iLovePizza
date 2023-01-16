@@ -81,11 +81,11 @@
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="#Tutte">Tutte</a>
-            <a href="#Napoletana">Napoletana</a>
-            <a href="#Romana">Romana</a>
-            <a href="#RestoItalia">Resto d'Italia</a>
-            <a href="#Internazionale">Internazionale</a>
+            <a href="tutte">Tutte</a>
+            <a href="napoletana">Napoletana</a>
+            <a href="romana">Romana</a>
+            <a href="resto">Resto d'Italia</a>
+            <a href="internazionale">Internazionale</a>
         </div>
     </div>
     <a href="#Consigli">Consigli</a>
