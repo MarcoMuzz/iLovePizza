@@ -6,50 +6,91 @@
     <title>iLovePizza - @yield('title')</title>
 
     <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+        .navbar {
             overflow: hidden;
-            border: 1px solid #e7e7e7;
-            background-color: #f3f3f3;
+            background-color: #666;
         }
 
-        li {
+        .navbar a {
             float: left;
-            font-size: 4vh;
-        }
-
-        li a {
-            display: block;
-            color: #666;
+            font-size: 16px;
+            color: white;
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
         }
 
-        li a:hover:not(.active) {
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: grey;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 80px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
             background-color: #ddd;
         }
 
-        li a.active {
-            color: white;
-            background-color: #04AA6D;
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
-
     </style>
-
 </head>
-
 <body>
-<ul>
-    <li><a class="active" href="#home">iLovePizza</a></li>
-    <li><a href="#Tipidipizze">Home</a></li>
-    <li><a href="#Tipidipizze">Tipi di pizze</a></li>
-    <li><a href="#Consigli">Consigli</a></li>
-    <li><a href="#Associazioni">Associazioni</a></li>
-</ul>
+
+<div class="navbar">
+    <a style="background-color: #04AA6D">iLovePizza</a>
+    <a href="home">Home</a>
+    <div class="dropdown">
+        <button class="dropbtn">Tipi di Pizze
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#Tutte">Tutte</a>
+            <a href="#Napoletana">Napoletana</a>
+            <a href="#Romana">Romana</a>
+            <a href="#RestoItalia">Resto d'Italia</a>
+            <a href="#Internazionale">Internazionale</a>
+        </div>
+    </div>
+    <a href="#Consigli">Consigli</a>
+    <a href="#Associazioni">Associazioni</a>
+</div>
 
 <div id="content">
     @yield('content')
