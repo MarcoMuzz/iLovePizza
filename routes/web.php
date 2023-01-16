@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testController;
+use App\Http\Controllers\homeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,10 @@ use App\Http\Controllers\testController;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/home', [homeController::class, 'home']);
+
+//Route::get("home","homeController@home");
 
 Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
 
