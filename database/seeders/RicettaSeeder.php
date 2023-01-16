@@ -29,7 +29,7 @@ class RicettaSeeder extends Seeder
                 'senzaglutine' => rand(0, 1),
                 'senzalattosio' => rand(0, 1),
                 'cottura' => 'fornoalegna',
-                'immagine' => 'https://t3.ftcdn.net/jpg/04/48/09/00/360_F_448090057_lQt2CrcZ0vnTffzwtmTVU0JuiC0EgUuK.jpg?w=400&h=200',
+                'immagine' => 'https://img.freepik.com/premium-photo/black-man-naked-with-salat_67651-2377.jpg',
                 'id_autore' => rand(5, 11)
             ]);
         }
@@ -47,7 +47,7 @@ class RicettaSeeder extends Seeder
                     'senzaglutine' =>rand(0,1),
                     'senzalattosio' =>rand(0,1),
                     'cottura' => 'fornoelettrico',
-                    'immagine'=> 'https://t3.ftcdn.net/jpg/04/48/09/00/360_F_448090057_lQt2CrcZ0vnTffzwtmTVU0JuiC0EgUuK.jpgw?=400&h=200',
+                    'immagine'=> 'https://c8.alamy.com/zoomsit/6/5cd1333324dd45c2a0f752d17f69d334/b2a724.jpg',
                     'id_autore'=> rand(12,18)
                 ]);
         }
@@ -65,7 +65,7 @@ class RicettaSeeder extends Seeder
                 'senzaglutine' =>rand(0,1),
                 'senzalattosio' =>rand(0,1),
                 'cottura' => 'padella',
-                'immagine'=> 'https://t3.ftcdn.net/jpg/04/48/09/00/360_F_448090057_lQt2CrcZ0vnTffzwtmTVU0JuiC0EgUuK.jpg?w=400&h=200',
+                'immagine'=> 'https://lurlodimunch.files.wordpress.com/2013/03/uomo_nero_nudo_letto1.jpg',
                 'id_autore'=> rand(19,25)
             ]);
         }
@@ -83,7 +83,7 @@ class RicettaSeeder extends Seeder
                 'senzaglutine' =>rand(0,1),
                 'senzalattosio' =>rand(0,1),
                 'cottura' => 'fornogas',
-                'immagine'=> 'https://t3.ftcdn.net/jpg/04/48/09/00/360_F_448090057_lQt2CrcZ0vnTffzwtmTVU0JuiC0EgUuK.jpg?w=400&h=200',
+                'immagine'=> 'https://i.etsystatic.com/9377676/r/il/5039b1/2119365259/il_570xN.2119365259_9sfu.jpg',
                 'id_autore'=> rand(26,32)
             ]);
         }

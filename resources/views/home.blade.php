@@ -12,7 +12,7 @@
 
         @foreach($romana as $pizzaromana)
         <div style="width: 30vw;float:left; display: inline-block;border: solid 1px black;border-radius: 5%">
-            <img src="https://c8.alamy.com/zoomsit/6/5cd1333324dd45c2a0f752d17f69d334/b2a724.jpg"><br>{{$pizzaromana['nome']}}</div>
+            <img width="400" height="170" src="{{$pizzaromana['immagine']}}"><br>{{$pizzaromana['nome']}}</div>
         @endforeach
 
     </div><br>
