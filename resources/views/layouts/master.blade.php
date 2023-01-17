@@ -75,21 +75,21 @@
 
 <div class="navbar">
     <a style="background-color: #04AA6D">iLovePizza</a>
-    <a href="home">Home</a>
+    <a href="{{route('home')}}">Home</a>
     <div class="dropdown">
         <button class="dropbtn">Tipi di Pizze
             <i class="fa fa-caret-down"></i>
         </button>
         <div class="dropdown-content">
-            <a href="tutte">Tutte</a>
-            <a href="napoletana">Napoletana</a>
-            <a href="romana">Romana</a>
-            <a href="resto">Resto d'Italia</a>
-            <a href="internazionale">Internazionale</a>
+            <a href="{{route('fabio',['tipologia'=>'tutte'])}}">Tutte</a>
+            <a href="{{route('fabio',['tipologia'=>'napoletana'])}}">Napoletana</a>
+            <a href="{{route('fabio',['tipologia'=>'romana'])}}">Romana</a>
+            <a href="{{route('fabio',['tipologia'=>'resto'])}}">Resto d'Italia</a>
+            <a href="{{route('fabio',['tipologia'=>'internazionale'])}}">Internazionale</a>
         </div>
     </div>
-    <a href="consigli">Consigli</a>
-    <a href="#Associazioni">Associazioni</a>
+    <a href="{{route('consigli')}}">Consigli</a>
+    <a href="{{route('associazioni')}}">Associazioni</a>
 </div>
 
 <div id="content">

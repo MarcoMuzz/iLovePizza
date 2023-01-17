@@ -20,8 +20,8 @@ return new class extends Migration
             $table->boolean('napoletana');
             $table->boolean('resto');
             $table->boolean('internazionale');
-            $table->index('capo');
-            $table->foreignId('capo')->references('id')->on('utentes')->onDelete('cascade');
+            $table->index('id_capo');
+            $table->foreignId('id_capo')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();
         });
     }

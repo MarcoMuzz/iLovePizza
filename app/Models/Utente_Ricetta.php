@@ -12,8 +12,8 @@ class Utente_Ricetta extends Model
     protected $table = 'utente_ricettas';
 
     protected $fillable =[
-        'utente_id',
-        'ricetta_id',
+        'id_utente',
+        'id_ricetta',
         'voto',
     ];
 

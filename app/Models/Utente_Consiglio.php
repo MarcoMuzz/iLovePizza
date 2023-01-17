@@ -12,8 +12,8 @@ class Utente_Consiglio extends Model
     protected $table = 'utente_consiglios';
 
     protected $fillable = [
-        'utente_id',
-        'consiglio_id',
+        'id_utente',
+        'id_consiglio',
     ];
 
     public function Utente()

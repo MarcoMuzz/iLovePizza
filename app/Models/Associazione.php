@@ -17,7 +17,7 @@ class Associazione extends Model
         'napoletana',
         'resto',
         'internazionale',
-        'capo',
+        'id_capo',
         ];
 
     public function Utente()

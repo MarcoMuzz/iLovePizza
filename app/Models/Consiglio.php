@@ -15,7 +15,7 @@ class Consiglio extends Model
         'nome',
         'immagine',
         'contenuto',
-        'autore',
+        'id_autore',
     ];
 
     public function Utente()

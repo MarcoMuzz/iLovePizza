@@ -11,8 +11,8 @@ class Associazione_Utente extends Model
     protected $table = 'associazione_utentes';
 
     protected $fillable =[
-        'associazione_id',
-        'utente_id',
+        'id_associazione',
+        'id_utente',
         'ruolo',
     ];
     protected $primaryKey = 'utente_id';

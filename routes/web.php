@@ -5,6 +5,7 @@ use App\Http\Controllers\testController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ricetteController;
 use App\Http\Controllers\consigliController;
+use App\Http\Controllers\associazioneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,17 +18,19 @@ use App\Http\Controllers\consigliController;
 |
 */
 
-Route::get('/',[homeController::class, 'home']);
+Route::get('/',[homeController::class, 'home'])->name('home');
 
-Route::get('/home', [homeController::class, 'home']);
+Route::get('/home', [homeController::class, 'home'])->name('home');
 
 //Route::get("home","homeController@home");
 
 Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
 
-Route::get('/{tipologia}', [ricetteController::class, 'Ricette']); //route di test delle ricette
+Route::get('/TipiDiPizze/{tipologia}', [ricetteController::class, 'Ricette'])->name('fabio'); //route di test delle ricette  <---- questa route mangia tutte le sottostanti
 
-Route::get('/consigli', [consigliController::class, 'Consigli']); //route di test dei consigli
+Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli'); //route di test dei consigli
+
+Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni'); //route di test delle associazioni
 
 
 

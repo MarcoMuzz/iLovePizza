@@ -27,4 +27,6 @@ class ricetteController extends Controller
 
 
     }
+
+
 }

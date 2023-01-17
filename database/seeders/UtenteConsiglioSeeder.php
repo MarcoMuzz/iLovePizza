@@ -18,12 +18,12 @@ class UtenteConsiglioSeeder extends Seeder
         //
         for($i=33;$i<=50;$i++) {
             Utente_Consiglio::create([
-                'utente_id' => $i,
-                'consiglio_id' => rand(1, 5),
+                'id_utente' => $i,
+                'id_consiglio' => rand(1, 5),
             ]);
             Utente_Consiglio::create([
-                'utente_id' => $i,
-                'consiglio_id' => rand(6, 10),
+                'id_utente' => $i,
+                'id_consiglio' => rand(6, 10),
             ]);
         }
     }

@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('associazione_utentes', function (Blueprint $table) {
-            $table->index('associazione_id')->unique();
-            $table->foreignId('associazione_id')->references('id')->on('associaziones')->onDelete('cascade');
-            $table->index('utente_id');
-            $table->foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
+            $table->index('id_associazione')->unique();
+            $table->foreignId('id_associazione')->references('id')->on('associaziones')->onDelete('cascade');
+            $table->index('id_utente');
+            $table->foreignId('id_utente')->references('id')->on('utentes')->onDelete('cascade');
             $table->integer('ruolo')->default(0);
             $table->timestamps();
         });
