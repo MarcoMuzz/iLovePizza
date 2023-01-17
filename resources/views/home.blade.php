@@ -3,8 +3,6 @@
 
 @section('content')
 
-
-
     <h1>Benvenuto in iLovePizza (and piedi)</h1>
     <h2>Pizze Napoletane</h2>
     <h3>La pizza napoletana con pasta morbida e sottile, ma dai bordi alti, è la versione della pizza tonda preparata nella città di Napoli. Dal 5 febbraio 2010 è ufficialmente riconosciuta come Specialità Tradizionale Garantita(STG) dell'Unione Europea e nel 2017 l'arte del pizzaiuolo napoletano, di cui la pizza napoletana è il prodotto tangibile, è stata dichiarata dall'UNESCO come patrimonio immateriale dell'umanità.</h3>
@@ -46,6 +44,7 @@
                 <img  width=auto height="200" src="{{$pizzaInternazionale['immagine']}}"><br>{{$pizzaInternazionale['nome']}}</div>
         @endforeach
 
-    </div><br>
+    </div>
 
 @endsection
+

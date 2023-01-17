@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 class ricetteController extends Controller
 {
+
     public function Ricette($tipologia) {
 
         switch ($tipologia) {

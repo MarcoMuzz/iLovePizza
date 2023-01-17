@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('title', 'Profilo Utente')
-
 @section('content')
     <h5>{{ $utente['username']}}</h5><br/>
     <p>
@@ -13,3 +12,4 @@
     @endif
 
 @endsection
+

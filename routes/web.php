@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ricetteController;
+use App\Http\Controllers\consigliController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,9 @@ Route::get('/home', [homeController::class, 'home']);
 
 Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
 
-
 Route::get('/{tipologia}', [ricetteController::class, 'Ricette']); //route di test delle ricette
+
+Route::get('/consigli', [consigliController::class, 'Consigli']); //route di test dei consigli
 
 
 

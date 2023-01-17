@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('consiglios', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
-            $table->string('immagine');
+            $table->text('immagine');
             $table->longText('contenuto');
             $table->index('autore')->usigned();
             $table->foreignId('autore')->references('id')->on('utentes')->onDelete('cascade');
