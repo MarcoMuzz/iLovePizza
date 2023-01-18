@@ -16,8 +16,8 @@ class CommentoSeeder extends Seeder
     public function run()
     {   for($i=1;$i<=20;$i++){
         Commento::create([
-            'id_ricetta' => rand(1,12),
-            'id_autore' => rand(33,50),
+            'ricetta_id' => rand(1,12),
+            'utente_id' => rand(33,50),
             'contenuto' => 'blablabla'
         ]);
     }

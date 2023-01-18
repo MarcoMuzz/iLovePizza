@@ -15,10 +15,10 @@ return new class extends Migration
     {
 
         Schema::create('utente_consiglios', function (Blueprint $table) {
-            $table->index('id_utente');
-            $table-> foreignId('id_utente')->references('id')->on('utentes')->onDelete('cascade');
-            $table->index('id_consiglio');
-            $table-> foreignId('id_consiglio')->references('id')->on('consiglios')->onDelete('cascade');
+            $table->index('utente_id');
+            $table-> foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
+            $table->index('consiglio_id');
+            $table-> foreignId('consiglio_id')->references('id')->on('consiglios')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -20,7 +20,7 @@ class ConsiglioSeeder extends Seeder
                 'nome' => "consiglio {$i}",
                 'contenuto' => "blablabla",
                 'immagine'=> "https://images.emojiterra.com/google/android-oreo/512px/1f601.png",
-                'id_autore'=> rand(1,32) //
+                'utente_id'=> rand(1,32) //
             ]);
         }
     }

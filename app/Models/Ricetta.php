@@ -24,16 +24,16 @@ class Ricetta extends Model
         'senzalattosio',
         'cottura',
         'immagine',
-        'id_autore',
+        'utente_id',
     ];
 
     public function Utente()
     {
-        return $this->belongsTo('App\Utente');
+        return $this->belongsTo('App\Models\Utente');
     }
 
     public function Utente_Ricetta()
     {
-        return $this->hasMany('App\Utente_Ricetta');
+        return $this->hasMany('App\Models\Utente_Ricetta');
     }
 }

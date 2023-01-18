@@ -21,34 +21,39 @@ class Utente extends Model
         'password',
         ];
 
+    public function AU_Utente()
+    {
+        return $this->belongsTo('App\Models\Associazione_Utente');
+    }
+
     public function Associazione()
     {
-        return $this->HasOne('App\Associazione');
+        return $this->HasOne('App\Models\Associazione');
     }
 
     public function Ricetta()
     {
-        return $this->hasMany('App\Ricetta');
+        return $this->hasMany('App\Models\Ricetta');
     }
 
     public function Consiglio()
     {
-        return $this->hasMany('App\Consiglio');
+        return $this->hasMany('App\Models\Consiglio');
     }
 
     public function Associazione_Utente()
     {
-        return $this->hasMany('App\Associazione_Utente');
+        return $this->hasMany('App\Models\Associazione_Utente');
     }
 
     public function Utente_Consiglio()
     {
-        return $this->hasMany('App\Utente_Consiglio');
+        return $this->hasMany('App\Models\Utente_Consiglio');
     }
 
     public function Utente_Ricetta()
     {
-        return $this->hasMany('App\Utente_Ricetta');
+        return $this->hasMany('App\Models\Utente_Ricetta');
     }
 
 }

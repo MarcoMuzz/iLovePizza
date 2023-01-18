@@ -90,6 +90,9 @@
     </div>
     <a href="{{route('consigli')}}">Consigli</a>
     <a href="{{route('associazioni')}}">Associazioni</a>
+
+    <!--  <div style="display: inline-block ;float: right; padding-top: 11px"><input type="text" placeholder="Search.."></div>
+    -->
 </div>
 
 <div id="content">

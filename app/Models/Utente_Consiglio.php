@@ -12,17 +12,17 @@ class Utente_Consiglio extends Model
     protected $table = 'utente_consiglios';
 
     protected $fillable = [
-        'id_utente',
-        'id_consiglio',
+        'utente_id',
+        'consiglio_id',
     ];
 
     public function Utente()
     {
-        return $this->belongsToMany('App\Utente');
+        return $this->belongsToMany('App\Models\Utente');
     }
 
     public function Consiglio()
     {
-        return $this->belongsToMany('App\Consiglio');
+        return $this->belongsToMany('App\Models\Consiglio');
     }
 }

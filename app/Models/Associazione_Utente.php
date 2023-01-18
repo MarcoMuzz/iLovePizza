@@ -11,19 +11,24 @@ class Associazione_Utente extends Model
     protected $table = 'associazione_utentes';
 
     protected $fillable =[
-        'id_associazione',
-        'id_utente',
+        'associazione_id',
+        'utente_id',
         'ruolo',
     ];
     protected $primaryKey = 'utente_id';
 
     public function Utente()
     {
-        return $this->belongsToMany('App\Utente');
+        return $this->belongsToMany('App\Models\Utente');
+    }
+
+    public function AU_Utente()
+    {
+        return $this->hasOne('App\Models\Utente');
     }
 
     public function Associazione()
     {
-        return $this->belongsToMany('App\Associazione');
+        return $this->belongsToMany('App\Models\Associazione');
     }
 }

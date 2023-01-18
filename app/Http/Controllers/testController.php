@@ -17,7 +17,7 @@ class testController extends Controller
             return null;
     }
 
-    public function utenteProfilo($id)
+   /* public function utenteProfilo($id)
     {
         $utente=Utente::findOrFail($id);
         $associazione=$this->GetAssociazioneId($id);
@@ -37,4 +37,14 @@ class testController extends Controller
             ]);
         }
     }
+    */
+    public function utenteProfilo($id)
+    {
+        //$membri=Associazione_Utente::where('associazione_id',$id)->Utente;
+        $membri=Associazione_Utente::find(2)->AU_Utente;
+     return view('utenteProfilo',[
+         'membri'=>$membri
+     ])   ;
+    }
+
 }

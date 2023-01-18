@@ -12,14 +12,14 @@ class Utente_Ricetta extends Model
     protected $table = 'utente_ricettas';
 
     protected $fillable =[
-        'id_utente',
-        'id_ricetta',
+        'utente_id',
+        'ricetta_id',
         'voto',
     ];
 
     public function Utente()
     {
-        return $this->belongsToMany('App\Utente');
+        return $this->belongsToMany('App\Models\Utente');
     }
 }
 

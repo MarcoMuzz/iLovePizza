@@ -6,7 +6,7 @@
 
         <h2>{{ $associazione['nome']}}</h2>
         @foreach($capos as $capo)
-            @if($capo['id'] == $associazione['id_capo'])
+            @if($capo['id'] == $associazione['utente_id'])
             <p> founded by: {{$capo['nome']}} </p>
             @endif
         @endforeach

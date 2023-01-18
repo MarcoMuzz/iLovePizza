@@ -12,18 +12,18 @@ class Commento extends Model
     //use HasFactory;
 
     protected $fillable =[
-        'id_ricetta',
-        'id_autore',
+        'ricetta_id',
+        'utente_id',
         'contenuto',
     ];
 
     public function Utente()
     {
-        return $this->belongsTo('App\Utente');
+        return $this->belongsTo('App\Models\Utente');
     }
 
     public function Ricetta()
     {
-        return $this->belongsTo('App\Ricetta');
+        return $this->belongsTo('App\Models\Ricetta');
     }
 }

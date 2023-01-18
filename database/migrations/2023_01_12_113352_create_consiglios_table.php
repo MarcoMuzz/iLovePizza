@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('nome');
             $table->text('immagine');
             $table->longText('contenuto');
-            $table->index('id_autore')->usigned();
-            $table->foreignId('id_autore')->references('id')->on('utentes')->onDelete('cascade');
+            $table->index('utente_id')->usigned();
+            $table->foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();
         });
     }

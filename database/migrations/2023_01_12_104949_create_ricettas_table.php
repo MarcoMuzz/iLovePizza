@@ -29,8 +29,8 @@ return new class extends Migration
             $table->string('cottura');
             //$table->float('votomedio');
             $table->text('immagine');
-            $table->index('id_autore');
-            $table->foreignId('id_autore')->references('id')->on('utentes')->onDelete('cascade');
+            $table->index('utente_id');
+            $table->foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();
         });
     }

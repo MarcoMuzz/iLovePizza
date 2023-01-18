@@ -17,16 +17,16 @@ class Associazione extends Model
         'napoletana',
         'resto',
         'internazionale',
-        'id_capo',
+        'utente_id',
         ];
 
     public function Utente()
     {
-        return $this->belongsTo('App\Utente');
+        return $this->belongsTo('App\Models\Utente');
     }
 
     public function Associazione_Utente()
     {
-        return $this->hasMany('App\Associazione_Utente');
+        return $this->hasMany('App\Models\Associazione_Utente');
     }
 }

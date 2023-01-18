@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('commentos', function (Blueprint $table) {
             $table->id();
-            $table->index('id_ricetta');
-            $table->foreignId('id_ricetta')->references('id')->on('ricettas')->onDelete('cascade');
-            $table->index('id_autore');
-            $table->foreignId('id_autore')->references('id')->on('utentes')->onDelete('cascade');
+            $table->index('ricetta_id');
+            $table->foreignId('ricetta_id')->references('id')->on('ricettas')->onDelete('cascade');
+            $table->index('utente_id');
+            $table->foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
             $table->longText('contenuto');
             $table->timestamps();
         });

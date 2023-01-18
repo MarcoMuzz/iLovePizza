@@ -6,7 +6,7 @@
     @foreach($ricettas as $ricetta)
         <h2>{{ $ricetta['nome']}}</h2>
         @foreach($autores as $autore)
-            @if($autore['id'] == $ricetta['id_autore'])
+            @if($autore['id'] == $ricetta['utente_id'])
             <p> written by: {{$autore['nome']}} </p>
             @endif
         @endforeach

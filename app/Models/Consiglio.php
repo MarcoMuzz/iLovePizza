@@ -15,16 +15,16 @@ class Consiglio extends Model
         'nome',
         'immagine',
         'contenuto',
-        'id_autore',
+        'utente_id',
     ];
 
     public function Utente()
     {
-        return $this->belongsTo('App\Utente');
+        return $this->belongsTo('App\Models\Utente');
     }
 
     public function Utente_Consiglio()
     {
-        return $this->hasMany('App\Utente_Consiglio');
+        return $this->hasMany('App\Models\Utente_Consiglio');
     }
 }

@@ -22,7 +22,7 @@ class AssociazioneSeeder extends Seeder
             'napoletana' => 0,
             'resto' => 0,
             'internazionale' => 0,
-            'id_capo' => 1
+            'utente_id' => 1
         ]);
         // ----------- CREAZIONE 2° TUPLA -----------
 
@@ -32,7 +32,7 @@ class AssociazioneSeeder extends Seeder
             'napoletana' => 1,
             'resto' => 0,
             'internazionale' => 0,
-            'id_capo' => 2
+            'utente_id' => 2
         ]);
         // ----------- CREAZIONE 3° TUPLA -----------
 
@@ -42,7 +42,7 @@ class AssociazioneSeeder extends Seeder
             'napoletana' => 0,
             'resto' => 1,
             'internazionale' => 0,
-            'id_capo' => 3
+            'utente_id' => 3
         ]);
         // ----------- CREAZIONE 4° TUPLA -----------
 
@@ -52,7 +52,7 @@ class AssociazioneSeeder extends Seeder
             'napoletana' => 0,
             'resto' => 0,
             'internazionale' => 1,
-            'id_capo' => 4
+            'utente_id' => 4
         ]);
     }
 }

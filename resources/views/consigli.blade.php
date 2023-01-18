@@ -6,7 +6,7 @@
 
         <h2>{{ $consiglio['nome']}}</h2>
         @foreach($autores as $autore)
-            @if($autore['id'] == $consiglio['id_autore'])
+            @if($autore['id'] == $consiglio['utente_id'])
             <p> written by: {{$autore['nome']}} </p>
             @endif
         @endforeach

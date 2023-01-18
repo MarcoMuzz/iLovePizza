@@ -39,8 +39,8 @@ class UtenteRicettaSeeder extends Seeder
 
             for($l=1; $l<=rand(0,4); $l++){
                 Utente_Ricetta::create([
-                        'id_utente' => $i,
-                        'id_ricetta' => $ricetta[$l],
+                        'utente_id' => $i,
+                        'ricetta_id' => $ricetta[$l],
                         'voto' => $voto[$l]
             ]);
             }

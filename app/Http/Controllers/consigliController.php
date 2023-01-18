@@ -16,11 +16,11 @@ class consigliController extends Controller
     }
 
     public function Consiglio($id) {
-        $conto=Utente_Consiglio::where('id_consiglio','=', $id)->count();
+        $conto=Utente_Consiglio::where('consiglio_id','=', $id)->count();
         $consiglio=Consiglio::where('id', '=',$id)->first();
-        $autore=Utente::where('id','=',$consiglio['id_autore'])->first();
-        $temp=Associazione_Utente::where('id_utente',$autore['id'])->first();
-        $associazione=Associazione::where('id',$temp['id_associazione'])->first();
+        $autore=Utente::where('id','=',$consiglio['utente_id'])->first();
+        $temp=Associazione_Utente::where('utente_id',$autore['id'])->first();
+        $associazione=Associazione::where('id',$temp['associazione_id'])->first();
         return view('consiglio',[
             'consiglios'=>$consiglio,
             'autore'=>$autore,
