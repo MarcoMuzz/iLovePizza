@@ -10,7 +10,8 @@
             <p> written by: {{$autore['nome']}} </p>
             @endif
         @endforeach
-        <p><img src="{{ $consiglio['immagine']}}"><br/></p>
+        <p><img style="max-width: 200px" src="{{ $consiglio['immagine']}}"><br/></p>
+        <a href="{{route('consiglio',['id'=>$consiglio['id']])}}">Continua a leggere</a>
         <br/>____________________________________________________<br/>
     @endforeach
 
