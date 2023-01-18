@@ -15,8 +15,8 @@ class associazioneController extends Controller
 
     public function Associazione($id) {
         $associazione=Associazione::where('id', '=',$id)->first();
-        $capo=Utente::where('id','=',$associazione['id_capo'])->first();
-        $membri=Associazione_Utente::all()->where('id_associazione','=',$id);
+        $capo=Utente::where('id','=',$associazione['utente_id'])->first();
+        $membri=Associazione_Utente::all()->where('associazione_id','=',$id);
         //$utenti=Utente::join();
         //$utenti=Associazione_Utente::all()->Utente();
         return view('associazione',[

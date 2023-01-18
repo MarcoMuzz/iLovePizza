@@ -10,6 +10,7 @@
             <p> founded by: {{$capo['nome']}} </p>
             @endif
         @endforeach
+        <a href="{{route('associazione',['id'=>$associazione['id']])}}">Visita</a>
         <br/>____________________________________________________<br/>
     @endforeach
 
