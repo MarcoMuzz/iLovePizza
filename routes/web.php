@@ -32,7 +32,7 @@ Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli
 
 Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni');
 
-Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route di test delle associazioni
+Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route ricette singole
 
 
 
