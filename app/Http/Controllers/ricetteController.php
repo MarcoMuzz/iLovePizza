@@ -6,6 +6,7 @@ use App\Models\Ricetta;
 use App\Models\Utente;
 use App\Models\Associazione;
 use App\Models\Utente_Ricetta;
+use App\Models\Commento;
 use Illuminate\Http\Request;
 
 
@@ -37,12 +38,14 @@ class ricetteController extends Controller
         $associazione=Associazione_Utente::where('id_utente',$autore['id'])->first();
         $media=Utente_Ricetta::where('id_ricetta',$ricetta['id'])->avg('voto');
         $media=round($media,1);
+        $commentos=Commento::where('id_ricetta','=',$id)->get();
         return view('ricetta',[
             'ricettas'=>$ricetta,
             'autore'=>$autore,
             'conto'=>$conto,
             'associazione'=>$associazione,
-            'media'=>$media
+            'media'=>$media,
+            'commentos'=>$commentos
         ]);
     }
 
