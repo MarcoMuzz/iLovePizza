@@ -34,5 +34,7 @@ Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->na
 
 Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route ricette singole
 
-Route::get('/associazione/{id}', [associazioneController::class, 'Associazione'])->name('associazione');
+Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('consiglio');//route singolo consiglio
+
+
 
