@@ -6,7 +6,7 @@
     <div>capo : {{$capo['nome']}}</div>
 
     @foreach($membri as $membro)
-    <div> membri : {{$membro['nome']}}</div>
+    <div> membri : {{$membro['username']}}</div>
     @endforeach
 
 @endsection

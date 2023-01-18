@@ -32,6 +32,8 @@ Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli
 
 Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni');
 
+Route::get('/associazioni/{id}', [associazioneController::class, 'Associazione'])->name('associazione');
+
 Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route ricette singole
 
 Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('consiglio');//route singolo consiglio
