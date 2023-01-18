@@ -36,7 +36,7 @@ class ricetteController extends Controller
         $autore=Utente::where('id','=',$ricetta['id_autore'])->first();
         $associazione=Associazione_Utente::where('id_utente',$autore['id'])->first();
         $media=Utente_Ricetta::where('id_ricetta',$ricetta['id'])->avg('voto');
-
+        $media=round($media,1);
         return view('ricetta',[
             'ricettas'=>$ricetta,
             'autore'=>$autore,

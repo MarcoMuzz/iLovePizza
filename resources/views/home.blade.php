@@ -23,7 +23,9 @@
 
         @foreach($romana as $pizzaromana)
             <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-                <img  width=auto height="200" src="{{$pizzaromana['immagine']}}"><br>{{$pizzaromana['nome']}}</div>
+                <img  width=auto height="200" src="{{$pizzaromana['immagine']}}"><br>
+            <a href=" {{route('ricetta',['id'=> $pizzaromana['id'] ])}} ">{{$pizzaromana['nome']}}</a>
+            </div>
         @endforeach
 
     </div><br>
@@ -33,7 +35,9 @@
 
         @foreach($resto as $pizzaresto)
             <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-                <img  width=auto height="200" src="{{$pizzaresto['immagine']}}"><br>{{$pizzaresto['nome']}}</div>
+                <img  width=auto height="200" src="{{$pizzaresto['immagine']}}"><br>
+                <a href=" {{route('ricetta',['id'=> $pizzaresto['id'] ])}} ">{{$pizzaresto['nome']}}</a>
+            </div>
         @endforeach
 
     </div><br>
@@ -43,7 +47,9 @@
 
         @foreach($internazionale as $pizzaInternazionale)
             <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-                <img  width=auto height="200" src="{{$pizzaInternazionale['immagine']}}"><br>{{$pizzaInternazionale['nome']}}</div>
+                <img  width=auto height="200" src="{{$pizzaInternazionale['immagine']}}"><br>
+                <a href=" {{route('ricetta',['id'=> $pizzaInternazionale['id'] ])}} ">{{$pizzaInternazionale['nome']}}</a>
+            </div>
         @endforeach
 
     </div>

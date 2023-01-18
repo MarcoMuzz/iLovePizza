@@ -29,7 +29,7 @@ class RicettaSeeder extends Seeder
                 'senzaglutine' => rand(0, 1),
                 'senzalattosio' => rand(0, 1),
                 'cottura' => 'fornoalegna',
-                'immagine' => 'https://img.freepik.com/premium-photo/black-man-naked-with-salat_67651-2377.jpg',
+                'immagine' => 'https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza-1764x882.jpg',
                 'id_autore' => rand(5, 11)
             ]);
         }
@@ -47,7 +47,7 @@ class RicettaSeeder extends Seeder
                     'senzaglutine' =>rand(0,1),
                     'senzalattosio' =>rand(0,1),
                     'cottura' => 'fornoelettrico',
-                    'immagine'=> 'https://c8.alamy.com/zoomsit/6/5cd1333324dd45c2a0f752d17f69d334/b2a724.jpg',
+                    'immagine'=> 'https://www.giallozafferano.it/images/5-560/Pizza-Romana_780x520_wm.jpg',
                     'id_autore'=> rand(12,18)
                 ]);
         }
@@ -65,7 +65,7 @@ class RicettaSeeder extends Seeder
                 'senzaglutine' =>rand(0,1),
                 'senzalattosio' =>rand(0,1),
                 'cottura' => 'padella',
-                'immagine'=> 'https://lurlodimunch.files.wordpress.com/2013/03/uomo_nero_nudo_letto1.jpg',
+                'immagine'=> 'https://media-cdn.tripadvisor.com/media/photo-s/17/ed/fd/81/san-marco.jpg',
                 'id_autore'=> rand(19,25)
             ]);
         }
@@ -83,7 +83,7 @@ class RicettaSeeder extends Seeder
                 'senzaglutine' =>rand(0,1),
                 'senzalattosio' =>rand(0,1),
                 'cottura' => 'fornogas',
-                'immagine'=> 'https://i.etsystatic.com/9377676/r/il/5039b1/2119365259/il_570xN.2119365259_9sfu.jpg',
+                'immagine'=> 'https://www.foodandwineitalia.com/wp-content/uploads/elementor/thumbs/pizza-ananas-shutterstock-pkuuz32rlvimvtt3l7lrad591d03en9nu2ppqlzqyg.png',
                 'id_autore'=> rand(26,32)
             ]);
         }
