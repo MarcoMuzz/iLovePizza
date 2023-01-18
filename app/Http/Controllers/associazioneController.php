@@ -25,6 +25,7 @@ class associazioneController extends Controller
             'membri'=>$membri
 
         ]);
+
     }
 }
 
