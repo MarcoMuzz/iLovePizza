@@ -8,7 +8,7 @@ use App\Models\Consiglio;
 class consigliController extends Controller
 {
 
-    public function Consigli(){
+    public function Consigli() {
         return view('consigli',['consiglios' => Consiglio::all(), 'autores' => Utente::all()]);
     }
 }

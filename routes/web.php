@@ -30,7 +30,9 @@ Route::get('/TipiDiPizze/{tipologia}', [ricetteController::class, 'Ricette'])->n
 
 Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli'); //route di test dei consigli
 
-Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni'); //route di test delle associazioni
+Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni');
+
+Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route di test delle associazioni
 
 
 

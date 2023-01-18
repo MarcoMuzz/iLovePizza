@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Associazione_Utente;
 use App\Models\Ricetta;
 use App\Models\Utente;
-
+use App\Models\Associazione;
+use App\Models\Utente_Ricetta;
 use Illuminate\Http\Request;
 
 
@@ -26,6 +28,22 @@ class ricetteController extends Controller
         }
 
 
+    }
+
+    public function Ricetta($id) {
+        $conto=Utente_Ricetta::where('id_ricetta','=', $id)->count();
+        $ricetta=Ricetta::where('id', '=',$id)->first();
+        $autore=Utente::where('id','=',$ricetta['id_autore'])->first();
+        $associazione=Associazione_Utente::where('id_utente',$autore['id'])->first();
+        $media=Utente_Ricetta::where('id_ricetta',$ricetta['id'])->avg('voto');
+
+        return view('ricetta',[
+            'ricettas'=>$ricetta,
+            'autore'=>$autore,
+            'conto'=>$conto,
+            'associazione'=>$associazione,
+            'media'=>$media
+        ]);
     }
 
 

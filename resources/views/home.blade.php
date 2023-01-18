@@ -10,7 +10,9 @@
 
         @foreach($napoletana as $pizzanapoletana)
         <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-            <img  width=auto height="200" src="{{$pizzanapoletana['immagine']}}"><br>{{$pizzanapoletana['nome']}}</div>
+            <img  width=auto height="200" src="{{$pizzanapoletana['immagine']}}"><br>
+            <a href=" {{route('ricetta',['id'=> $pizzanapoletana['id'] ])}} ">{{$pizzanapoletana['nome']}}</a>
+        </div>
         @endforeach
 
     </div><br>
