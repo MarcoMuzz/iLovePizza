@@ -14,16 +14,14 @@ class associazioneController extends Controller
     }
 
     public function Associazione($id) {
-        $associazione=Associazione::where('id', '=',$id)->first();
+        $associazione=Associazione::find($id);
         $capo=Utente::where('id','=',$associazione['utente_id'])->first();
-        $membri=Associazione_Utente::all()->where('associazione_id','=',$id);
-        //$utenti=Utente::join();
-        //$utenti=Associazione_Utente::all()->Utente();
+        $membri=Associazione::find($id)->Membri;
+
         return view('associazione',[
-           'associaziones'=>$associazione,
+            'associaziones'=>$associazione,
             'capo'=>$capo,
             'membri'=>$membri
-
         ]);
 
     }

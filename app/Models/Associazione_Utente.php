@@ -15,16 +15,16 @@ class Associazione_Utente extends Model
         'utente_id',
         'ruolo',
     ];
-    protected $primaryKey = 'utente_id';
+    protected $primaryKey = 'associazione_id';
 
     public function Utente()
     {
-        return $this->belongsToMany('App\Models\Utente');
+        return $this->belongsTo('App\Models\Utente');
     }
 
-    public function AU_Utente()
+    public function Membri()
     {
-        return $this->hasOne('App\Models\Utente');
+        return $this->belongsTo('App\Models\Associazione');
     }
 
     public function Associazione()

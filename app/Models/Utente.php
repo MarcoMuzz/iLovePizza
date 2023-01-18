@@ -21,14 +21,10 @@ class Utente extends Model
         'password',
         ];
 
-    public function AU_Utente()
-    {
-        return $this->belongsTo('App\Models\Associazione_Utente');
-    }
 
     public function Associazione()
     {
-        return $this->HasOne('App\Models\Associazione');
+        return $this->hasOne('App\Models\Associazione');
     }
 
     public function Ricetta()

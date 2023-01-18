@@ -41,10 +41,9 @@ class testController extends Controller
     public function utenteProfilo($id)
     {
         //$membri=Associazione_Utente::where('associazione_id',$id)->Utente;
-        $membri=Associazione_Utente::find(2)->AU_Utente;
-     return view('utenteProfilo',[
-         'membri'=>$membri
-     ])   ;
+        $membri=Associazione::find($id)->Membri;
+
+     return view('utenteProfilo',['membri'=>$membri]);
     }
 
 }

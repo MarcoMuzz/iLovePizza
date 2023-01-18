@@ -29,4 +29,16 @@ class Associazione extends Model
     {
         return $this->hasMany('App\Models\Associazione_Utente');
     }
+
+    public function Membri()
+    {
+        return $this->hasManyThrough(
+            Utente::class,
+            Associazione_Utente::class,
+            'associazione_id',
+            'id',
+            'id',
+            'utente_id'
+        );
+    }
 }
