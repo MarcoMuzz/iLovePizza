@@ -6,7 +6,7 @@ use App\Models\Ricetta;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
-{//PER COMMIT
+{
     /**
      * Create a new controller instance.
      *
