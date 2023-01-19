@@ -20,7 +20,9 @@ use App\Http\Controllers\associazioneController;
 
 Route::get('/',[homepageController::class, 'homepage'])->name('homepage');
 
-Route::get('/homepage', [homepageController::class, 'homepage'])->name('homepage');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
+
+//Route::get('/homepage', [homepageController::class, 'homepage'])->name('homepage');
 
 //Route::get("home","homeController@home");
 
@@ -43,4 +45,4 @@ Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('co
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+

@@ -88,7 +88,7 @@
             /* this should be the same width as the parent list item */
             margin-top: -35px;
         /* aligns top of sub menu with top of list item */
-
+        }
     </style>
 </head>
 <body>
@@ -154,10 +154,30 @@
                                         {{ __('Logout') }}
                                     </a>
 
+
+
+                                    <!--funzioni di Utente-->
+                                    <a class="dropdown-item" href="{{route('homepage')}}">Crea Associazione</a>
+
+                                    <!--funzioni di Membro-->
+                                    <a class="dropdown-item" href="{{route('homepage')}}">La mia Associazione</a>
+                                    <a class="dropdown-item" href="{{route('homepage')}}">Scrivi ricetta</a>
+                                    <a class="dropdown-item" href="{{route('homepage')}}">Scrivi consiglio</a>
+
+                                    <!--funzioni di Moderatore-->
+                                    <a class="dropdown-item" href="{{route('homepage')}}">Modera Contenuti</a>
+
+                                    <!--funzioni di Capo-->
+                                    <a class="dropdown-item" href="{{route('homepage')}}">Modera Membri</a>
+                                    <a class="dropdown-item" href="{{route('homepage')}}">Invita membro</a>
+
+
+
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
+
                             </li>
                         @endguest
                     </ul>
