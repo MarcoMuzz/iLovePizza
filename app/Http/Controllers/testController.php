@@ -6,6 +6,7 @@ use App\Models\Associazione;
 use App\Models\Associazione_Utente;
 use App\Models\Utente;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class testController extends Controller
 {
@@ -37,7 +38,7 @@ class testController extends Controller
             ]);
         }
     }
-    */
+
     public function utenteProfilo($id)
     {
         //$membri=Associazione_Utente::where('associazione_id',$id)->Utente;
@@ -45,5 +46,13 @@ class testController extends Controller
 
      return view('utenteProfilo',['membri'=>$membri]);
     }
+    */
 
+    public function test()
+    {
+
+        $ut=Auth::user();
+        return view('utenteProfilo',['ut'=>$ut]);
+
+    }
 }

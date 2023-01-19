@@ -22,11 +22,8 @@ Route::get('/',[homepageController::class, 'homepage'])->name('homepage');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
 
-//Route::get('/homepage', [homepageController::class, 'homepage'])->name('homepage');
 
-//Route::get("home","homeController@home");
 
-Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
 
 Route::get('/TipiDiPizze/{tipologia}', [ricetteController::class, 'Ricette'])->name('fabio'); //route di test delle ricette  <---- questa route mangia tutte le sottostanti
 
@@ -41,8 +38,10 @@ Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricett
 Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('consiglio');//route singolo consiglio
 
 
-
-
 Auth::routes();
 
 
+// route di testing
+//Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
+
+Route::get('/profilo', [testController::class, 'test'])->middleware('auth');
