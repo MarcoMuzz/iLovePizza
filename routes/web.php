@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testController;
-use App\Http\Controllers\homeController;
+use App\Http\Controllers\homepageController;
 use App\Http\Controllers\ricetteController;
 use App\Http\Controllers\consigliController;
 use App\Http\Controllers\associazioneController;
@@ -18,9 +18,9 @@ use App\Http\Controllers\associazioneController;
 |
 */
 
-Route::get('/',[homeController::class, 'home'])->name('home');
+Route::get('/',[homepageController::class, 'homepage'])->name('homepage');
 
-Route::get('/home', [homeController::class, 'home'])->name('home');
+Route::get('/homepage', [homepageController::class, 'homepage'])->name('homepage');
 
 //Route::get("home","homeController@home");
 
@@ -40,3 +40,7 @@ Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('co
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

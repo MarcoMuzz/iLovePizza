@@ -75,7 +75,7 @@
 
 <div class="navbar">
     <a style="background-color: #04AA6D">iLovePizza</a>
-    <a href="{{route('home')}}">Home</a>
+    <a href="{{route('homepage')}}">Home</a>
     <div class="dropdown">
         <button class="dropbtn">Tipi di Pizze
             <i class="fa fa-caret-down"></i>

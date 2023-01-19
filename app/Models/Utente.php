@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Utente extends Model
+class Utente extends Authenticatable
 {
     //we
     use HasFactory;

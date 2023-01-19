@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ricetta;
 
-class homeController extends Controller
+class homepageController extends Controller
 {
-    public function home(){
+    public function homepage(){
 
         $romana= Ricetta::where('romana',1)
             ->take(3)
@@ -28,11 +28,11 @@ class homeController extends Controller
             ->take(3)
             -> get()
         ;
-        return view('home',[
-            'romana'=>$romana,
-            'napoletana'=>$napoletana,
-            'resto'=>$resto,
-            'internazionale'=>$internazionale
+        return view('homepage',[
+                'romana'=>$romana,
+                'napoletana'=>$napoletana,
+                'resto'=>$resto,
+                'internazionale'=>$internazionale
             ]
         );
     }
