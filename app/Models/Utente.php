@@ -32,6 +32,11 @@ class Utente extends Model
         return $this->hasMany('App\Models\Ricetta');
     }
 
+    public function Commento()
+    {
+        return $this->hasMany('App\Models\Commento');
+    }
+
     public function Consiglio()
     {
         return $this->hasMany('App\Models\Consiglio');

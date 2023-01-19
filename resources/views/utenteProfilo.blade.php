@@ -2,6 +2,8 @@
 @section('title', 'Profilo Utente')
 @section('content')
 
-    {{$membri}}
+    @foreach($membri as $membro)
+    {{$membro['username']}}<br>
+    @endforeach
 @endsection
 

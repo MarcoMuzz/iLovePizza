@@ -36,4 +36,15 @@ class Ricetta extends Model
     {
         return $this->hasMany('App\Models\Utente_Ricetta');
     }
+
+
+    /*
+     * restituisce tutti i commenti della ricetta con le relative informazoni
+     * degli autori
+     */
+    public function Commenti()
+    {
+        return $this->hasMany('App\Models\Commento')
+            ->join('utentes','utente_id','=','utentes.id');
+    }
 }

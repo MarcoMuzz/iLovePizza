@@ -17,11 +17,15 @@ class associazioneController extends Controller
         $associazione=Associazione::find($id);
         $capo=Utente::where('id','=',$associazione['utente_id'])->first();
         $membri=Associazione::find($id)->Membri;
+        $ricette=Associazione::find($id)->Ricette; //contiene per ogni ricetta anche lo username dell'autore
+        $consigli=Associazione::find($id)->Consigli ; //contiene per ogni consiglio anche lo username dell'autore
 
         return view('associazione',[
             'associaziones'=>$associazione,
             'capo'=>$capo,
-            'membri'=>$membri
+            'membri'=>$membri,
+            'ricette'=>$ricette,
+            'consigli'=>$consigli,
         ]);
 
     }

@@ -12,7 +12,10 @@
 
     <h1>Sezione Commenti</h1>
    @foreach($commentos as $commento)
-       {{$commento['contenuto']}}<br>
+      <h5>{{$commento['username']}}</h5>
+       {{$commento['contenuto']}}
+       <div style="position: absolute; left: 300px">{{$commento['created_at']}}</div>
+       <br>____________________________________________________<br>
        @endforeach
 
 @endsection

@@ -22,7 +22,7 @@ class Commento extends Model
         return $this->belongsTo('App\Models\Utente');
     }
 
-    public function Ricetta()
+    public function Commenti()
     {
         return $this->belongsTo('App\Models\Ricetta');
     }

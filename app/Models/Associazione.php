@@ -30,6 +30,10 @@ class Associazione extends Model
         return $this->hasMany('App\Models\Associazione_Utente');
     }
 
+    /*
+     * restituisce i dati degli utenti facenti parte dell'associazione
+     * insieme al ruolo
+     */
     public function Membri()
     {
         return $this->hasManyThrough(
@@ -39,6 +43,43 @@ class Associazione extends Model
             'id',
             'id',
             'utente_id'
-        );
+        )->select('utentes.*','associazione_utentes.ruolo')
+            ->orderByDesc('ruolo');
+    }
+
+    /*
+    * restituisce i dati delle ricette scritte dagli utenti facenti parte
+    * dell'associazione insieme allo username dell'autore
+    */
+    public function Ricette()
+    {
+        return $this->hasManyThrough(
+            Utente::class,
+            Associazione_Utente::class,
+            'associazione_id',
+            'id',
+            'id',
+            'utente_id'
+        )->join('ricettas','utentes.id','=','ricettas.utente_id')
+            ->select('ricettas.*','utentes.username')
+                ->orderBy('created_at');
+    }
+
+    /*
+    * restituisce i dati dei consigli scritti dagli utenti facenti parte
+    * dell'associazione insieme allo username dell'autore
+    */
+    public function Consigli()
+    {
+        return $this->hasManyThrough(
+            Utente::class,
+            Associazione_Utente::class,
+            'associazione_id',
+            'id',
+            'id',
+            'utente_id'
+        )->join('consiglios','utentes.id','=','consiglios.utente_id')
+            ->select('consiglios.*','utentes.username')
+                ->orderBy('created_at');
     }
 }

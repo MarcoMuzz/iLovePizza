@@ -26,9 +26,8 @@ class ricetteController extends Controller
                 return view('ricette',['ricettas' => Ricetta::all()->where('resto', 1), 'autores' => Utente::all()]);
             case "internazionale":
                 return view('ricette',['ricettas' => Ricetta::all()->where('internazionale', 1), 'autores' => Utente::all()]);
+
         }
-
-
     }
 
     public function Ricetta($id) {
@@ -38,7 +37,7 @@ class ricetteController extends Controller
         $associazione=Associazione_Utente::where('utente_id',$autore['id'])->first();
         $media=Utente_Ricetta::where('ricetta_id',$ricetta['id'])->avg('voto');
         $media=round($media,1);
-        $commentos=Commento::where('ricetta_id','=',$id)->get();
+        $commentos=Ricetta::find($id)->Commenti;
         return view('ricetta',[
             'ricettas'=>$ricetta,
             'autore'=>$autore,
