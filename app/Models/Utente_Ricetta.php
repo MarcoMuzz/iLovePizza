@@ -21,6 +21,11 @@ class Utente_Ricetta extends Model
     {
         return $this->belongsToMany('App\Models\Utente');
     }
+
+    public function Ricetta()
+    {
+        return $this->belongsTo('App\Models\Ricetta');
+    }
 }
 
 

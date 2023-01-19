@@ -37,6 +37,10 @@ class Ricetta extends Model
         return $this->hasMany('App\Models\Utente_Ricetta');
     }
 
+    public function Voti()
+    {
+        return $this->hasMany('App\Models\Utente_Ricetta');
+    }
 
     /*
      * restituisce tutti i commenti della ricetta con le relative informazoni
@@ -47,4 +51,23 @@ class Ricetta extends Model
         return $this->hasMany('App\Models\Commento')
             ->join('utentes','utente_id','=','utentes.id');
     }
+
+    /*
+    * restituisce tutti i commenti della ricetta con le relative informazoni
+    * degli autori
+    */
+    public function Associazione()
+    {
+        return $this->hasOneThrough(
+            Associazione_Utente::class,
+            Utente::class,
+            'id',
+            'utente_id',
+            'id',
+            'id'
+        )->join('associaziones','associazione_id','=','associazione_id')->select('associaziones.*');
+    }
+
+
+
 }

@@ -32,10 +32,10 @@ class ricetteController extends Controller
 
     public function Ricetta($id) {
         $conto=Utente_Ricetta::where('ricetta_id','=', $id)->count();
-        $ricetta=Ricetta::where('id', '=',$id)->first();
-        $autore=Utente::where('id','=',$ricetta['utente_id'])->first();
-        $associazione=Associazione_Utente::where('utente_id',$autore['id'])->first();
-        $media=Utente_Ricetta::where('ricetta_id',$ricetta['id'])->avg('voto');
+        $ricetta=Ricetta::find($id);
+        $autore=Ricetta::find($id)->Utente;
+        $associazione=Ricetta::find($id)->Associazione;
+        $media=Ricetta::find($id)->Voti->avg('voto');
         $media=round($media,1);
         $commentos=Ricetta::find($id)->Commenti;
         return view('ricetta',[
