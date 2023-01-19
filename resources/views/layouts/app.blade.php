@@ -28,7 +28,7 @@
             display: block;
             position: relative;
             float: left;
-            background: #24af15;
+            background: #666;
             /* menu background color */
         }
 
@@ -38,10 +38,11 @@
             text-decoration: none;
             width: 200px;
             /* this is the width of the menu items */
-            line-height: 35px;
+            line-height: 50px;
             /* this is the hieght of the menu items */
             color: #ffffff;
             /* list item font color */
+            font-size: 150%;
         }
 
         #nav li li a {
@@ -87,6 +88,7 @@
             /* this should be the same width as the parent list item */
             margin-top: -35px;
         /* aligns top of sub menu with top of list item */
+
     </style>
 </head>
 <body>
