@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{config('app.name', 'iLovePizza')}}</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -16,87 +16,13 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
-    <style>
-        #nav {
-            list-style: none inside;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        #nav li {
-            display: block;
-            position: relative;
-            float: left;
-            background: #666;
-            /* menu background color */
-        }
-
-        #nav li a {
-            display: block;
-            padding: 0;
-            text-decoration: none;
-            width: 200px;
-            /* this is the width of the menu items */
-            line-height: 50px;
-            /* this is the hieght of the menu items */
-            color: #ffffff;
-            /* list item font color */
-            font-size: 150%;
-        }
-
-        #nav li li a {
-            font-size: 80%;
-        }
-
-
-        /* smaller font size for sub menu items */
-
-        #nav li:hover {
-            background: #003f20;
-        }
-
-
-        /* highlights current hovered list item and the parent list items when hovering over sub menues */
-
-        #nav ul {
-            position: absolute;
-            padding: 0;
-            left: 0;
-            display: none;
-            /* hides sublists */
-        }
-
-        #nav li:hover ul ul {
-            display: none;
-        }
-
-
-        /* hides sub-sublists */
-
-        #nav li:hover ul {
-            display: block;
-        }
-
-
-        /* shows sublist on hover */
-
-        #nav li li:hover ul {
-            display: block;
-            /* shows sub-sublist on hover */
-            margin-left: 200px;
-            /* this should be the same width as the parent list item */
-            margin-top: -35px;
-        /* aligns top of sub menu with top of list item */
-        }
-    </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'iLovePizza') }}
+                   <img src="https://cdn-icons-png.flaticon.com/128/3595/3595455.png" width="40px">    iLovePizza
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -104,24 +30,27 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul id="nav" class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a href="{{route('homepage')}}">Home</a>
-                            </li>
-                            <li> <a>Tipi di Pizze</a>
-                                <ul>
-                                    <li><a href="{{route('fabio',['tipologia'=>'tutte'])}}">Tutte</a></li>
-                                    <li><a href="{{route('fabio',['tipologia'=>'napoletana'])}}">Napoletana</a></li>
-                                    <li><a href="{{route('fabio',['tipologia'=>'romana'])}}">Romana</a></li>
-                                    <li><a href="{{route('fabio',['tipologia'=>'resto'])}}">Resto d'Italia</a></li>
-                                    <li><a href="{{route('fabio',['tipologia'=>'internazionale'])}}">Internazionale</a></li>
-                                </ul></li>
-                            <li class="nav-item">
-                                <a href="{{route('consigli')}}">Consigli</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('associazioni')}}">Associazioni</a>
-                            </li>
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Tipi di Pizze</a>
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'tutte'])}}">Tutte</a>
+                                <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'napoletana'])}}">Napoletana</a>
+                                <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'romana'])}}">Romana</a>
+                                <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'resto'])}}">Resto dell'Italia</a>
+                                <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'internazionale'])}}">Internazionale</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('consigli') }}">Consigli</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('associazioni') }}">Associazioni</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -142,8 +71,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->nome }}
-                                    {{ Auth::user()->cognome }}
+                                    {{ Auth::user()->username}}
 
                                 </a>
 
