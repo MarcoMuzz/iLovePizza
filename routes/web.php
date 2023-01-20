@@ -26,12 +26,9 @@ Route::get('/',[homepageController::class, 'homepage'])->name('homepage');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
 
+Route::get('/TipiDiPizze/{tipologia}', [ricetteController::class, 'Ricette'])->name('fabio'); //route per tutte le ricette di x tipologia
 
-
-
-Route::get('/TipiDiPizze/{tipologia}', [ricetteController::class, 'Ricette'])->name('fabio'); //route di test delle ricette  <---- questa route mangia tutte le sottostanti
-
-Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli'); //route di test dei consigli
+Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli'); //route per tutti i consigli
 
 Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni');
 
@@ -50,7 +47,11 @@ Auth::routes();
 
 
 // route di testing
-//Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
+Route::get('/profilo', [testController::class, 'Profilo']); //route di test
+Route::get('/test', [testController::class, 'test']); //route di test
+Route::get('/modera', [testController::class, 'testModera']); //route di test
+Route::post('/modera', [testController::class, 'eliminaMembro'])->name('eliminaMembro'); //route di test
+//
 
 Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti che hanno fatto il login
 

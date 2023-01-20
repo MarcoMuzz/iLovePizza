@@ -20,9 +20,9 @@ class Associazione extends Model
         'utente_id',
         ];
 
-    public function Utente()
+    public function Associazione()
     {
-        return $this->belongsTo('App\Models\Utente');
+        return $this->belongsToMany('App\Models\Utente');
     }
 
     public function Associazione_Utente()

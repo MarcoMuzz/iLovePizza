@@ -18,41 +18,35 @@ class testController extends Controller
             return null;
     }
 
-   /* public function utenteProfilo($id)
-    {
-        $utente=Utente::findOrFail($id);
-        $associazione=$this->GetAssociazioneId($id);
-        if($associazione!= null)
-        {
-            $associazione=Associazione::find($this->GetAssociazioneId($id));
-            return view('utenteProfilo',[
-                'utente' => $utente,
-                'associazione' => $associazione
-            ]);
-        }
-        else
-        {
-            return view('utenteProfilo',[
-                'utente' => $utente,
-                'associazione' => 'null'
-            ]);
-        }
-    }
 
-    public function utenteProfilo($id)
+    public function Profilo()
     {
-        //$membri=Associazione_Utente::where('associazione_id',$id)->Utente;
-        $membri=Associazione::find($id)->Membri;
-
-     return view('utenteProfilo',['membri'=>$membri]);
+        $ut=Auth::user();
+        return view('test',['ut'=>$ut]);
     }
-    */
 
     public function test()
     {
+        $test=Auth::user()->Associazione;
 
-        $ut=Auth::user();
-        return view('utenteProfilo',['ut'=>$ut]);
-
+        return view('test',['test'=>$test]);
     }
+
+    public function testModera()
+    {
+        //$associazione=Auth::user()->Associazione;
+        $test=Auth::user()->Associazione->Membri;
+
+        return view('test',['test'=>$test,'userRole'=>Auth::user()->custom]);
+    }
+
+    public function eliminaMembro(Request $request)
+    {
+        //$associazione=Auth::user()->Associazione;
+        Associazione_Utente::where('utente_id',$request->m_id)->update((['ruolo' => '2']));
+
+        return $this->testModera();
+    }
+
+
 }
