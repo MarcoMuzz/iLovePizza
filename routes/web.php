@@ -6,6 +6,8 @@ use App\Http\Controllers\homepageController;
 use App\Http\Controllers\ricetteController;
 use App\Http\Controllers\consigliController;
 use App\Http\Controllers\associazioneController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Middleware\VerificaRuolo;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +46,20 @@ Auth::routes();
 // route di testing
 //Route::get('/utente/{id}', [testController::class, 'utenteProfilo']); //route di test Profilo Utente
 
-Route::get('/profilo', [testController::class, 'test'])->middleware('auth');
+Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti che hanno fatto il login
+
+    Route::get('/profilo', [testController::class, 'test']);
+
+    Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
+
+    });
+
+    Route::group(['middleware' => 'ruolo:2'], function () {  //Gruppo Routes per utenti che sono Moderatori
+
+    });
+
+    Route::group(['middleware' => 'ruolo:3'], function () {  //Gruppo Routes per utenti che sono Capi
+
+    });
+
+});

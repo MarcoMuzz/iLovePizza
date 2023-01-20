@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Associazione_Utente;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Associazione_Utente;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -25,10 +25,11 @@ class Utente extends Authenticatable
 
     public function getCustomAttribute()
     {
-        $uid=Auth::user()->id;
-        $ruolo=Associazione_Utente::find($uid)->ruolo;
-
-        return $ruolo;
+            $uid=Auth::user()->id;
+            if(Associazione_Utente::where('utente_id',$uid)!=null)
+            {
+                return Utente::find($uid)->Associazione_Utente->ruolo;
+            }
     }
 
     public function Associazione()
@@ -54,7 +55,7 @@ class Utente extends Authenticatable
 
     public function Associazione_Utente()
     {
-        return $this->hasMany('App\Models\Associazione_Utente');
+        return $this->hasOne('App\Models\Associazione_Utente');
     }
 
     public function Utente_Consiglio()

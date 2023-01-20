@@ -83,24 +83,24 @@
                                     </a>
 
 
-                                    @if(Auth::user()->Associazione_Utente->first()==null)
+                                    @if(Auth::user()->custom==0)
                                     <!--funzioni di Utente-->
                                     <a class="dropdown-item" href="{{route('homepage')}}">Crea Associazione</a>
                                     @endif
 
-                                    @if(Auth::user()->Associazione_Utente->first()->ruolo>=1)
+                                    @if(Auth::user()->custom>=1)
                                     <!--funzioni di Membro-->
                                     <a class="dropdown-item" href="{{route('associazione',['id'=>Auth::user()->Associazione_Utente->first()->associazione_id])}}">La mia Associazione</a>
                                     <a class="dropdown-item" href="{{route('homepage')}}">Scrivi ricetta</a>
                                     <a class="dropdown-item" href="{{route('homepage')}}">Scrivi consiglio</a>
                                     @endif
 
-                                    @if(Auth::user()->Associazione_Utente->first()->ruolo>=2)
+                                    @if(Auth::user()->custom=2)
                                     <!--funzioni di Moderatore-->
                                     <a class="dropdown-item" href="{{route('homepage')}}">Modera Contenuti</a>
                                     @endif
 
-                                    @if(Auth::user()->Associazione_Utente->first()->ruolo==3)
+                                    @if(Auth::user()->custom==3)
                                     <!--funzioni di Capo-->
                                     <a class="dropdown-item" href="{{route('homepage')}}">Modera Membri</a>
                                     <a class="dropdown-item" href="{{route('homepage')}}">Invita membro</a>

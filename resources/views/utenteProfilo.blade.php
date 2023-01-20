@@ -4,5 +4,6 @@
 
     {{$ut}}
     <br>
+    {{Auth::user()->custom}}
 @endsection
 
