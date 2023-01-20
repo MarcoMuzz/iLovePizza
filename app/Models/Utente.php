@@ -25,11 +25,15 @@ class Utente extends Authenticatable
 
     public function getCustomAttribute()
     {
+        if(Auth::check())
+        {
             $uid=Auth::user()->id;
-            if(Associazione_Utente::where('utente_id',$uid)!=null)
+            if(Utente::find($uid)->Associazione_Utente!=null)
             {
                 return Utente::find($uid)->Associazione_Utente->ruolo;
             }
+        }
+        return 0;
     }
 
     public function Associazione()

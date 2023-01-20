@@ -95,7 +95,7 @@
                                     <a class="dropdown-item" href="{{route('homepage')}}">Scrivi consiglio</a>
                                     @endif
 
-                                    @if(Auth::user()->custom=2)
+                                    @if(Auth::user()->custom>=2)
                                     <!--funzioni di Moderatore-->
                                     <a class="dropdown-item" href="{{route('homepage')}}">Modera Contenuti</a>
                                     @endif
