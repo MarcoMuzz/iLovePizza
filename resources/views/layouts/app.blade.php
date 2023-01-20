@@ -51,6 +51,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('associazioni') }}">Associazioni</a>
                         </li>
+
+                        </li>
+                        <li class="nav-item">
+                            <form action="{{route('ricerca')}}" method="GET" role="search">
+                            <input type="search" name="ricerca" placeholder="Effettua una ricerca...." class="form-control" value="{{Request::get('ricerca')}}"" >
+
+                        </form>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

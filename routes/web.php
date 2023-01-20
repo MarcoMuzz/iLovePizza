@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RicercaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\testController;
 use App\Http\Controllers\homepageController;
@@ -37,7 +38,11 @@ Route::get('/associazioni/{id}', [associazioneController::class, 'Associazione']
 
 Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route ricette singole
 
-Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('consiglio');//route singolo consiglio
+Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('consiglio');
+
+Route::get('/ricerca', [RicercaController::class, 'Ricerca'])->name('ricerca');//route ricerca
+
+
 
 
 Auth::routes();
