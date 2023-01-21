@@ -36,9 +36,17 @@ class Utente extends Authenticatable
         return 0;
     }
 
-    public function Associazione()
+    public function Associazione() //restituisce i dati dell'associazione a cui appartiene l'utente
     {
-        return $this->hasOne('App\Models\Associazione');
+        return $this->hasOneThrough(
+            Associazione::class,
+            Associazione_Utente::class,
+            'utente_id',
+            'id',
+            'id',
+            'associazione_id'
+        );
+
     }
 
 
