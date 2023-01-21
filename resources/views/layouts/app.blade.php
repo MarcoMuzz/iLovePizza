@@ -89,7 +89,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    <a class="dropdown-item" href="{{route('profilo')}}">Profilo</a>
 
                                     @if(Auth::user()->custom==0)
                                     <!--funzioni di Utente-->

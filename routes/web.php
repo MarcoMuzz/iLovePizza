@@ -7,10 +7,12 @@ use App\Http\Controllers\homepageController;
 use App\Http\Controllers\ricetteController;
 use App\Http\Controllers\consigliController;
 use App\Http\Controllers\associazioneController;
+use App\Http\Controllers\profiloController;
 use App\Http\Controllers\creaRicetta;
 use App\Http\Controllers\creaConsiglio;
 use App\Http\Controllers\creaCommento;
 use Illuminate\Support\Facades\Auth;
+
 use App\Http\Middleware\VerificaRuolo;
 
 /*
@@ -49,17 +51,18 @@ Auth::routes();
 
 
 // route di testing
-Route::get('/profilo', [testController::class, 'Profilo']); //route di test
-Route::get('/test', [testController::class, 'test']); //route di test
+//Route::get('/profilo', [testController::class, 'Profilo']); //route di test
+//Route::get('/test', [testController::class, 'test']); //route di test
 Route::get('/modera', [testController::class, 'testModera']); //route di test
 Route::post('/modera', [testController::class, 'eliminaMembro'])->name('eliminaMembro'); //route di test
 //
 
 
+
 Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti che hanno fatto il login
 
     Route::get('/commentocreato', [creaCommento::class, 'CreaCommento'])->name('creacommento');
-    Route::get('/profilo', [testController::class, 'test']);
+    Route::get('/profilo', [profiloController::class, 'getProfilo'])->name('profilo');
 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
         Route::get('/crearicetta', [creaRicetta::class, 'ControllerRicetta'])->name('controllerricetta');
