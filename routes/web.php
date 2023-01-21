@@ -9,6 +9,7 @@ use App\Http\Controllers\consigliController;
 use App\Http\Controllers\associazioneController;
 use App\Http\Controllers\creaRicetta;
 use App\Http\Controllers\creaConsiglio;
+use App\Http\Controllers\creaCommento;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\VerificaRuolo;
 
@@ -54,8 +55,10 @@ Route::get('/modera', [testController::class, 'testModera']); //route di test
 Route::post('/modera', [testController::class, 'eliminaMembro'])->name('eliminaMembro'); //route di test
 //
 
+
 Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti che hanno fatto il login
 
+    Route::get('/commentocreato', [creaCommento::class, 'CreaCommento'])->name('creacommento');
     Route::get('/profilo', [testController::class, 'test']);
 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
@@ -64,6 +67,8 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
 
         Route::get('/creaconsiglio', [creaConsiglio::class, 'ControllerConsiglio'])->name('controllerconsiglio');
         Route::get('/consigliocreato', [creaConsiglio::class, 'CreaConsiglio'])->name('creaconsiglio');
+
+
 
     });
 
