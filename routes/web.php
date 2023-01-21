@@ -8,6 +8,7 @@ use App\Http\Controllers\ricetteController;
 use App\Http\Controllers\consigliController;
 use App\Http\Controllers\associazioneController;
 use App\Http\Controllers\creaRicetta;
+use App\Http\Controllers\creaConsiglio;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Middleware\VerificaRuolo;
 
@@ -59,6 +60,9 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
         Route::get('/crearicetta', [creaRicetta::class, 'ControllerRicetta'])->name('controllerricetta');
         Route::get('/ricettacreata', [creaRicetta::class, 'CreaRicetta'])->name('crearicetta');
+
+        Route::get('/creaconsiglio', [creaConsiglio::class, 'ControllerConsiglio'])->name('controllerconsiglio');
+        Route::get('/consigliocreato', [creaConsiglio::class, 'CreaConsiglio'])->name('creaconsiglio');
 
     });
 

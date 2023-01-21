@@ -19,9 +19,7 @@ class creaRicetta extends Controller
         return view('creaRicetta', [
             'associazione'=> $associazione
         ]);
-
     }
-
 
     public function CreaRicetta(Request $request)
     {
