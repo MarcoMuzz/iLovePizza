@@ -11,6 +11,7 @@ use App\Http\Controllers\profiloController;
 use App\Http\Controllers\creaRicetta;
 use App\Http\Controllers\creaConsiglio;
 use App\Http\Controllers\creaCommento;
+use App\Http\Controllers\invitoController;
 use Illuminate\Support\Facades\Auth;
 
 use App\Http\Middleware\VerificaRuolo;
@@ -44,6 +45,8 @@ Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('co
 
 Route::get('/ricerca', [RicercaController::class, 'Ricerca'])->name('ricerca');//route ricerca
 
+Route::get('/invito',[invitoController::class,'inserisciMail'])->name('invito');
+Route::post('/invito',[invitoController::class,'inviaInvito'])->name('mailInviata');
 
 
 
@@ -86,4 +89,3 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
 });
 
 
-//sedere
