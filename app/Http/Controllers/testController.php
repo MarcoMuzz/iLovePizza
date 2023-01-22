@@ -32,20 +32,31 @@ class testController extends Controller
         return view('test',['test'=>$test]);
     }
 
-    public function testModera()
+    public function Modera()
     {
-        //$associazione=Auth::user()->Associazione;
-        $test=Auth::user()->Associazione->Membri;
+        $membri=Auth::user()->Associazione->Membri->where('id','!=',Auth::user()->id)->where('ruolo','!=','3');
 
-        return view('test',['test'=>$test,'userRole'=>Auth::user()->custom]);
+        return view('moderaMembri',['membri'=>$membri,'userRole'=>Auth::user()->custom]);
     }
 
-    public function eliminaMembro(Request $request)
+    public function promuoviMembro(Request $request)
+    {
+        Associazione_Utente::where('utente_id',$request->m_id)->update((['ruolo' => '2']));
+        return redirect()->route('modera');
+    }
+
+    public function espelliMembro(Request $request)
+    {
+        Associazione_Utente::where('utente_id',$request->m_id)->delete();
+        return redirect()->route('modera');
+    }
+
+    public function declassaMembro(Request $request)
     {
         //$associazione=Auth::user()->Associazione;
-        Associazione_Utente::where('utente_id',$request->m_id)->update((['ruolo' => '2']));
+        Associazione_Utente::where('utente_id',$request->m_id)->update((['ruolo' => '1']));
 
-        return $this->testModera();
+        return redirect()->route('modera');
     }
 
 
