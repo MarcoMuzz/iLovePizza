@@ -84,3 +84,6 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
     });
 
 });
+
+
+//sedere
