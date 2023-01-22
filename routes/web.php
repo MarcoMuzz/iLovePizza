@@ -45,8 +45,6 @@ Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('co
 
 Route::get('/ricerca', [RicercaController::class, 'Ricerca'])->name('ricerca');//route ricerca
 
-Route::get('/invito',[invitoController::class,'inserisciMail'])->name('invito');
-Route::post('/invito',[invitoController::class,'inviaInvito'])->name('mailInviata');
 
 
 
@@ -89,3 +87,4 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
 });
 
 
+//sedere

@@ -1,12 +1,10 @@
 @extends('layouts.app')
-@section('title', 'Test')
+@section('title', 'Modera Membri')
 @section('content')
 
-{{$test}}
-<hr>
 
 
-        @foreach($test as $membro)
+        @foreach($membri as $membro)
 
                 {{$membro['username']}}
                 @switch($membro['ruolo'])

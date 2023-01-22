@@ -93,25 +93,26 @@
 
                                     @if(Auth::user()->custom==0)
                                     <!--funzioni di Utente-->
-                                    <a class="dropdown-item" href="{{route('homepage')}}">Crea Associazione</a>
+                                        <a class="dropdown-item" href="{{route('homepage')}}">Crea Associazione</a>
                                     @endif
 
                                     @if(Auth::user()->custom>=1)
                                     <!--funzioni di Membro-->
-                                    <a class="dropdown-item" href="{{route('associazione',['id'=>Auth::user()->Associazione_Utente->first()->associazione_id])}}">La mia Associazione</a>
-                                    <a class="dropdown-item" href="{{route('controllerricetta')}}">Scrivi ricetta</a>
-                                    <a class="dropdown-item" href="{{route('controllerconsiglio')}}">Scrivi consiglio</a>
+                                        <a class="dropdown-item" href="{{route('associazione',['id'=>Auth::user()->Associazione_Utente->first()->associazione_id])}}">La mia Associazione</a>
+                                        <a class="dropdown-item" href="{{route('controllerricetta')}}">Scrivi ricetta</a>
+                                        <a class="dropdown-item" href="{{route('controllerconsiglio')}}">Scrivi consiglio</a>
                                     @endif
 
                                     @if(Auth::user()->custom>=2)
                                     <!--funzioni di Moderatore-->
-                                    <a class="dropdown-item" href="{{route('homepage')}}">Modera Contenuti</a>
+                                        <a class="dropdown-item" href="{{route('homepage')}}">Modera Contenuti</a>
+                                        <a class="dropdown-item" href="{{route('moderaMembri')}}">Modera Membri</a>
                                     @endif
 
                                     @if(Auth::user()->custom==3)
                                     <!--funzioni di Capo-->
-                                    <a class="dropdown-item" href="{{route('homepage')}}">Modera Membri</a>
-                                    <a class="dropdown-item" href="{{route('homepage')}}">Invita membro</a>
+
+                                        <a class="dropdown-item" href="{{route('homepage')}}">Invita membro</a>
                                     @endif
 
 
