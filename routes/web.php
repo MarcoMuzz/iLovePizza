@@ -56,7 +56,10 @@ Auth::routes();
 //Route::get('/test', [testController::class, 'test']); //route di test
 Route::get('/modera', [testController::class, 'testModera']); //route di test
 Route::post('/modera', [testController::class, 'eliminaMembro'])->name('eliminaMembro'); //route di test
-//
+
+
+Route::get('/invita', [invitoController::class, 'inserisciMail']);
+Route::post('/invita', [invitoController::class, 'inviaInvito'])->name('inviaInvito');
 
 
 

@@ -3,7 +3,7 @@
 @section('content')
 
 
-            <form action="{{route('mailInviata')}}" method="post">
+            <form action="{{route('inviaInvito')}}" method="post">
                 @csrf
                 <input  type="email" name="invitoMail" value=" ">
                 <input  type="submit" value="Invia invito">
