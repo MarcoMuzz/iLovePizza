@@ -54,7 +54,36 @@ class associazioneController extends Controller
         Associazione_Utente::where('utente_id',$request->m_id)->update((['ruolo' => '1']));
         return redirect()->route('moderaMembri');
     }
+
+
+    public function creaAssociazione(){
+
+        return view('creaAssociazione');
+    }
+
+
+
+    public function storeAssociazione(Request $request){
+
+    $associazione = New Associazione;
+    $associazione->nome = $request->nome;
+    if($request->napoletana == 'on') $associazione->napoletana = 1;
+    if($request->romana == 'on') $associazione->romana = 1;
+    if($request->resto == 'on') $associazione->resto = 1;
+    if($request->internazionale == 'on') $associazione->internazionale = 1;
+    $associazione->utente_id = Auth::user()->id;
+    $associazione->save();
+
+    $assut = new Associazione_Utente();
+    $assut->utente_id = Auth::user()->id;
+    $assut->associazione_id = $associazione->id;
+    $assut->ruolo = 3;
+    $assut->save();
+
+    return redirect('/')->with('status', 'Associazione creata correttamente');;
+
+
 }
 
 
-
+}

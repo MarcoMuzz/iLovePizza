@@ -71,6 +71,8 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
 
     Route::get('/commentocreato', [creaCommento::class, 'CreaCommento'])->name('creacommento');
     Route::get('/profilo', [profiloController::class, 'getProfilo'])->name('profilo');
+    Route::get('/creaassociazione', [associazioneController::class, 'creaAssociazione'])->name('creaassociazione');
+    Route::get('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');
 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
         Route::get('/crearicetta', [creaRicetta::class, 'ControllerRicetta'])->name('controllerricetta');

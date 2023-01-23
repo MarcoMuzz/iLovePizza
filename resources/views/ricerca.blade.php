@@ -10,25 +10,25 @@
                 <img  width=auto  height=100px src="{{$ricetta['immagine']}}"><br>
                 <a href=" {{route('ricetta',['id'=> $ricetta['id'] ])}} ">{{$ricetta['nome']}}</a>
 
-        <br/>____________________________________________________<br/>
+        <br/><hr>
     @endforeach
         </div>
 
-        <div style="33%;float:left">
+        <div style="width:33%;float:left">
             <h3>Consigli</h3>
             @foreach($consiglios as $consiglio)
                 <img style="max-width: 200px" src="{{ $consiglio['immagine']}}"><br/></p>
                 <a href="{{route('consiglio',['id'=>$consiglio['id']])}}">{{$consiglio['nome']}}</a>
-                <br/>____________________________________________________<br/>
+                <br/><hr>
             @endforeach
         </div>
 
-        <div style="33%;float:right">
+        <div style="width:33%;float:right">
             <h3>Associazioni</h3>
             @foreach($associaziones as $associazione)
                 {{$associazione['nome']}}
                 <a href="{{route('associazione',['id'=>$associazione['id']])}}">Visita</a>
-                <br/>____________________________________________________<br/>
+                <br/><hr>
             @endforeach
 
         </div>

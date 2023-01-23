@@ -2,6 +2,11 @@
 @section('title', 'Home')
 
 @section('content')
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
 
     <h1>Benvenuto in iLovePizza (and piedi)</h1>
     <h2>Pizze Napoletane</h2>

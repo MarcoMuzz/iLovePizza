@@ -3,7 +3,7 @@
 
 @section('content')
 
-{{--$associazione--}}
+
 
 <html>
 <head>

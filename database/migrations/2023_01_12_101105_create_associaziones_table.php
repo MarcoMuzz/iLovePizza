@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('associaziones', function (Blueprint $table) {
             $table->id();
             $table->string('nome')->unique();
-            $table->boolean('romana');
-            $table->boolean('napoletana');
-            $table->boolean('resto');
-            $table->boolean('internazionale');
+            $table->boolean('romana')->default('0');
+            $table->boolean('napoletana')->default('0');
+            $table->boolean('resto')->default('0');
+            $table->boolean('internazionale')->default('0');
             $table->index('utente_id');
             $table->foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();
