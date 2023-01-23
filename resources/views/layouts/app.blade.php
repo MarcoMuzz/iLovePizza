@@ -98,7 +98,7 @@
 
                                     @if(Auth::user()->custom>=1)
                                     <!--funzioni di Membro-->
-                                        <a class="dropdown-item" href="{{route('associazione',['id'=>Auth::user()->Associazione_Utente->first()->associazione_id])}}">La mia Associazione</a>
+                                        <a class="dropdown-item" href="{{route('associazione',['id'=>Auth::user()->Associazione->id])}}">La mia Associazione</a>
                                         <a class="dropdown-item" href="{{route('controllerricetta')}}">Scrivi ricetta</a>
                                         <a class="dropdown-item" href="{{route('controllerconsiglio')}}">Scrivi consiglio</a>
                                     @endif
