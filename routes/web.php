@@ -54,8 +54,11 @@ Auth::routes();
 // route di testing
 //Route::get('/profilo', [testController::class, 'Profilo']); //route di test
 //Route::get('/test', [testController::class, 'test']); //route di test
-Route::get('/modera', [testController::class, 'testModera']); //route di test
-Route::post('/modera', [testController::class, 'eliminaMembro'])->name('eliminaMembro'); //route di test
+//Route::get('/modera', [testController::class, 'Modera']); //route di test
+//Route::post('/modera', [testController::class, 'promuoviMembro'])->name('promuoviMembro'); //route di test
+//Route::post('/modera2', [testController::class, 'espelliMembro'])->name('espelliMembro'); //route di test
+//Route::post('/modera3', [testController::class, 'declassaMembro'])->name('declassaMembro'); //route di test
+//
 
 //invito membri
 
@@ -76,19 +79,16 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
         Route::get('/creaconsiglio', [creaConsiglio::class, 'ControllerConsiglio'])->name('controllerconsiglio');
         Route::get('/consigliocreato', [creaConsiglio::class, 'CreaConsiglio'])->name('creaconsiglio');
 
-
-
     });
 
     Route::group(['middleware' => 'ruolo:2'], function () {  //Gruppo Routes per utenti che sono Moderatori
-
+        Route::get('/modera', [associazioneController::class, 'moderaMembri'])->name('moderaMembri');
+        Route::post('/modera/espelli', [associazioneController::class, 'espelliMembro'])->name('espelliMembro');
     });
 
     Route::group(['middleware' => 'ruolo:3'], function () {  //Gruppo Routes per utenti che sono Capi
-
+        Route::post('/modera/declassa', [associazioneController::class, 'declassaMembro'])->name('declassaMembro');
+        Route::post('/modera/promuovi', [associazioneController::class, 'promuoviMembro'])->name('promuoviMembro');
     });
 
 });
-
-
-//sedere
