@@ -10,7 +10,7 @@ use App\Http\Controllers\associazioneController;
 use App\Http\Controllers\profiloController;
 use App\Http\Controllers\creaRicetta;
 use App\Http\Controllers\creaConsiglio;
-use App\Http\Controllers\creaCommento;
+use App\Http\Controllers\commentoController;
 use App\Http\Controllers\invitoController;
 use Illuminate\Support\Facades\Auth;
 
@@ -69,23 +69,34 @@ Route::post('/invita', [invitoController::class, 'inviaInvito'])->name('inviaInv
 
 Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti che hanno fatto il login
 
-    Route::get('/commentocreato', [creaCommento::class, 'CreaCommento'])->name('creacommento');
+    Route::get('/commentocreato', [commentoController::class, 'CreaCommento'])->name('creacommento');
     Route::get('/profilo', [profiloController::class, 'getProfilo'])->name('profilo');
     Route::get('/creaassociazione', [associazioneController::class, 'creaAssociazione'])->name('creaassociazione');
     Route::get('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');
+    Route::get('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta');
 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
-        Route::get('/crearicetta', [creaRicetta::class, 'ControllerRicetta'])->name('controllerricetta');
-        Route::get('/ricettacreata', [creaRicetta::class, 'CreaRicetta'])->name('crearicetta');
+        Route::get('/crearicetta', [ricetteController::class, 'creaRicetta'])->name('crearicetta');
+        Route::get('/storericetta', [ricetteController::class, 'storeRicetta'])->name('storericetta');
 
-        Route::get('/creaconsiglio', [creaConsiglio::class, 'ControllerConsiglio'])->name('controllerconsiglio');
-        Route::get('/consigliocreato', [creaConsiglio::class, 'CreaConsiglio'])->name('creaconsiglio');
+        Route::get('/creaconsiglio', [consigliController::class, 'creaConsiglio'])->name('creaconsiglio');
+        Route::get('/storeconsiglio', [consigliController::class, 'storeConsiglio'])->name('storeconsiglio');
 
     });
 
     Route::group(['middleware' => 'ruolo:2'], function () {  //Gruppo Routes per utenti che sono Moderatori
         Route::get('/modera', [associazioneController::class, 'moderaMembri'])->name('moderaMembri');
         Route::post('/modera/espelli', [associazioneController::class, 'espelliMembro'])->name('espelliMembro');
+
+        Route::get('moderaContenuti',[associazioneController::class, 'moderaContenuti'])->name('moderaContenuti');
+
+        Route::post('/moderaContenuti/eliminaRicetta', [ricetteController::class, 'eliminaRicetta'])->name('eliminaRicetta');
+        Route::get('/moderaContenuti/modificaRicetta/{id}', [ricetteController::class, 'modificaRicetta'])->name('modificaRicetta');
+        Route::get('/moderaContenuti/aggiornaRicetta',[ricetteController::class, 'updateRicetta'])->name('updateRicetta');
+
+        Route::post('/moderaContenuti/eliminaConsiglio', [consigliController::class, 'eliminaConsiglio'])->name('eliminaConsiglio');
+        Route::get('/moderaContenuti/modificaConsiglio/{id}', [consigliController::class, 'modificaConsiglio'])->name('modificaConsiglio');
+        Route::get('/moderaContenuti/aggiornaConsiglio',[consigliController::class, 'updateConsiglio'])->name('updateConsiglio');
     });
 
     Route::group(['middleware' => 'ruolo:3'], function () {  //Gruppo Routes per utenti che sono Capi

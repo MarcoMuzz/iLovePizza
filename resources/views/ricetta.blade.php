@@ -7,6 +7,22 @@
     <div>Ingredienti : {{$ricettas['ingredienti']}}</div>
     <div>Preparazione : {{$ricettas['preparazione']}}</div>
     <h2> Valutazione Media: {{$media}}</h2><br>
+
+@if(Auth::check())
+    @if(Auth::user()->Utente_Ricetta!= null && $votoPersonale!=0)
+    Il tuo voto: {{$votoPersonale}}
+    @else
+        <div>Dai un voto
+            <form method="get" action="{{route('votaRicetta')}}">
+                <input type="range" name="voto" min="1" max="5" value="4">
+                <input type="hidden" name="r_id" value={{$ricettas['id']}}>
+                <button type="submit"  class="btn btn-primary">Vota</button>
+            </form>
+        </div>
+    @endif
+@endif
+
+
     <h2>Numero voti: {{$conto}}</h2>
 
     <div>

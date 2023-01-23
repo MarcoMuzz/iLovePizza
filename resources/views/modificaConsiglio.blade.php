@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Crea Consiglio')
+@section('title', 'modifica Consiglio')
 
 @section('content')
 
@@ -19,30 +19,30 @@
     @endif
     <div class="card">
         <div class="card-header text-center font-weight-bold">
-            Crea un nuovo consiglio
+            Modifica il consiglio
         </div>
         <div class="card-body">
-            <form method="GET" action="{{route('storeconsiglio')}}">
+            <form method="GET" action="{{route('updateConsiglio')}}">
                 @csrf
                 <div class="form-group">
                     <label>Nome</label>
-                    <input type="text" id="title" name="nome" class="form-control" required>
+                    <textarea name="nome" class="form-control" required>{{$consiglio['nome']}}</textarea>
                 </div>
 
 
                 <div class="form-group">
                     <label>Contenuto</label>
-                    <textarea name="contenuto" class="form-control" required></textarea>
+                    <textarea name="contenuto" class="form-control" required>{{$consiglio['contenuto']}}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
-                    <input  type="text" name="immagine" class="form-control" required>
+                    <textarea name="immagine" class="form-control" required>{{$consiglio['immagine']}}</textarea>
                 </div>
 
 
-
-                <button type="submit" class="btn btn-primary">Pubblica</button>
+                <input  type="hidden" name="id" value="{{$consiglio['id']}}">
+                <button type="submit" class="btn btn-primary">Applica modifiche</button>
             </form>
         </div>
     </div>

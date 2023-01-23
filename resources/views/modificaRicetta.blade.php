@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Crea Ricetta')
+@section('title', 'Modifica Ricetta')
 
 @section('content')
 
@@ -19,25 +19,25 @@
     @endif
     <div class="card">
         <div class="card-header text-center font-weight-bold">
-            Crea una nuova ricetta
+            Modifica la ricetta
         </div>
         <div class="card-body">
-            <form method="GET" action="{{route('storericetta')}}">
+            <form method="GET" action="{{route('updateRicetta')}}">
                 @csrf
                 <div class="form-group">
                     <label>Nome</label>
-                    <input type="text" id="title" name="nome" class="form-control" required>
+                    <textarea name="nome" class="form-control" required>{{$ricetta['nome']}}</textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Ingredienti</label>
-                    <textarea name="ingredienti" class="form-control" required></textarea>
+                    <textarea name="ingredienti" class="form-control" required>{{$ricetta['ingredienti']}}</textarea>
                 </div>
 
 
                 <div class="form-group">
                     <label>Preparazione</label>
-                    <textarea name="preparazione" class="form-control" required></textarea>
+                    <textarea name="preparazione" class="form-control" required>{{$ricetta['preparazione']}}</textarea>
                 </div>
 
                 <div class="form-group">
@@ -77,11 +77,11 @@
 
                 <div class="form-group">
                     <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
-                    <input  type="text" name="immagine" class="form-control" required>
+                    <textarea name="immagine" class="form-control" required>{{$ricetta['immagine']}}</textarea>
                 </div>
 
-
-                <button type="submit" class="btn btn-primary">Pubblica</button>
+                <input  type="hidden" name="id" value="{{$ricetta['id']}}">
+                <button type="submit" class="btn btn-primary">Applica modifica</button>
             </form>
         </div>
     </div>

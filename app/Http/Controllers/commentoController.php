@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Commento;
 use Illuminate\Support\Facades\Auth;
 
-class creaCommento extends Controller
+class commentoController extends Controller
 {
     public function CreaCommento(Request $request)
     {

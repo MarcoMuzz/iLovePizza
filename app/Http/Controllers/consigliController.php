@@ -7,6 +7,8 @@ use App\Models\Associazione_Utente;
 use App\Models\Consiglio;
 use App\Models\Utente;
 use App\Models\Utente_Consiglio;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class consigliController extends Controller
 {
@@ -27,5 +29,52 @@ class consigliController extends Controller
             'conto'=>$conto,
             'associazione'=>$associazione,
         ]);
+    }
+
+    public function creaConsiglio()
+    {
+        $temp=Auth::user()->Associazione_Utente;
+        $associazione=Associazione::find($temp['associazione_id']);
+        return view('creaConsiglio', [
+            'associazione'=> $associazione
+        ]);
+    }
+
+    public function storeConsiglio(Request $request)
+    {
+        $consiglio = new Consiglio;
+        $consiglio->nome = $request->nome;
+        $consiglio->immagine = $request->immagine;
+        $consiglio->contenuto = $request->contenuto;
+        $consiglio->utente_id = Auth::user()->id;
+
+        $consiglio->save();
+        return redirect('/creaconsiglio')->with('status', 'Consiglio creato correttamente');
+    }
+
+    public function eliminaConsiglio(Request $request)
+    {
+        Consiglio::where('id',$request->id)->delete();
+        return redirect()->route('moderaContenuti')->with('status', 'Consiglio eliminato');
+    }
+
+    public function modificaConsiglio($id)
+    {
+        return view('modificaConsiglio',[
+            'id'=>$id,
+            'associazione'=>Auth::user()->Associazione,
+            'consiglio'=>Consiglio::find($id)
+        ]);
+    }
+
+    public function updateConsiglio(Request $request)
+    {
+        Consiglio::find($request->id)->update([
+            'nome'=>$request->nome,
+            'contenuto'=>$request->contenuto,
+            'immagine'=>$request->immagine
+        ]);
+
+        return redirect()->route('moderaContenuti')->with('status', 'Consiglio modificato');
     }
 }

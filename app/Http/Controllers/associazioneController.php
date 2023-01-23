@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Associazione;
 use App\Models\Associazione_Utente;
+use App\Models\Consiglio;
+use App\Models\Ricetta;
 use App\Models\Utente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -80,10 +82,15 @@ class associazioneController extends Controller
     $assut->ruolo = 3;
     $assut->save();
 
-    return redirect('/')->with('status', 'Associazione creata correttamente');;
+    return redirect('/')->with('status', 'Associazione creata correttamente');
 
 
 }
 
-
+    public function moderaContenuti()
+    {
+        $ricette=Auth::user()->Associazione->Ricette;
+        $consigli=Auth::user()->Associazione->Consigli;
+        return view('moderaContenuti',['ricette'=>$ricette,'consigli'=>$consigli]);
+    }
 }

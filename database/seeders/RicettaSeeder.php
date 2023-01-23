@@ -20,8 +20,8 @@ class RicettaSeeder extends Seeder
                 'nome' => 'ricetta' . $i,
                 'ingredienti' => 'Ingrediente 1, Ingrediente 2, Ingrediente 3',
                 'preparazione'=>'blablabla',
-                'romana' => 0,
-                'napoletana' => 1,
+                'romana' => 1,
+                'napoletana' => 0,
                 'resto' => 0,
                 'internazionale' => 0,
                 'light' => rand(0, 1),
@@ -29,7 +29,7 @@ class RicettaSeeder extends Seeder
                 'senzaglutine' => rand(0, 1),
                 'senzalattosio' => rand(0, 1),
                 'cottura' => 'fornoalegna',
-                'immagine' => 'https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza-1764x882.jpg',
+                'immagine' => 'https://www.giallozafferano.it/images/5-560/Pizza-Romana_780x520_wm.jpg',
                 'utente_id' => rand(5, 11)
             ]);
         }
@@ -38,8 +38,8 @@ class RicettaSeeder extends Seeder
                     'nome' => 'ricetta'.$i,
                     'ingredienti' => 'Ingrediente 1, Ingrediente 2, Ingrediente 3',
                     'preparazione'=>'blablabla',
-                    'romana'=> 1,
-                    'napoletana'=> 0,
+                    'romana'=> 0,
+                    'napoletana'=> 1,
                     'resto'=> 0,
                     'internazionale'=>0,
                     'light'=>rand(0,1),
@@ -47,7 +47,7 @@ class RicettaSeeder extends Seeder
                     'senzaglutine' =>rand(0,1),
                     'senzalattosio' =>rand(0,1),
                     'cottura' => 'fornoelettrico',
-                    'immagine'=> 'https://www.giallozafferano.it/images/5-560/Pizza-Romana_780x520_wm.jpg',
+                    'immagine'=> 'https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza-1764x882.jpg',
                     'utente_id'=> rand(12,18)
                 ]);
         }

@@ -99,13 +99,13 @@
                                     @if(Auth::user()->custom>=1)
                                     <!--funzioni di Membro-->
                                         <a class="dropdown-item" href="{{route('associazione',['id'=>Auth::user()->Associazione->id])}}">La mia Associazione</a>
-                                        <a class="dropdown-item" href="{{route('controllerricetta')}}">Scrivi ricetta</a>
-                                        <a class="dropdown-item" href="{{route('controllerconsiglio')}}">Scrivi consiglio</a>
+                                        <a class="dropdown-item" href="{{route('crearicetta')}}">Scrivi ricetta</a>
+                                        <a class="dropdown-item" href="{{route('creaconsiglio')}}">Scrivi consiglio</a>
                                     @endif
 
                                     @if(Auth::user()->custom>=2)
                                     <!--funzioni di Moderatore-->
-                                        <a class="dropdown-item" href="{{route('homepage')}}">Modera Contenuti</a>
+                                        <a class="dropdown-item" href="{{route('moderaContenuti')}}">Modera Contenuti</a>
                                         <a class="dropdown-item" href="{{route('moderaMembri')}}">Modera Membri</a>
                                     @endif
 

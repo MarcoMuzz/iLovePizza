@@ -31,7 +31,7 @@ class UtenteRicettaSeeder extends Seeder
         }*/
         for($i=1; $i<=50; $i++)
         {
-            $voto = range(0.5, 5, 0.5); //0.5 è il minimo voto applicabile
+            $voto = range(1, 5); //1 è il minimo voto applicabile
             $ricetta = range(1, 12); //12 = num max di ricette
 
             shuffle($voto);
