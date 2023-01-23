@@ -10,14 +10,14 @@ class invitoController extends Controller
 {
     public function inserisciMail(){
 
-        //$ifAdmin=Auth::user()->custom;
+        //$capoDi=Auth::user()->Associazione;
 
-        return view('invito'/*,[$ifAdmin]*/ );
+        return view('invito');
 
     }
     public function inviaInvito(){
 
-        Mail::to('')->send(new mailInvito());
+        Mail::to('culo@culo.com')->send(new mailInvito());
         return'Invito consegnato!';
 
     }

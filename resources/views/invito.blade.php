@@ -5,7 +5,7 @@
 
             <form action="{{route('inviaInvito')}}" method="post">
                 @csrf
-                <input  type="email" name="invitoMail" value=''>
+                <input  type="email" name="invitoMail" value='{{$mail}}'>
                 <input  type="submit" value="Invia invito">
             </form>
 

@@ -109,9 +109,10 @@
                                         <a class="dropdown-item" href="{{route('moderaMembri')}}">Modera Membri</a>
                                     @endif
 
-                                    @if(Auth::user()->custom==3)
-                                    <!--funzioni di Capo-->
 
+                                    @if(Auth::user()->custom==3)
+
+                                    <!--funzioni di Capo-->
                                         <a class="dropdown-item" href="{{route('invitaMembro')}}">Invita membro</a>
                                     @endif
 
