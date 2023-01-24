@@ -49,7 +49,7 @@ class Ricetta extends Model
     public function Commenti()
     {
         return $this->hasMany('App\Models\Commento')
-            ->join('utentes','utente_id','=','utentes.id');
+            ->join('utentes','utente_id','=','utentes.id')->select('username','contenuto','commentos.id','commentos.created_at');
     }
 
     /*
