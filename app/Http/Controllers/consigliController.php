@@ -77,4 +77,19 @@ class consigliController extends Controller
 
         return redirect()->route('moderaContenuti')->with('status', 'Consiglio modificato');
     }
+
+    public function votaConsiglio(Request $request)
+    {
+        $like= new Utente_Consiglio;
+        $like->utente_id=Auth::user()->id;
+        $like->consiglio_id=$request->c_id;
+        $like->save();
+        return back();
+    }
+
+    public function rimuoviVotoConsiglio(Request $request)
+    {
+         Utente_Consiglio::where('utente_id',Auth::user()->id)->where('consiglio_id',$request->c_id)->delete();
+         return back();
+    }
 }

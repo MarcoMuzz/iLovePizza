@@ -74,6 +74,10 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
     Route::get('/creaassociazione', [associazioneController::class, 'creaAssociazione'])->name('creaassociazione');
     Route::get('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');
     Route::get('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta');
+    Route::get('/votaConsiglio', [consigliController::class, 'votaConsiglio'])->name('votaConsiglio');
+    Route::get('/rimuoviVotoConsiglio', [consigliController::class, 'rimuoviVotoConsiglio'])->name('rimuoviVotoConsiglio');
+
+
 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
         Route::get('/crearicetta', [ricetteController::class, 'creaRicetta'])->name('crearicetta');

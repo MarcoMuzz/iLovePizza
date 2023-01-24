@@ -11,7 +11,14 @@ class profiloController extends Controller
     {
         $ut=Auth::user();
         $as=Auth::user()->Associazione;
+        $ricette=Auth::user()->Ricetta;
+        $consigli=Auth::user()->Consiglio;
 
-        return view('profilo',['utente'=>$ut,'associazione'=>$as]);
+        return view('profilo',[
+            'utente'=>$ut,
+            'associazione'=>$as,
+            'ricette'=>$ricette,
+            'consigli'=>$consigli
+        ]);
     }
 }

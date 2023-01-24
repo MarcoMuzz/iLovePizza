@@ -18,7 +18,7 @@ class Utente_Consiglio extends Model
 
     public function Utente()
     {
-        return $this->belongsToMany('App\Models\Utente');
+        return $this->belongsTo('App\Models\Utente');
     }
 
     public function Consiglio()
