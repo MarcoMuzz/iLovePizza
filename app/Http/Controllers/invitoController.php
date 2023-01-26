@@ -24,8 +24,12 @@ class invitoController extends Controller
 
     private function creaToken(){
         $token= Str::random(10);
+        while(Invito::where('token',$token)->first()!=null){
+            $token= Str::random(10);
+        }
         return $token;
     }
+
     public function inserisciMail(){
 
         //$capoDi=Auth::user()->Associazione;
