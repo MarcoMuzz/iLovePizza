@@ -59,5 +59,9 @@ class testController extends Controller
         return redirect()->route('modera');
     }
 
-
+    public function registrazioneInvito($token){
+        return view('test',[
+            'invito'=>$token
+        ]);
+    }
 }

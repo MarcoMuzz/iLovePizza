@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class Associazione extends Model
 {
     //use HasFactory;
@@ -82,4 +83,11 @@ class Associazione extends Model
             ->select('consiglios.*','utentes.username')
                 ->orderBy('created_at');
     }
+
+
+    public function Invito(){
+
+        return $this->hasMany('App\Models\Invito');
+    }
+
 }

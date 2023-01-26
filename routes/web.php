@@ -63,8 +63,8 @@ Auth::routes();
 //invito membri
 
 Route::get('/invita', [invitoController::class, 'inserisciMail'])->name('invitaMembro');
-Route::post('/invita', [invitoController::class, 'inviaInvito'])->name('inviaInvito');
-
+Route::get('/inviaInvito', [invitoController::class, 'inviaInvito'])->name('inviaInvito');
+Route::get('/register/{token}', [invitoController::class, 'registrazioneInvito']);
 
 
 Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti che hanno fatto il login

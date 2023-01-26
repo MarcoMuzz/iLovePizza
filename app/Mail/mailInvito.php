@@ -3,11 +3,13 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Invito;
 
 class mailInvito extends Mailable
 {
@@ -18,9 +20,11 @@ class mailInvito extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $invito;
+
+    public function __construct(Invito $invito)
     {
-        //
+        $this->invito=$invito;
     }
 
     /**
@@ -31,7 +35,7 @@ class mailInvito extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Mail Invito',
+            subject: 'IlovePizza - Unisciti a noi!',
         );
     }
 
@@ -44,6 +48,10 @@ class mailInvito extends Mailable
     {
         return new Content(
             markdown: 'emails.invito',
+            with: [
+                'url'=> 'http://localhost:8000/register/'.$this->invito->token ,
+            ]
+
         );
     }
 

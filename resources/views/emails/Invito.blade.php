@@ -3,10 +3,11 @@
 
 Unisciti alla mia associazione sulla celebre piattaforma IlovePizza!!!
 
-<x-mail::button :url="'http://localhost:8000/register'">
+<x-mail::button :url=$url>
+
 Iscriviti
 </x-mail::button>
 
 Thanks,<br>
-{{ config('app.name') }}
+
 </x-mail::message>
