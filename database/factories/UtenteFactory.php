@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Facades\Hash;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Utente>
  */
@@ -21,7 +21,7 @@ class UtenteFactory extends Factory
             'cognome' => $this->faker->lastName(),
             'username' => $this->faker->userName(),
             'email' => $this->faker->safeEmail(),
-            'password' => $this->faker->password()
+            'password' => Hash::make($this->faker->password())
         ];
     }
 }

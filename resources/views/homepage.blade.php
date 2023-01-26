@@ -8,6 +8,12 @@
         </div>
     @endif
 
+    @if(session('statusRed'))
+        <div class="alert alert-danger ">
+            {{ session('statusRed') }}
+        </div>
+    @endif
+
     <h1>Benvenuto in iLovePizza</h1>
     <h2>Pizze Napoletane</h2>
     <h3>La pizza napoletana con pasta morbida e sottile, ma dai bordi alti, è la versione della pizza tonda preparata nella città di Napoli. Dal 5 febbraio 2010 è ufficialmente riconosciuta come Specialità Tradizionale Garantita(STG) dell'Unione Europea e nel 2017 l'arte del pizzaiuolo napoletano, di cui la pizza napoletana è il prodotto tangibile, è stata dichiarata dall'UNESCO come patrimonio immateriale dell'umanità.</h3>

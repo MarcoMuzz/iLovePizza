@@ -7,6 +7,11 @@
             {{ session('status') }}
         </div>
     @endif
+    @if(session('statusRed'))
+        <div class="alert alert-danger">
+            {{ session('statusRed') }}
+        </div>
+    @endif
 
             <form method="GET" action="{{route('inviaInvito')}}" >
                 @csrf
