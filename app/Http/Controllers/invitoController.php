@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
 class invitoController extends Controller
@@ -74,38 +73,33 @@ class invitoController extends Controller
 
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
+
+    public function storeInvitato(Request $request){
+        $request->validate([
             'nome' => ['required', 'string', 'max:255'],
+            'cognome' => ['required', 'string', 'max:255'],
             'username' => ['required', 'string', 'max:255', 'unique:utentes'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:utentes'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
 
-    }
+        $utente= new Utente;
+        $utente->nome= $request->nome;
+        $utente->cognome= $request->cognome;
+        $utente->username= $request->username;
+        $utente->email= $request->email;
+        $utente->password=  Hash::make($request->password);
+        $utente->save();
 
-    public function storeInvitato(Request $request){
-    $data=$request->only(['nome', 'username','email','password']);
-    if($this->validator($data)==false) return back();
+        $membro= new Associazione_Utente;
+        $membro->utente_id= $utente->id;
+        $membro->associazione_id = $request->associazione_id;
+        $membro->ruolo= 1;
+        $membro->save();
 
-    $utente= new Utente;
-    $utente->nome= $request->nome;
-    $utente->cognome= $request->cognome;
-    $utente->username= $request->username;
-    $utente->email= $request->email;
-    $utente->password=  Hash::make($request->password);
-    $utente->save();
-
-    $membro= new Associazione_Utente;
-    $membro->utente_id= $utente->id;
-    $membro->associazione_id = $request->associazione_id;
-    $membro->ruolo= 1;
-    $membro->save();
-
-    Invito::where('utente_mail',$request->email)->delete();
-
-    return redirect('/login');
+        Invito::where('utente_mail',$request->email)->delete();
+        Auth::loginUsingId($utente->id);
+        return redirect('/');
 
     }
 
