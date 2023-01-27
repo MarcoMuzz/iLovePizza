@@ -77,7 +77,6 @@ class invitoController extends Controller
             $associazione_id=Invito::where('token',$token)->first()->associazione_id;
             $invito= Invito::where('token',$token)->first();
             if(Auth::check()){
-                redirect('/');
                 if(Auth::user()->email==$invitoEmail){//ramo registrazione di utente presente nel db e gia loggato
                     $this->collegamentoUtAss(Auth::user()->id, $associazione_id);
                     return redirect('/')->with('status','Invito ad associazione accettato!');
