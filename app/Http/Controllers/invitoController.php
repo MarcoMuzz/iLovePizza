@@ -79,6 +79,7 @@ class invitoController extends Controller
             if(Auth::check()){
                 if(Auth::user()->email==$invitoEmail){//ramo registrazione di utente presente nel db e gia loggato
                     $this->collegamentoUtAss(Auth::user()->id, $associazione_id);
+                    Invito::where('utente_mail',$invitoEmail)->delete();
                     return redirect('/')->with('status','Invito ad associazione accettato!');
                 }
                 else{//ramo registrazione di utente presente nel db e gia loggato ma con un profilo diverso da quello dell'invito
@@ -106,7 +107,6 @@ class invitoController extends Controller
         $membro->associazione_id=$a_id;
         $membro->ruolo=1;
         $membro->save();
-        Invito::where('utente_mail',$request->email)->delete();
         return 0;
     }
 
