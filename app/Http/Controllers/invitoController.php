@@ -106,6 +106,7 @@ class invitoController extends Controller
         $membro->associazione_id=$a_id;
         $membro->ruolo=1;
         $membro->save();
+        Invito::where('utente_mail',$request->email)->delete();
         return 0;
     }
 
