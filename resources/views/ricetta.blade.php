@@ -61,5 +61,6 @@
         Associazione: {{$associazione['nome']}}
     </div> <!-- Fine Sezione autore -->
 
+    </div>
 @endsection
 

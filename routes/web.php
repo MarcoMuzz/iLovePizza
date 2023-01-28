@@ -8,8 +8,6 @@ use App\Http\Controllers\ricetteController;
 use App\Http\Controllers\consigliController;
 use App\Http\Controllers\associazioneController;
 use App\Http\Controllers\profiloController;
-use App\Http\Controllers\creaRicetta;
-use App\Http\Controllers\creaConsiglio;
 use App\Http\Controllers\commentoController;
 use App\Http\Controllers\invitoController;
 use Illuminate\Support\Facades\Auth;
