@@ -2,12 +2,6 @@
 @section('title', 'Home')
 
 @section('content')
-
-    <head>
-
-    </head>
-    <body>
-    <div>
     @if(session('status'))
         <div class="alert alert-success ">
             {{ session('status') }}
@@ -20,59 +14,87 @@
         </div>
     @endif
 
-    <h1>Benvenuto in iLovePizza</h1>
-    <h2>Pizze Napoletane</h2>
-    <h6>La pizza napoletana con pasta morbida e sottile, ma dai bordi alti, è la versione della pizza tonda preparata nella città di Napoli. Dal 5 febbraio 2010 è ufficialmente riconosciuta come Specialità Tradizionale Garantita(STG) dell'Unione Europea e nel 2017 l'arte del pizzaiuolo napoletano, di cui la pizza napoletana è il prodotto tangibile, è stata dichiarata dall'UNESCO come patrimonio immateriale dell'umanità.</h6>
-    <div style=" width: 100%; height: 230px;">
 
-        @foreach($napoletana as $pizzanapoletana)
-        <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-            <img  width=auto height="200" src="{{$pizzanapoletana['immagine']}}"><br>
-            <a href=" {{route('ricetta',['id'=> $pizzanapoletana['id'] ])}} ">{{$pizzanapoletana['nome']}}</a>
+<div class="container">
+    @if(session('status'))
+        <div class="alert alert-success ">
+            {{ session('status') }}
         </div>
+    @endif
+
+    @if(session('statusRed'))
+        <div class="alert alert-danger ">
+            {{ session('statusRed') }}
+        </div>
+    @endif
+        <h1>Benvenuto in iLovePizza</h1>
+        <div class="container-lg">
+        <h2>Pizze Napoletane</h2>
+        <h6>La pizza napoletana con pasta morbida e sottile, ma dai bordi alti, è la versione della pizza tonda preparata nella città di Napoli. Dal 5 febbraio 2010 è ufficialmente riconosciuta come Specialità Tradizionale Garantita(STG) dell'Unione Europea e nel 2017 l'arte del pizzaiuolo napoletano, di cui la pizza napoletana è il prodotto tangibile, è stata dichiarata dall'UNESCO come patrimonio immateriale dell'umanità.</h6>
+        @foreach($napoletana as $pizzanapoletana)
+
+                <div class="card" style="width: 25rem;display:inline-flex">
+                    <img src="{{$pizzanapoletana['immagine']}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$pizzanapoletana['nome']}}</h5>
+                        <p class="card-text">Lorem Ipssum dolor</p>
+                        <a href="{{route('ricetta',['id'=> $pizzanapoletana['id'] ])}}" class="btn btn-primary">Guarda</a>
+                    </div>
+                </div>
+
         @endforeach
+        </div>
+    <hr>
 
-    </div><br>
 
 
-    <h2>Pizze Romane</h2>
-    <div style=" width: 100%; height: 230px;">
-
+        <div class="container-md">
+        <h2>Pizze Romane</h2>
         @foreach($romana as $pizzaromana)
-            <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-                <img  width=auto height="200" src="{{$pizzaromana['immagine']}}"><br>
-            <a href=" {{route('ricetta',['id'=> $pizzaromana['id'] ])}} ">{{$pizzaromana['nome']}}</a>
-            </div>
+                <div class="card" style="width: 25rem;float:center;display:inline-flex">
+                    <img src="{{$pizzaromana['immagine']}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$pizzaromana['nome']}}</h5>
+                        <p class="card-text">Lorem Ipssum dolor</p>
+                        <a href="{{route('ricetta',['id'=> $pizzaromana['id'] ])}}" class="btn btn-primary">Guarda</a>
+                    </div>
+                </div>
         @endforeach
+        </div><br>
 
-    </div><br>
 
-    <h2>Pizze resto'dItalia</h2>
-    <div style=" width: 100%; height: 230px;">
-
+        <div class="container-fluid">
+        <div class="container-md">
+            <h2>Pizze resto'dItalia</h2>
         @foreach($resto as $pizzaresto)
-            <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-                <img  width=auto height="200" src="{{$pizzaresto['immagine']}}"><br>
-                <a href=" {{route('ricetta',['id'=> $pizzaresto['id'] ])}} ">{{$pizzaresto['nome']}}</a>
-            </div>
+                <div class="card" style="width: 25rem;float:center;display:inline-flex">
+                    <img src="{{$pizzaresto['immagine']}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$pizzaresto['nome']}}</h5>
+                        <p class="card-text">Lorem Ipssum dolor</p>
+                        <a href="{{route('ricetta',['id'=> $pizzaresto['id'] ])}}" class="btn btn-primary">Guarda</a>
+                    </div>
+                </div>
         @endforeach
+        </div><br>
+        </div>
 
-    </div><br>
-
-    <h2>Pizze Internazionali</h2>
-    <div style=" width: 100%; height: 230px;">
-
+        <div class="container-fluid">
+        <div class="container-md">
+            <h2>Pizze Internazionali</h2>
         @foreach($internazionale as $pizzaInternazionale)
-            <div style="width: 30vw;float:left; text-align: center ; display: inline-block;border: solid 1px black;border-radius: 5%">
-                <img  width=auto height="200" src="{{$pizzaInternazionale['immagine']}}"><br>
-                <a href=" {{route('ricetta',['id'=> $pizzaInternazionale['id'] ])}} ">{{$pizzaInternazionale['nome']}}</a>
-            </div>
+                <div class="card" style="width: 25rem;float:center;display:inline-flex">
+                    <img src="{{$pizzaInternazionale['immagine']}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{$pizzaInternazionale['nome']}}</h5>
+                        <p class="card-text">Lorem Ipssum dolor</p>
+                        <a href="{{route('ricetta',['id'=> $pizzaInternazionale['id'] ])}}" class="btn btn-primary">Guarda</a>
+                    </div>
+                </div>
         @endforeach
-
-    </div>
-    </div>
-    </body>
-    </html>
+        </div>
+        </div>
+</div>
 @endsection
 
 
