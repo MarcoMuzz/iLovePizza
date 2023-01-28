@@ -2,12 +2,6 @@
 @section('title', 'Home')
 
 @section('content')
-    <style>
-        .card-img-top{
-            height:250px;
-            width:auto;
-        }
-    </style>
 
 
 <div class="container">

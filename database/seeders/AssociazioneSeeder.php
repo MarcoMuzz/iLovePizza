@@ -14,40 +14,40 @@ class AssociazioneSeeder extends Seeder
      * @return void
      */
     public function run()
-    {   // ----------- CREAZIONE 1° TUPLA -----------
+    {
 
         Associazione::create([
-            'nome' => "Associazione 1",
+            'nome' => "La Confraternita della Pizza",
             'romana' => 1,
             'napoletana' => 0,
             'resto' => 0,
             'internazionale' => 0,
             'utente_id' => 1
         ]);
-        // ----------- CREAZIONE 2° TUPLA -----------
+
 
         Associazione::create([
-            'nome' => "Associazione 2",
+            'nome' => "L'Angolo di Zia Margherita",
             'romana' => 0,
             'napoletana' => 1,
             'resto' => 0,
             'internazionale' => 0,
             'utente_id' => 2
         ]);
-        // ----------- CREAZIONE 3° TUPLA -----------
+        //
 
         Associazione::create([
-            'nome' => "Associazione 3",
+            'nome' => "Capricciosa Revolution",
             'romana' => 0,
             'napoletana' => 0,
             'resto' => 1,
             'internazionale' => 0,
             'utente_id' => 3
         ]);
-        // ----------- CREAZIONE 4° TUPLA -----------
+
 
         Associazione::create([
-            'nome' => "Associazione 4",
+            'nome' => "La Vela",
             'romana' => 1,
             'napoletana' => 0,
             'resto' => 0,
@@ -56,7 +56,7 @@ class AssociazioneSeeder extends Seeder
         ]);
 
         Associazione::create([
-            'nome' => "Associazione 5",
+            'nome' => "Associazione Prova",
             'romana' => 1,
             'napoletana' => 1,
             'resto' => 0,
