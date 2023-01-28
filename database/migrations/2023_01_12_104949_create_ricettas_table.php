@@ -22,10 +22,6 @@ return new class extends Migration
             $table->boolean('napoletana')->default('0');
             $table->boolean('resto')->default('0');
             $table->boolean('internazionale')->default('0');
-            $table->boolean('light')->default('0');
-            $table->boolean('vegetariano')->default('0');
-            $table->boolean('senzaglutine')->default('0');
-            $table->boolean('senzalattosio')->default('0');
             $table->string('cottura');
             $table->text('immagine');
             $table->index('utente_id');

@@ -24,10 +24,6 @@ class RicettaSeeder extends Seeder
                 'napoletana' => 0,
                 'resto' => 0,
                 'internazionale' => 0,
-                'light' => rand(0, 1),
-                'vegetariano' => rand(0, 1),
-                'senzaglutine' => rand(0, 1),
-                'senzalattosio' => rand(0, 1),
                 'cottura' => 'fornoalegna',
                 'immagine' => 'https://www.giallozafferano.it/images/5-560/Pizza-Romana_780x520_wm.jpg',
                 'utente_id' => rand(5, 11)
@@ -42,10 +38,6 @@ class RicettaSeeder extends Seeder
                     'napoletana'=> 1,
                     'resto'=> 0,
                     'internazionale'=>0,
-                    'light'=>rand(0,1),
-                    'vegetariano' =>rand(0,1),
-                    'senzaglutine' =>rand(0,1),
-                    'senzalattosio' =>rand(0,1),
                     'cottura' => 'fornoelettrico',
                     'immagine'=> 'https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza-1764x882.jpg',
                     'utente_id'=> rand(12,18)
@@ -60,10 +52,6 @@ class RicettaSeeder extends Seeder
                 'napoletana'=> 0,
                 'resto'=> 1,
                 'internazionale'=>0,
-                'light'=>rand(0,1),
-                'vegetariano' =>rand(0,1),
-                'senzaglutine' =>rand(0,1),
-                'senzalattosio' =>rand(0,1),
                 'cottura' => 'padella',
                 'immagine'=> 'https://media-cdn.tripadvisor.com/media/photo-s/17/ed/fd/81/san-marco.jpg',
                 'utente_id'=> rand(19,25)
@@ -78,10 +66,6 @@ class RicettaSeeder extends Seeder
                 'napoletana'=> 0,
                 'resto'=> 0,
                 'internazionale'=>1,
-                'light'=>rand(0,1),
-                'vegetariano' =>rand(0,1),
-                'senzaglutine' =>rand(0,1),
-                'senzalattosio' =>rand(0,1),
                 'cottura' => 'fornogas',
                 'immagine'=> 'https://www.foodandwineitalia.com/wp-content/uploads/elementor/thumbs/pizza-ananas-shutterstock-pkuuz32rlvimvtt3l7lrad591d03en9nu2ppqlzqyg.png',
                 'utente_id'=> rand(26,32)
