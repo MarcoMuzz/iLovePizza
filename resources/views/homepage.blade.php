@@ -2,17 +2,12 @@
 @section('title', 'Home')
 
 @section('content')
-    @if(session('status'))
-        <div class="alert alert-success ">
-            {{ session('status') }}
-        </div>
-    @endif
-
-    @if(session('statusRed'))
-        <div class="alert alert-danger ">
-            {{ session('statusRed') }}
-        </div>
-    @endif
+    <style>
+        .card-img-top{
+            height:250px;
+            width:auto;
+        }
+    </style>
 
 
 <div class="container">
@@ -43,7 +38,11 @@
                 </div>
 
         @endforeach
-        </div>
+            <br>
+<div class="text-center">
+            <a href="{{route('fabio',['tipologia'=> 'napoletana' ])}}" class="btn btn-primary center" style="margin-top:4px">Clicca qui per entrare nella sezione dedicata alle Pizze Napoletane</a>
+</div>
+
     <hr>
 
 
@@ -60,7 +59,12 @@
                     </div>
                 </div>
         @endforeach
-        </div><br>
+            <div class="text-center">
+                <a href="{{route('fabio',['tipologia'=> 'romana' ])}}" class="btn btn-primary center" style="margin-top:4px">Clicca qui per entrare nella sezione dedicata alle Pizze Romane</a>
+            </div>
+        </div>
+        </div>
+    <hr>
 
 
         <div class="container-fluid">
@@ -76,8 +80,12 @@
                     </div>
                 </div>
         @endforeach
-        </div><br>
+            <div class="text-center">
+                <a href="{{route('fabio',['tipologia'=> 'resto' ])}}" class="btn btn-primary center" style="margin-top:4px">Clicca qui per entrare nella sezione dedicata alle Pizze dal resto dell'Italia</a>
+            </div>
         </div>
+        </div>
+    <hr>
 
         <div class="container-fluid">
         <div class="container-md">
@@ -92,9 +100,14 @@
                     </div>
                 </div>
         @endforeach
+            <div class="text-center">
+                <a href="{{route('fabio',['tipologia'=> 'internazionale' ])}}" class="btn btn-primary center" style="margin-top:4px">Clicca qui per entrare nella sezione dedicata alle Pizze Internazionali</a>
+            </div>
+        </div>
         </div>
         </div>
 </div>
+    </div>
 @endsection
 
 

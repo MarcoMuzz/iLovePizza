@@ -54,5 +54,14 @@ class AssociazioneSeeder extends Seeder
             'internazionale' => 1,
             'utente_id' => 4
         ]);
+
+        Associazione::create([
+            'nome' => "Associazione 5",
+            'romana' => 1,
+            'napoletana' => 1,
+            'resto' => 0,
+            'internazionale' => 0,
+            'utente_id' => 52
+        ]);
     }
 }

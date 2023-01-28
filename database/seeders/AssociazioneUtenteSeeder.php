@@ -95,5 +95,16 @@ class AssociazioneUtenteSeeder extends Seeder
 
                         }
         }
+                    Associazione_Utente::create([
+                    'associazione_id' => 5,
+                    'utente_id' => 51,
+                    'ruolo' => 3
+                    ]);
+
+                    Associazione_Utente::create([
+                    'associazione_id' => 5,
+                    'utente_id' => 52,
+                    'ruolo' => 1
+                    ]);
     }
 }
