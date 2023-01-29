@@ -1,7 +1,12 @@
 @extends('layouts.app')
 @section('title', 'Consiglio')
 @section('content')
-
+    <style>
+    .card-img-top{
+    height:250px;
+    width:auto;
+    }
+    </style>
     <div class="container-lg d-flex" style="flex-wrap: wrap">
     @foreach($associaziones as $associazione)
             <br>
