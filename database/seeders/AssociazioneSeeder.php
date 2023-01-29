@@ -61,7 +61,7 @@ class AssociazioneSeeder extends Seeder
             'napoletana' => 1,
             'resto' => 0,
             'internazionale' => 0,
-            'utente_id' => 52
+            'utente_id' => 51
         ]);
     }
 }
