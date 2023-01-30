@@ -9,17 +9,47 @@
 
     <title>{{config('app.name', 'iLovePizza')}}</title>
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <link rel="shortcut icon" href="{{asset('pizza_fav.png')}}">
+
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+    <style>
+        {{--
+        body
+        {
+            background-image: url("https://img.freepik.com/premium-vector/pizza-slice-seamless-pattern-background_573652-1142.jpg");
+
+        }
+        --}}
+        body
+        {
+            background-color: rgba(255, 253, 208, 0.30);
+        }
+        nav
+        {
+            background-color: gainsboro;
+            box-shadow: 0px 15px 10px -15px #111;
+        }
+        .dropdown-menu
+        {
+            background-color: gainsboro;
+        }
+
+
+
+    </style>
 
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                    <img src="https://cdn-icons-png.flaticon.com/128/3595/3595455.png" width="40px">    iLovePizza
@@ -38,7 +68,7 @@
 
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Tipi di Pizze</a>
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'tutte'])}}">Tutte</a>
+                                <a class="dropdown-item " href="{{route('fabio',['tipologia'=>'tutte'])}}">Tutte</a>
                                 <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'napoletana'])}}">Napoletana</a>
                                 <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'romana'])}}">Romana</a>
                                 <a class="dropdown-item" href="{{route('fabio',['tipologia'=>'resto'])}}">Resto dell'Italia</a>
@@ -67,13 +97,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a href="{{ route('login') }}" class="btn btn-primary">{{ __('Accedi') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                 </li>
                             @endif
                         @else

@@ -27,18 +27,18 @@
                     <label>Nome</label>
                     <input type="text" id="title" name="nome" class="form-control" required>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <label>Ingredienti</label>
                     <textarea name="ingredienti" class="form-control" required></textarea>
                 </div>
 
-
+                <br>
                 <div class="form-group">
                     <label>Preparazione</label>
                     <textarea name="preparazione" class="form-control" required></textarea>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <label>Tipologia</label>
                     <select  class="form-control" name="tipologia" required>
@@ -61,7 +61,7 @@
 
                     </select>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <label>Cottura</label>
                     <select  class="form-control" name="cottura" required>
@@ -73,13 +73,13 @@
                     </select>
                 </div>
 
-
+                <br>
                 <div class="form-group">
                     <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
                     <input  type="text" name="immagine" class="form-control" required>
                 </div>
 
-
+                <br>
                 <button type="submit" class="btn btn-primary">Pubblica</button>
             </form>
         </div>

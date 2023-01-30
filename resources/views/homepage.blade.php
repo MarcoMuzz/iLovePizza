@@ -10,6 +10,7 @@
     </style>
 
 
+
 <div class="container">
     @if(session('status'))
         <div class="alert alert-success ">
@@ -22,13 +23,15 @@
             {{ session('statusRed') }}
         </div>
     @endif
-        <h1>Benvenuto in iLovePizza</h1>
+
         <div class="container-lg">
+            <h1>Benvenuto in iLovePizza! 👋🏻 </h1> <br>
+
         <h2>Pizze Napoletane</h2>
         <h6>La pizza napoletana con pasta morbida e sottile, ma dai bordi alti, è la versione della pizza tonda preparata nella città di Napoli. Dal 5 febbraio 2010 è ufficialmente riconosciuta come Specialità Tradizionale Garantita(STG) dell'Unione Europea e nel 2017 l'arte del pizzaiuolo napoletano, di cui la pizza napoletana è il prodotto tangibile, è stata dichiarata dall'UNESCO come patrimonio immateriale dell'umanità.</h6>
         @foreach($napoletana as $pizzanapoletana)
 
-                <div class="card" style="width: 25rem;display:inline-flex">
+                <div class="card" style="width: 25rem; display:inline-flex">
                     <img src="{{$pizzanapoletana['immagine']}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzanapoletana['nome']}}</h5>
@@ -45,12 +48,10 @@
 
     <hr>
 
-
-
         <div class="container-md">
         <h2>Pizze Romane</h2>
         @foreach($romana as $pizzaromana)
-                <div class="card" style="width: 25rem;float:center;display:inline-flex">
+                <div class="card" style="width: 25rem; display:inline-flex">
                     <img src="{{$pizzaromana['immagine']}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaromana['nome']}}</h5>
@@ -71,7 +72,7 @@
         <div class="container-md">
             <h2>Pizze resto'dItalia</h2>
         @foreach($resto as $pizzaresto)
-                <div class="card" style="width: 25rem;float:center;display:inline-flex">
+                <div class="card" style="width: 25rem; display:inline-flex">
                     <img src="{{$pizzaresto['immagine']}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaresto['nome']}}</h5>
@@ -91,7 +92,7 @@
         <div class="container-md">
             <h2>Pizze Internazionali</h2>
         @foreach($internazionale as $pizzaInternazionale)
-                <div class="card" style="width: 25rem;float:center;display:inline-flex">
+                <div class="card" style="width: 25rem;display:inline-flex">
                     <img src="{{$pizzaInternazionale['immagine']}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaInternazionale['nome']}}</h5>
@@ -106,8 +107,7 @@
         </div>
         </div>
         </div>
-</div>
-    </div>
+
 @endsection
 
 
