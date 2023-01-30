@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('title', 'Modera Membri')
 @section('content')
-
+    @if(session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
 
 
         @foreach($membri as $membro)
@@ -28,7 +32,7 @@
                 <form action="{{route('promuoviMembro')}}" method="post">
                     @csrf
                 <input  type="hidden" name="m_id" value="{{$membro['id']}}$">
-                <input  type="submit" value="Promuovi.">
+                    <button type="submit" class="btn btn-primary">Promuovi</button>
                 </form>
                 @endif
 
@@ -36,7 +40,7 @@
                     <form action="{{route('declassaMembro')}}" method="post">
                         @csrf
                         <input  type="hidden" name="m_id" value="{{$membro['id']}}$">
-                        <input  type="submit" value="Declassa.">
+                        <button type="submit" class="btn btn-primary">Declassa</button>
                     </form>
                 @endif
 
@@ -44,7 +48,7 @@
                     <form action="{{route('espelliMembro')}}" method="post">
                         @csrf
                         <input  type="hidden" name="m_id" value="{{$membro['id']}}$">
-                        <input  type="submit" value="Espelli.">
+                        <button type="submit" class="btn btn-primary">Espelli</button>
                     </form>
                 @endif
                 <hr>
