@@ -28,7 +28,7 @@
             <form action="{{route('eliminaRicetta')}}" method="post">
                 @csrf
                 <input  type="hidden" name="id" value="{{$ricetta['id']}}$">
-                <input  type="submit" value="Elimina">
+                <input  type="submit" value="Elimina Ricetta">
             </form>
             <br>
 
@@ -52,7 +52,7 @@
             <form action="{{route('eliminaConsiglio')}}" method="post">
                 @csrf
                 <input  type="hidden" name="id" value="{{$consiglio['id']}}$">
-                <input  type="submit" value="Elimina">
+                <input  type="submit" value="Elimina Consiglio">
             </form>
             <br>
 
