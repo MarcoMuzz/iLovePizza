@@ -30,7 +30,7 @@
         --}}
         body
         {
-            background-color: rgba(255, 253, 208, 0.30);
+        {{--  background-color: rgba(255, 253, 208, 0.30);--}}
         }
         nav
         {
