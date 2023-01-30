@@ -42,19 +42,19 @@ class associazioneController extends Controller
     public function promuoviMembro(Request $request)
     {
         Associazione_Utente::where('utente_id',$request->m_id)->update((['ruolo' => '2']));
-        return redirect()->route('moderaMembri');
+        return redirect()->route('moderaMembri')->with('status','Membro promosso con successo.');
     }
 
     public function espelliMembro(Request $request)
     {
         Associazione_Utente::where('utente_id',$request->m_id)->delete();
-        return redirect()->route('moderaMembri');
+        return redirect()->route('moderaMembri')->with('status','Membro espulso con successo.');
     }
 
     public function declassaMembro(Request $request)
     {
         Associazione_Utente::where('utente_id',$request->m_id)->update((['ruolo' => '1']));
-        return redirect()->route('moderaMembri');
+        return redirect()->route('moderaMembri')->with('status','Membro declassato con successo.');
     }
 
 

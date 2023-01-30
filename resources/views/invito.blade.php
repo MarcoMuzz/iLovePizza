@@ -12,12 +12,13 @@
             {{ session('statusRed') }}
         </div>
     @endif
-
+    <h5>Inserisci l'email della persona che vuoi invitare: </h5>
+    <br>
             <form method="GET" action="{{route('inviaInvito')}}" >
                 @csrf
                 <input  type="email"  name="email" required>
                 <input type ="hidden" name="associazione_id" value="{{Auth::user()->Associazione->id}}">
-                <button  type="submit" class="btn btn-primary"> Invia invito</button>
+                <button  type="submit" class="btn btn-primary">Invia invito</button>
             </form>
 
 
