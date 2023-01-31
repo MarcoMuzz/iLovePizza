@@ -14,7 +14,7 @@ class consigliController extends Controller
 {
 
     public function Consigli() {
-        return view('consigli',['consiglios' => Consiglio::all(), 'autores' => Utente::all()]);
+        return view('consigli',['consiglios' => Consiglio::paginate(5), 'autores' => Utente::all()]);
     }
 
     public function Consiglio($id) {

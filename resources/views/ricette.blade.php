@@ -35,6 +35,10 @@
             }
         }
 
+        .pagi nav{
+            background-color:#f8fafc;
+            box-shadow: none;
+        }
 
     </style>
     <div class="container">

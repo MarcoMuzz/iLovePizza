@@ -20,13 +20,13 @@ class ricetteController extends Controller
             case "tutte":
                 return view('ricette',['ricettas' =>Ricetta::paginate(5) , 'autores' => Utente::all()]);
             case "napoletana":
-                return view('ricette',['ricettas' => Ricetta::where('napoletana', 1)->paginate(3), 'autores' => Utente::all()]);
+                return view('ricette',['ricettas' => Ricetta::where('napoletana', 1)->paginate(5), 'autores' => Utente::all()]);
             case "romana":
-                return view('ricette',['ricettas' => Ricetta::where('romana', 1)->paginate(3), 'autores' => Utente::all()]);
+                return view('ricette',['ricettas' => Ricetta::where('romana', 1)->paginate(5), 'autores' => Utente::all()]);
             case "resto":
-                return view('ricette',['ricettas' => Ricetta::where('resto', 1)->paginate(3), 'autores' => Utente::all()]);
+                return view('ricette',['ricettas' => Ricetta::where('resto', 1)->paginate(5), 'autores' => Utente::all()]);
             case "internazionale":
-                return view('ricette',['ricettas' => Ricetta::where('internazionale', 1)->paginate(3), 'autores' => Utente::all()]);
+                return view('ricette',['ricettas' => Ricetta::where('internazionale', 1)->paginate(5), 'autores' => Utente::all()]);
 
         }
     }

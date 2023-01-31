@@ -2,23 +2,6 @@
 @section('title', 'Consiglio')
 @section('content')
 
-  {{--  @foreach($consiglios as $consiglio)
-        <div class="card" style="width: 40rem;display:list; margin: 15px auto; padding:1%">
-        <h2 style="text-align:center;"> {{ $consiglio['nome']}}</h2>
-        @foreach($autores as $autore)
-            @if($autore['id'] == $consiglio['utente_id'])
-            <p style="text-align:center;"> written by: {{$autore['nome']}} </p>
-            @endif
-        @endforeach
-        <p><img style="max-width: 150px; float: left; padding-right: 20px" src="{{ $consiglio['immagine']}}">
-            <br> Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure... </p>
-
-        <a style="text-align:right;" href="{{route('consiglio',['id'=>$consiglio['id']])}}">Continua a leggere ></a>
-        </div>
-    @endforeach
-  --}}
 
   <style>
       .card {
@@ -56,15 +39,22 @@
               width: 50%;
           }
       }
+      .pagi nav{
+          background-color:#f8fafc;
+          box-shadow: none;
+      }
       @media only screen and (max-width: 1200px) {
           .card img {
               width: 40%;
           }
+
+
       }
 
   </style>
 
   <div class="container">
+      <div class="pagi">{!!$consiglios->links()!!} </div>
       @foreach($consiglios as $consiglio)
           <br>
 
