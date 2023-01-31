@@ -27,14 +27,14 @@
 
     </style>
 
-    @if(session('status'))
-        <div class="alert alert-success">
-            {{ session('status') }}
-        </div>
-    @endif
 
     <div class="container-lg">
 
+        @if(session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="row">
             <div class="col text-center">
         <h1>Ricette</h1>
