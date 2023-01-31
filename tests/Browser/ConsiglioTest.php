@@ -21,7 +21,7 @@ class ConsiglioTest extends DuskTestCase
                 ->clickLink('Scrivi consiglio')
                 ->type('nome', 'Consiglio Dusk')
                 ->type('contenuto', 'Lorem Ipsum Dolor')
-                ->type('immagine', 'https://www.misya.info/wp-content/uploads/2007/04/impasto_per_pizze.jpg')
+                ->attach('immagine',  __DIR__.'\immaginitest\consigliotest.webp')
                 ->press('Pubblica')  // Qui c'è la pubblicazione del consiglio, nei prossimi step si visita la pagina del profilo utente per controllare che il consiglio compaia anche lì
                 ->visit('/')
                 ->click('@user-functions')

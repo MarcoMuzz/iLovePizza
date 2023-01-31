@@ -24,7 +24,7 @@ class RicettaTest extends DuskTestCase
                 ->type('preparazione', 'Lorem Ipsum Dolor')
                 ->select('tipologia', 'romana')
                 ->select('cottura')
-                ->type('immagine', 'https://media-cdn.tripadvisor.com/media/photo-s/19/33/58/01/photo0jpg.jpg')
+                ->attach('immagine',  __DIR__.'\immaginitest\pizzatest.jpg')
                 ->press('Pubblica')  // Qui c'è la pubblicazione della ricetta, nei prossimi step si visita la pagina del profilo utente per controllare che la ricetta compaia anche lì
                 ->visit('/')
                 ->click('@user-functions')
