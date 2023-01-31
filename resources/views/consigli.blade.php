@@ -6,26 +6,29 @@
   <style>
       .card {
           flex-direction: row;
-          align-items: center;
+          margin-bottom: 2%;
       }
       .card-title {
           font-weight: bold;
       }
       .card img {
-          width: 33%;
-          border-top-right-radius: 0;
-          border-bottom-left-radius: calc(0.25rem - 1px);
+          object-fit: cover;
+        width:30%;
       }
 
       h5{
           font-size:125%;
-
       }
 
       p{
           font-size:113%;
+          margin-top: 2%;
       }
-      @media only screen and (max-width: 768px) {
+      #p1 {
+          color: grey;
+      }
+
+      @media screen and (max-width: 768px) {
           a {
               display: none;
           }
@@ -35,20 +38,23 @@
           .card-body .card-text {
               margin: 0;
           }
+          .card{
+              width: 75%;
+              flex-direction: column;
+          }
           .card img {
-              width: 50%;
+              width:100%;
+          }
+         #p1{
+          width: 250px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
           }
       }
       .pagi nav{
           background-color:#f8fafc;
           box-shadow: none;
-      }
-      @media only screen and (max-width: 1200px) {
-          .card img {
-              width: 40%;
-          }
-
-
       }
 
   </style>
@@ -56,11 +62,10 @@
   <div class="container">
       <div class="pagi">{!!$consiglios->links()!!} </div>
       @foreach($consiglios as $consiglio)
-          <br>
+
 
           <div class="card">
-              <img style="object-fit: cover;" src="{{ $consiglio['immagine']}}" class="card-img-top" />
-
+              <img src="{{ $consiglio['immagine']}}" class="card-img-top"/>
               <div class="card-body">
                   <h2 class="card-title">{{ $consiglio['nome']}}</h2>
                   <h5 class="card-text">
@@ -71,7 +76,7 @@
                           @endif
 
                       @endforeach</h5>
-                          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                          <p id="p1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                               exercitation ullamco laboris nisi ut aliquip ex ea commodo.... <br> </p>
 

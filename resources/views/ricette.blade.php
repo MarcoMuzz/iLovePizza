@@ -5,15 +5,20 @@
     <style>
         .card {
             flex-direction: row;
-            align-items: center;
+            margin-bottom: 2%;
         }
         .card-title {
             font-weight: bold;
         }
         .card img {
-            width: 30%;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: calc(0.25rem - 1px);
+            object-fit: cover;
+            width:35%;
+        }
+        p {
+            margin-top: 2%;
+        }
+        #p1 {
+            color: grey;
         }
         @media only screen and (max-width: 768px) {
             a {
@@ -26,15 +31,23 @@
                 margin: 0;
             }
             .card img {
-                width: 50%;
+                width: 100%;
             }
-        }
-        @media only screen and (max-width: 1200px) {
-            .card img {
-                width: 40%;
+            .card{
+                width: 75%;
+                flex-direction: column;
             }
-        }
 
+            #p1{
+
+                font-size: 95%;
+                width: 250px;
+                margin-top: 5%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        }
         .pagi nav{
             background-color:#f8fafc;
             box-shadow: none;
@@ -53,9 +66,12 @@
                 <h5 class="card-text">
                     @foreach($autores as $autore)
                         @if($autore['id'] == $ricetta['utente_id'])
-                            Scritta da: {{$autore['username']}}
+                           <strong> Scritta da: {{$autore['username']}} </strong>
                         @endif
                     @endforeach
+                        <p id="p1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo.... <br> </p>
                 </h5>
                 <p>
                     @if($ricetta['napoletana'] == 1) Pizza Napoletana

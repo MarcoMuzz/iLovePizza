@@ -3,25 +3,23 @@
 @section('content')
 
     <style>
-        .card {
+          .card {
             width: 30%;
             text-align: center;
-            justify-content: center;
-            padding: 1%;
-            margin: 0 auto;
+            padding: 2%;
+            margin-bottom: 3%;
         }
-        .container{
-            display: flex;
-        }
+
         h1 {
             text-align: center;
             margin: 2%;
         }
+
         @media screen and (max-width: 950px) {
-            .container {
+            .container-lg {
                 display: inline-block;
             }
-            .card{
+            .row{
                 width:75%;
                 margin-bottom: 3%;
             }
@@ -35,13 +33,13 @@
         </div>
     @endif
 
+    <div class="container-lg">
 
-
+        <div class="row">
+            <div class="col text-center">
         <h1>Ricette</h1>
-    <div class="container">
-
         @foreach($ricette as $ricetta)
-            <div class="card ">
+                <div class="card" style="width: 25rem;display:inline-flex">
             <h2>{{ $ricetta['nome']}}</h2>
             <p> written by: {{$ricetta['username']}} </p>
             <p><img style="max-width: 80%" src="{{ $ricetta['immagine']}}"><br/></p>
@@ -63,37 +61,37 @@
                 <input  type="hidden" name="id" value="{{$ricetta['id']}}$">
                 <input  type="submit" class="btn btn-danger" value="Elimina Ricetta">
             </form>
-
-
             </div>
+
         @endforeach
 
-    </div>
+            </div>
 
 
-        <h1>Consigli</h1>
-    <div class="container">
-            @foreach($consigli as $consiglio)
-                <div class="card">
-                <h2>{{ $consiglio['nome']}}</h2>
-                <p> written by: {{$consiglio['username']}} </p>
-                <p><img style="max-width: 80%" src="{{ $consiglio['immagine']}}"><br/></p>
-                <a href="{{route('consiglio',['id'=>$consiglio['id']])}}">Continua a leggere</a>
-                <br>
+            <div class="col text-center">
+                <h1>Consigli</h1>
+                @foreach($consigli as $consiglio)
+                    <div class="card" style="width: 25rem;display:inline-flex">
+                    <h2>{{ $consiglio['nome']}}</h2>
+                    <p> written by: {{$consiglio['username']}} </p>
+                    <p><img style="max-width: 80%" src="{{ $consiglio['immagine']}}"><br/></p>
+                    <a href="{{route('consiglio',['id'=>$consiglio['id']])}}">Continua a leggere</a>
+                    <br>
                     <a class="button" href=" {{route('modificaConsiglio',['id'=>$consiglio['id']])}}">Modifica</a>
                     <br>
-                <form action="{{route('eliminaConsiglio')}}" method="post">
-                    @csrf
-                    <input  type="hidden" name="id" value="{{$consiglio['id']}}$">
-                    <input  type="submit" class="btn btn-danger" value="Elimina Consiglio">
-                </form>
-                <br>
-                </div>
+                    <form action="{{route('eliminaConsiglio')}}" method="post">
+                        @csrf
+                        <input  type="hidden" name="id" value="{{$consiglio['id']}}$">
+                        <input  type="submit" class="btn btn-danger" value="Elimina Consiglio">
+                    </form>
+                    </div>
 
             @endforeach
 
-    </div>
+            </div>
 
+
+        </div>
 
 
 
