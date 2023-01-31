@@ -2,6 +2,101 @@
 @section('title', 'profilo')
 
 @section('content')
+    <div class="container">
+        <h1>Profilo Personale</h1>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td>Username</td>
+                    <td> {{$utente['username']}}</td>
+                </tr>
+                <tr>
+                    <td>Nome</td>
+                    <td> {{$utente['nome']}}</td>
+                </tr>
+                <tr>
+                    <td>Cognome</td>
+                    <td> {{$utente['cognome']}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td> {{$utente['email']}}</td>
+                </tr>
+                @if($associazione != null)
+                    <tr>
+                        <td>Associazione</td>
+                        <td>{{$associazione['nome']}}</td>
+                    </tr>
+                    <tr>
+                        <td>Ruolo</td>
+                        <td>@if(Auth::user()->custom ==1)
+                                Membro
+                            @endif
+
+                            @if(Auth::user()->custom ==2)
+                                Moderatore
+                            @endif
+
+                            @if(Auth::user()->custom ==3)
+                                Capo
+                            @endif
+                        </td>
+                    </tr>
+
+                @endif
+
+
+            </tbody>
+        </table>
+        <div class="row">
+
+            <div class="col-sm-6 col-md-4">
+                <h1>Ricette:</h1>
+                <div class="scroll">
+
+                    @foreach($ricette as $ricetta)
+                        <div class="card">
+                            <img src="{{$ricetta['immagine']}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$ricetta['nome']}}</h5>
+                                <p class="card-text">Lorem Ipssum dolor</p>
+                                <a href="{{route('ricetta',['id'=> $ricetta['id'] ])}}" class="btn btn-primary">Guarda</a>
+                            </div>
+                        </div>
+                        <br><br>
+                    @endforeach
+                </div>
+            </div>
+
+            <div class="col-sm-6 col-md-4"> </div>
+            <div class="col-sm-6 col-md-4">
+                <h1>Consigli:</h1>
+                <div class="scroll">
+                    @foreach($consigli as $consiglio)
+                        <div class="card">
+                            <img src="{{$consiglio['immagine']}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{$consiglio['nome']}}</h5>
+                                <p class="card-text">Lorem Ipssum dolor</p>
+                                <a href="{{route('consiglio',['id'=> $consiglio['id'] ])}}" class="btn btn-primary">Guarda</a>
+                            </div>
+                        </div>
+                        <br><br>
+                    @endforeach
+                </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+    {{--
     Username: {{$utente['username']}} <br>
     Nome: {{$utente['nome']}} <br>
     Cognome: {{$utente['cognome']}} <br>
@@ -54,5 +149,6 @@
     @endforeach
     @endif
     </div>
+    --}}
 @endsection
 
