@@ -3,17 +3,16 @@
 
 @section('content')
     <style>
-.scroll{
+        .scroll{
 
-    overflow:scroll;
-    height:600px;
-}
-
+            overflow:scroll;
+            height:600px;
+        }
     </style>
 
     <div class="container">
 
-      <div class="text-center"><h1>{{$associaziones['nome']}}<br></h1> </div>
+        <div class="text-center"><h1>{{$associaziones['nome']}}<br></h1> </div>
         <p>{{$associaziones['descrizione']}}
 
 
@@ -30,31 +29,33 @@
             </thead>
             <tbody>
             @foreach($membri as $membro)
-            <tr>
-                <td> {{$membro['nome']}}</td>
-                <td>{{$membro['cognome']}}</td>
-                <td>{{$membro['username']}}</td>
-                <td> @switch($membro['ruolo'])
-                        @case(1)
-                            Membro
-                            @break
+                <tr>
+                    <td> {{$membro['nome']}}</td>
+                    <td>{{$membro['cognome']}}</td>
+                    <td>{{$membro['username']}}</td>
+                    <td> @switch($membro['ruolo'])
+                            @case(1)
+                                Membro
+                                @break
 
-                        @case(2)
-                            Moderatore
-                            @break
+                            @case(2)
+                                Moderatore
+                                @break
 
-                        @case(3)
-                            Capo
-                            @break
-                    @endswitch</td>
-            </tr>
+                            @case(3)
+                                Capo
+                                @break
+                        @endswitch</td>
+                </tr>
             @endforeach
             </tbody>
         </table>
 
         <div class="row">
-            <div  class="col-sm-6 col-md-4 scroll">
+
+            <div class="col-sm-6 col-md-4">
                 <h1>Ricette:</h1>
+                <div class="scroll">
 
                 @foreach($ricette as $ricetta)
                     <div class="card">
@@ -67,11 +68,13 @@
                     </div>
                     <br><br>
                 @endforeach
-<hr>
             </div>
-            <div class="col-sm-6 col-md-4 "></div>
-            <div class="col-sm-6 col-md-4 scroll">
+            </div>
+
+            <div class="col-sm-6 col-md-4"> </div>
+            <div class="col-sm-6 col-md-4">
                 <h1>Consigli:</h1>
+                <div class="scroll">
                 @foreach($consigli as $consiglio)
                     <div class="card">
                         <img src="{{$consiglio['immagine']}}" class="card-img-top" alt="...">
@@ -83,7 +86,7 @@
                     </div>
                     <br><br>
                 @endforeach
-
+                </div>
             </div>
 
 
