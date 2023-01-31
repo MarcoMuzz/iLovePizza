@@ -4,79 +4,47 @@
 @section('content')
 
     <style>
+
         .card
         {
             padding: 3%;
         }
-        h5{
-            flex-direction: row;
-        }
+
         #imgg {
             margin: auto;
             border-radius: 20px;
             width: 100%;
         }
-        li {
-            display: block;
-        }
-        #ing
-        {
-            margin: auto;
-            font-size: 120%;
-            width:30%;
-        }
-        #tis
-        {
-            font-size: 120%;
-            width:50%;
-            margin: auto;
-        }
-        #val
-        {
-            margin: auto;
-            padding-bottom: 0;
-            width: 30rem;
-        }
-        #com
-        {
-            padding: 1%;
-            margin: auto;
-            background-color: #f3f3f3;
-            width: 35rem;
 
-        }
-        #commo {
-            margin: auto;
-        }
-        #aut {
-            width: 30rem;
-            font-size: 120%;
-            margin: auto;
-        }
 
 
     </style>
     <br>
+    <div class="container">
     <div class="card-text text-center">
         <h1>{{$ricettas['nome']}}</h1>
     </div>
     <br>
-
+        <br>
         <div class="row">
-            <div class="col">
-                <div id="ing" class="card"> <h3> Ingredienti : </h3>
-                    <div> {{$ricettas['ingredienti']}}</div>
-                </div>
-            </div>
-            <div class="col">
+            <div class="col-12 col-md-8">
                 <div  class="card-img">
                     <img id="imgg" src="{{url('/ricette/'.$ricettas['immagine'])}}">
                 </div>
+
+
             </div>
             <div class="col">
+                <div>
+                    <br>
+                    <div class="card"> <!-- Inizio Sezione autore -->
+                        <h3>Autore</h3>
+                        <div> Username: {{$autore['username']}}</div>
+                        Associazione: {{$associazione['nome']}}
 
-                <div id="val" class="card" > <!-- Inizio Sezione valutazioni -->
-                    <h3> Valutazione Media: {{$media}}</h3>
+                    </div>
+                    <hr>
+                   <div class="card"><h3> Valutazione Media: {{$media}}</h3>
                     @if(Auth::check())
                         @if(Auth::user()->Utente_Ricetta!= null && $votoPersonale!=0)
                             <h2>Il tuo voto: {{$votoPersonale}}</h2>
@@ -87,35 +55,41 @@
                                     <input type="hidden" name="r_id" value={{$ricettas['id']}}>
                                     <button type="submit"  class="btn btn-primary">Vota</button>
                                 </form>
+
                             </div>
                         @endif
                     @endif
                     <p> <h3>Numero voti: {{$conto}}</p>
+
                 </div> <!-- Fine Sezione valutazioni -->
+                </div>
+
+
 
                 <br>
-                <div id="aut" class="card"> <!-- Inizio Sezione autore -->
-                    <h3>Autore</h3>
-                    <div> Username: {{$autore['username']}}</div>
-                    Associazione: {{$associazione['nome']}}
-                </div> <!-- Fine Sezione autore -->
+
             </div>
         </div>
 
+<br>
+        <div class="card">
+           <h3> Ingredienti : </h3>
+            {{$ricettas['ingredienti']}}
+        </div>
 
     <br>
-    <div id="tis" class="card-text"> <h3> Preparazione : </h3>
+    <div class="card"> <h3> Preparazione : </h3>
         <div>  {{$ricettas['preparazione']}}</div>
     </div>
     <!-- Fine Sezione ricetta -->
 
 
     <br>
-    <div id="com" class="card"> <!-- Inizio Sezione commenti -->
+    <div class="card"> <!-- Inizio Sezione commenti -->
         <h3>Commenti:</h3> <br>
 
         @foreach($commentos as $commento)
-            <div id="commo" class="card" style="width: 30rem;">
+            <div class="card"">
                 <div>
                     <h5>{{$commento['username']}} </h5>
                 </div>
@@ -125,9 +99,10 @@
                 </div>
             </div>
             <br>
+        <br>
 
         @endforeach
-
+        @if(Auth::check())
         <form method="GET" action="{{route('creacommento')}}">
             <input type="hidden" name="ricetta_id" class="form-control" required value="{{$ricettas['id']}}">
             <div class="form-group">
@@ -136,11 +111,9 @@
             <br>
             <button type="submit" class="btn btn-primary">Pubblica</button>
         </form>
-    </div> <!-- Fine Sezione commenti -->
+            @endif
+
 
     <br>
-
-
-    </li>
 @endsection
 
