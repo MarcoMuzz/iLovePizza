@@ -9,6 +9,11 @@
             font-size: 115%;
             width:75%;
         }
+        .card-text
+        {
+            margin: 0 auto;
+            width:75%;
+        }
 
         .vl {
             border: 1px solid black;
@@ -47,9 +52,6 @@
 
             }
         }
-
-
-
 
 
     </style>
@@ -99,13 +101,15 @@
                    </form>
                @endif
            @endif
+
+
            </div>
 
        </div>
 
    </div >
 
-   <div id="div2" class="card-text "><p><h2>Contenuto :</h2> {{$consiglios['contenuto']}}</p></div>
+   <div id="div2" class="card-text"><p><h2>Contenuto :</h2> {{$consiglios['contenuto']}}</p></div>
 
     <div class="card-text text-center">
         <a> <img style="width: 75%; border-radius: 25px" src="{{$consiglios['immagine']}}"></a>

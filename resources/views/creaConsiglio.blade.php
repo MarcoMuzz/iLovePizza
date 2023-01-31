@@ -28,19 +28,17 @@
                     <input type="text" id="title" name="nome" class="form-control" required>
                 </div>
 
-
+                <br>
                 <div class="form-group">
                     <label>Contenuto</label>
                     <textarea name="contenuto" class="form-control" required></textarea>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
                     <input  type="text" name="immagine" class="form-control" required>
                 </div>
-
-
-
+                <br>
                 <button type="submit" class="btn btn-primary">Pubblica</button>
             </form>
         </div>
