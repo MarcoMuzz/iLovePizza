@@ -37,9 +37,9 @@ class invitoController extends Controller
 
     public function inserisciMail(){
 
-        //$capoDi=Auth::user()->Associazione;
+        $inviti=Invito::all();
 
-        return view('invito');
+        return view('invito',['inviti'=>$inviti]);
 
     }
 

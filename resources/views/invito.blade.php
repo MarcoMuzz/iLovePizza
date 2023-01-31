@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Test')
+@section('title', 'Invito')
 @section('content')
 
     <style>
@@ -54,6 +54,32 @@
                 <button  type="submit" class="btn btn-primary">Invia invito</button>
             </form>
         </div>
+    </div>
+<br>
+    <div class="card align-content-center">
+
+        <p >Inviti in attesa di essere accettati:</p>
+        <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Email</th>
+            <th scope="col">Data creazione</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($inviti as $invito)
+        <tr>
+            <td>{{$invito['utente_mail']}}</td>
+            <td>{{$invito['created_at']}}</td>
+        </tr>
+        @endforeach
+        </tbody>
+        </table>
+
+
+
+
+
     </div>
 
 
