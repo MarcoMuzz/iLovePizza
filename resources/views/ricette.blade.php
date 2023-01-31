@@ -35,13 +35,13 @@
             }
         }
 
+
     </style>
     <div class="container">
+
+        <div class="pagi">{!!$ricettas->links()!!} </div>
     @foreach($ricettas as $ricetta)
         <br>
-
-
-
         <div class="card">
             <img src="{{ $ricetta['immagine']}}" class="card-img-top" />
             <div class="card-body">
@@ -70,5 +70,7 @@
 
 
     @endforeach
-</div>
+        <br>
+
+
     @endsection

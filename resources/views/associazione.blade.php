@@ -2,6 +2,95 @@
 @section('title', 'associazione')
 
 @section('content')
+    <style>
+.scroll{
+
+    overflow:scroll;
+    height:600px;
+}
+
+    </style>
+
+    <div class="container">
+      <div class="text-center"><h1>{{$associaziones['nome']}}<br></h1> </div>
+        <div class="text-center"><h2>Lista Membri<br></h2> </div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Nome</th>
+                <th scope="col">Cognome</th>
+                <th scope="col">Username</th>
+                <th scope="col">Ruolo</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($membri as $membro)
+            <tr>
+                <td> {{$membro['nome']}}</td>
+                <td>{{$membro['cognome']}}</td>
+                <td>{{$membro['username']}}</td>
+                <td> @switch($membro['ruolo'])
+                        @case(1)
+                            Membro
+                            @break
+
+                        @case(2)
+                            Moderatore
+                            @break
+
+                        @case(3)
+                            Capo
+                            @break
+                    @endswitch</td>
+            </tr>
+            @endforeach
+            </tbody>
+        </table>
+
+        <div class="row">
+            <div  class="col-sm-6 col-md-4 scroll">
+                <h1>Ricette:</h1>
+
+                @foreach($ricette as $ricetta)
+                    <div class="card">
+                        <img src="{{$ricetta['immagine']}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$ricetta['nome']}}</h5>
+                            <p class="card-text">Lorem Ipssum dolor</p>
+                            <a href="{{route('ricetta',['id'=> $ricetta['id'] ])}}" class="btn btn-primary">Guarda</a>
+                        </div>
+                    </div>
+                    <br><br>
+                @endforeach
+<hr>
+            </div>
+            <div class="col-sm-6 col-md-4 "></div>
+            <div class="col-sm-6 col-md-4 scroll">
+                <h1>Consigli:</h1>
+                @foreach($consigli as $consiglio)
+                    <div class="card">
+                        <img src="{{$consiglio['immagine']}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$consiglio['nome']}}</h5>
+                            <p class="card-text">Lorem Ipssum dolor</p>
+                            <a href="{{route('consiglio',['id'=> $consiglio['id'] ])}}" class="btn btn-primary">Guarda</a>
+                        </div>
+                    </div>
+                    <br><br>
+                @endforeach
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+    {{--
     <h1>{{$associaziones['nome']}}<br></h1>
     <div>capo : {{$capo['username']}}<br></div>
     <div>{{$capo['nome']}} {{$capo['cognome']}}<br></div>
@@ -61,6 +150,9 @@
             <a href="{{route('consiglio',['id'=>$consiglio['id']])}}">Continua a leggere</a>
             <br/>____________________________________________________<br>
         @endforeach
+
+
     </div>
+    --}}
 @endsection
 
