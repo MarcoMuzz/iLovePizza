@@ -75,11 +75,6 @@
                 </div>
 
 
-                <div class="form-group">
-                    <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
-                    <textarea name="immagine" class="form-control" required>{{$ricetta['immagine']}}</textarea>
-                </div>
-
                 <input  type="hidden" name="id" value="{{$ricetta['id']}}">
                 <button type="submit" class="btn btn-primary">Applica modifica</button>
             </form>

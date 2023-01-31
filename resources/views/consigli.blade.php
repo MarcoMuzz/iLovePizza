@@ -65,7 +65,7 @@
 
 
           <div class="card">
-              <img src="{{ $consiglio['immagine']}}" class="card-img-top"/>
+              <img src="{{url('/cons/'.$consiglio['immagine'])}}" class="card-img-top"/>
               <div class="card-body">
                   <h2 class="card-title">{{ $consiglio['nome']}}</h2>
                   <h5 class="card-text">

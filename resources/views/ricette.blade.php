@@ -60,7 +60,7 @@
     @foreach($ricettas as $ricetta)
         <br>
         <div class="card">
-            <img src="{{ $ricetta['immagine']}}" class="card-img-top" />
+            <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" />
             <div class="card-body">
                 <h2 class="card-title">{{ $ricetta['nome']}}</h2>
                 <h5 class="card-text">

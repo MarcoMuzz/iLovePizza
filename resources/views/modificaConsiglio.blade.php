@@ -35,11 +35,6 @@
                     <textarea name="contenuto" class="form-control" required>{{$consiglio['contenuto']}}</textarea>
                 </div>
 
-                <div class="form-group">
-                    <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
-                    <textarea name="immagine" class="form-control" required>{{$consiglio['immagine']}}</textarea>
-                </div>
-
 
                 <input  type="hidden" name="id" value="{{$consiglio['id']}}">
                 <button type="submit" class="btn btn-primary">Applica modifiche</button>

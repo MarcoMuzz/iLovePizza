@@ -42,7 +42,7 @@
                 <div class="card" style="width: 25rem;display:inline-flex">
             <h2>{{ $ricetta['nome']}}</h2>
             <p> written by: {{$ricetta['username']}} </p>
-            <p><img style="max-width: 80%" src="{{ $ricetta['immagine']}}"><br/></p>
+            <p><img style="max-width: 80%" src="{{url('/ricette/'.$ricetta['immagine'])}}"><br/></p>
             @if($ricetta['napoletana'] == 1) Pizza Napoletana
             @endif
             @if($ricetta['romana'] == 1) Pizza Romana
@@ -74,7 +74,7 @@
                     <div class="card" style="width: 25rem;display:inline-flex">
                     <h2>{{ $consiglio['nome']}}</h2>
                     <p> written by: {{$consiglio['username']}} </p>
-                    <p><img style="max-width: 80%" src="{{ $consiglio['immagine']}}"><br/></p>
+                    <p><img style="max-width: 80%" src="{{url('/cons/'.$consiglio['immagine'])}}"><br/></p>
                     <a href="{{route('consiglio',['id'=>$consiglio['id']])}}">Continua a leggere</a>
                     <br>
                     <a class="button" href=" {{route('modificaConsiglio',['id'=>$consiglio['id']])}}">Modifica</a>

@@ -44,7 +44,11 @@ class consigliController extends Controller
     {
         $consiglio = new Consiglio;
         $consiglio->nome = $request->nome;
-        $consiglio->immagine = $request->immagine;
+        $file = $request->file('immagine');
+        $estensione =$request->file('immagine')->getClientOriginalExtension();
+        $nomefile = time().'.'.$estensione;
+        $file->move('cons', $nomefile);
+        $consiglio->immagine=$nomefile;
         $consiglio->contenuto = $request->contenuto;
         $consiglio->utente_id = Auth::user()->id;
 
@@ -71,8 +75,7 @@ class consigliController extends Controller
     {
         Consiglio::find($request->id)->update([
             'nome'=>$request->nome,
-            'contenuto'=>$request->contenuto,
-            'immagine'=>$request->immagine
+            'contenuto'=>$request->contenuto
         ]);
 
         return redirect()->route('moderaContenuti')->with('status', 'Consiglio modificato');

@@ -21,7 +21,7 @@
             Crea una nuova ricetta
         </div>
         <div class="card-body">
-            <form method="GET" action="{{route('storericetta')}}">
+            <form method="POST" action="{{route('storericetta')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Nome</label>
@@ -75,8 +75,8 @@
 
                 <br>
                 <div class="form-group">
-                    <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
-                    <input  type="text" name="immagine" class="form-control" required>
+                    <label>Immagine</label>
+                    <input type="file" name="immagine" class="form-control" required>
                 </div>
 
                 <br>

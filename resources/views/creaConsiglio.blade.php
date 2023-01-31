@@ -21,7 +21,7 @@
             Crea un nuovo consiglio
         </div>
         <div class="card-body">
-            <form method="GET" action="{{route('storeconsiglio')}}">
+            <form method="POST" action="{{route('storeconsiglio')}}"  enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label>Nome</label>
@@ -35,8 +35,8 @@
                 </div>
                 <br>
                 <div class="form-group">
-                    <label>Immagine (inserire il link dell'immagine, può essere hostata su imgbox.com) </label>
-                    <input  type="text" name="immagine" class="form-control" required>
+                    <label>Immagine</label>
+                    <input type="file" name="immagine" class="form-control" required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Pubblica</button>

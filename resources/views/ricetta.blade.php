@@ -70,7 +70,7 @@
             </div>
             <div class="col">
                 <div  class="card-img">
-                    <img id="imgg" src="{{$ricettas['immagine']}}">
+                    <img id="imgg" src="{{url('/ricette/'.$ricettas['immagine'])}}">
                 </div>
             </div>
             <div class="col">

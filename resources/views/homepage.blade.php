@@ -32,7 +32,7 @@
         @foreach($napoletana as $pizzanapoletana)
 
                 <div class="card" style="width: 25rem; display:inline-flex">
-                    <img src="{{$pizzanapoletana['immagine']}}" class="card-img-top" alt="...">
+                    <img src="{{url('/ricette/'.$pizzanapoletana['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzanapoletana['nome']}}</h5>
                         <p class="card-text">Lorem Ipssum dolor</p>
@@ -52,7 +52,7 @@
         <h2>Pizze Romane</h2>
         @foreach($romana as $pizzaromana)
                 <div class="card" style="width: 25rem; display:inline-flex">
-                    <img src="{{$pizzaromana['immagine']}}" class="card-img-top" alt="...">
+                    <img src="{{url('/ricette/'.$pizzaromana['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaromana['nome']}}</h5>
                         <p class="card-text">Lorem Ipssum dolor</p>
@@ -73,7 +73,7 @@
             <h2>Pizze resto'dItalia</h2>
         @foreach($resto as $pizzaresto)
                 <div class="card" style="width: 25rem; display:inline-flex">
-                    <img src="{{$pizzaresto['immagine']}}" class="card-img-top" alt="...">
+                    <img src="{{url('/ricette/'.$pizzaresto['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaresto['nome']}}</h5>
                         <p class="card-text">Lorem Ipssum dolor</p>
@@ -93,7 +93,7 @@
             <h2>Pizze Internazionali</h2>
         @foreach($internazionale as $pizzaInternazionale)
                 <div class="card" style="width: 25rem;display:inline-flex">
-                    <img src="{{$pizzaInternazionale['immagine']}}" class="card-img-top" alt="...">
+                    <img src="{{url('/ricette/'.$pizzaInternazionale['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaInternazionale['nome']}}</h5>
                         <p class="card-text">Lorem Ipssum dolor</p>

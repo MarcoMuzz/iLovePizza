@@ -24,7 +24,7 @@ class RicettaSeeder extends Seeder
                 'resto' => 0,
                 'internazionale' => 0,
                 'cottura' => 'fornoalegna',
-                'immagine' => 'https://static.gamberorosso.it/2019/09/pizza-romana-e1568103827939.jpg',
+                'immagine' => 'pizza1.jpg',
                 'utente_id' => rand(5, 11)
             ]);
         Ricetta::create([
@@ -36,7 +36,7 @@ class RicettaSeeder extends Seeder
             'resto' => 0,
             'internazionale' => 0,
             'cottura' => 'fornoalegna',
-            'immagine' => 'https://media-cdn.tripadvisor.com/media/photo-s/0f/d7/a5/d0/pizza-capricciosa.jpg',
+            'immagine' => 'pizza2.jpg',
             'utente_id' => rand(5, 11)
         ]);
 
@@ -49,7 +49,7 @@ class RicettaSeeder extends Seeder
             'resto' => 0,
             'internazionale' => 0,
             'cottura' => 'fornoalegna',
-            'immagine' => 'https://www.lalievita.it/wp-content/uploads/2020/05/pizzeria-la-lievita-pizza-a-domicilio-e-da-asporto-boscaiola-uscita-dal-forno.jpg',
+            'immagine' => 'pizza3.jpg',
             'utente_id' => rand(5, 11)
         ]);
 
@@ -64,7 +64,7 @@ class RicettaSeeder extends Seeder
             'resto'=> 0,
             'internazionale'=>0,
             'cottura' => 'fornoalegna',
-            'immagine'=> 'https://foodle.pro/meals-images/2019-05-10-13-02-22-03055aea3f35d745c688df1aa84f9947.jpg',
+            'immagine'=> 'pizza4.jpg',
             'utente_id'=> rand(12,18)
         ]);
 
@@ -78,7 +78,7 @@ class RicettaSeeder extends Seeder
             'resto'=> 0,
             'internazionale'=>0,
             'cottura' => 'fornoalegna',
-            'immagine'=> 'https://latteriasorrentina.com/wp-content/uploads/2019/06/come-fare-la-vera-pizza-1764x882.jpg',
+            'immagine'=> 'pizza5.jpg',
             'utente_id'=> rand(12,18)
         ]);
 
@@ -92,7 +92,7 @@ class RicettaSeeder extends Seeder
             'resto'=> 0,
             'internazionale'=>0,
             'cottura' => 'fornoalegna',
-            'immagine'=> 'https://www.tasteatlas.com/images/dishes/e6f2310a7ffe4904bc9826bfc77ee11f.jpg',
+            'immagine'=> 'pizza6.jpg',
             'utente_id'=> rand(12,18)
         ]);
 
@@ -109,7 +109,7 @@ class RicettaSeeder extends Seeder
                 'resto'=> 1,
                 'internazionale'=>0,
                 'cottura' => 'fornoelettrico',
-                'immagine'=> 'https://www.dolcidee.it/media/uploads/recipe/62a493734e7dc_tmpb1fe878a9d2d497b805fe901e901027d.jpg',
+                'immagine'=> 'pizza7.jpg',
                 'utente_id'=> rand(19,25)
             ]);
 
@@ -122,7 +122,7 @@ class RicettaSeeder extends Seeder
             'resto'=> 1,
             'internazionale'=>0,
             'cottura' => 'fornoelettrico',
-            'immagine'=> 'https://www.giochidigusto.it/wp-content/uploads/2021/02/trancio-senza-mozzarella-1.jpg',
+            'immagine'=> 'pizza8.jpg',
             'utente_id'=> rand(19,25)
         ]);
 
@@ -135,7 +135,7 @@ class RicettaSeeder extends Seeder
             'resto'=> 1,
             'internazionale'=>0,
             'cottura' => 'fornoelettrico',
-            'immagine'=> 'https://media-assets.lacucinaitaliana.it/photos/61fae816034a68e68c6375e0/4:3/w_1512,h_1134,c_limit/pizza-con-olive-e-nduja.jpg',
+            'immagine'=> 'pizza9.jpg',
             'utente_id'=> rand(19,25)
         ]);
 
@@ -151,7 +151,7 @@ class RicettaSeeder extends Seeder
                 'resto'=> 0,
                 'internazionale'=>1,
                 'cottura' => 'fornoelettrico',
-                'immagine'=> 'https://media-assets.lacucinaitaliana.it/photos/61fbd90ad70ea601fe205d23/3:2/w_1200,h_800,c_limit/pizza-con-ananas-origini.jpg',
+                'immagine'=> 'pizza10.webp',
                 'utente_id'=> rand(26,32)
             ]);
 
@@ -164,7 +164,7 @@ class RicettaSeeder extends Seeder
             'resto'=> 0,
             'internazionale'=>1,
             'cottura' => 'fornoelettrico',
-            'immagine'=> 'https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/ep10-korea-recipe-bulgogi-beef-pizza-cu.jpg?itok=FiQJFvUa',
+            'immagine'=> 'pizza11.jpg',
             'utente_id'=> rand(26,32)
         ]);
 
@@ -177,7 +177,7 @@ class RicettaSeeder extends Seeder
             'resto'=> 0,
             'internazionale'=>1,
             'cottura' => 'fornoelettrico',
-            'immagine'=> 'https://images-gmi-pmc.edge-generalmills.com/fea4cf15-06a3-4de3-8b2f-0cd8a6a9a80d.jpg',
+            'immagine'=> 'pizza12.jpg',
             'utente_id'=> rand(26,32)
         ]);
 

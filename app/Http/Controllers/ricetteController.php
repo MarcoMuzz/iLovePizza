@@ -94,7 +94,11 @@ class ricetteController extends Controller
                 break;
         }
         $ricetta->cottura = $request->cottura;
-        $ricetta->immagine = $request->immagine;
+        $file = $request->file('immagine');
+        $estensione =$request->file('immagine')->getClientOriginalExtension();
+        $nomefile = time().'.'.$estensione;
+        $file->move('ricette', $nomefile);
+        $ricetta->immagine=$nomefile;
         $ricetta->utente_id = Auth::user()->id;
 
         $ricetta->save();
@@ -141,7 +145,6 @@ class ricetteController extends Controller
             'nome'=>$request->nome,
             'ingredienti'=>$request->ingredienti,
             'preparazione'=>$request->preparazione,
-            'immagine'=>$request->immagine,
             'romana'=>$romana,
             'napoletana'=>$napoletana,
             'resto'=>$resto,

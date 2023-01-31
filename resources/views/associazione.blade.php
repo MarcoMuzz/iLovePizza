@@ -59,7 +59,7 @@
 
                 @foreach($ricette as $ricetta)
                     <div class="card">
-                        <img src="{{$ricetta['immagine']}}" class="card-img-top" alt="...">
+                        <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$ricetta['nome']}}</h5>
                             <p class="card-text">Lorem Ipssum dolor</p>
@@ -77,7 +77,7 @@
                 <div class="scroll">
                 @foreach($consigli as $consiglio)
                     <div class="card">
-                        <img src="{{$consiglio['immagine']}}" class="card-img-top" alt="...">
+                        <img  src="{{url('/cons/'.$consiglio['immagine'])}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$consiglio['nome']}}</h5>
                             <p class="card-text">Lorem Ipssum dolor</p>

@@ -81,10 +81,10 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
         Route::get('/crearicetta', [ricetteController::class, 'creaRicetta'])->name('crearicetta');
-        Route::get('/storericetta', [ricetteController::class, 'storeRicetta'])->name('storericetta');
+        Route::POST('/storericetta', [ricetteController::class, 'storeRicetta'])->name('storericetta');
 
         Route::get('/creaconsiglio', [consigliController::class, 'creaConsiglio'])->name('creaconsiglio');
-        Route::get('/storeconsiglio', [consigliController::class, 'storeConsiglio'])->name('storeconsiglio');
+        Route::POST('/storeconsiglio', [consigliController::class, 'storeConsiglio'])->name('storeconsiglio');
 
     });
 

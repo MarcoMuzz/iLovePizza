@@ -10,7 +10,7 @@
         <h2>Ricette</h2>
             @foreach($ricettas as $ricetta)
             <div class="card" style="width: 25rem;display:inline-flex">
-                <img src="{{$ricetta['immagine']}}" class="card-img-top" alt="...">
+                <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$ricetta['nome']}}</h5>
                     <p class="card-text">Lorem Ipssum dolor</p>
@@ -30,11 +30,11 @@
             <h2>Consigli</h2>
             @foreach($consiglios as $consiglio)
                 <div class="card" style="width: 25rem;display:inline-flex">
-                    <img src="{{$consiglio['immagine']}}" class="card-img-top" alt="...">
+                    <img src="{{url('/cons/'.$consiglio['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$consiglio['nome']}}</h5>
                         <p class="card-text">Lorem Ipssum dolor</p>
-                        <a href="{{route('ricetta',['id'=> $consiglio['id'] ])}}" class="btn btn-primary">Guarda</a>
+                        <a href="{{route('consiglio',['id'=> $consiglio['id'] ])}}" class="btn btn-primary">Guarda</a>
                     </div>
                 </div>
                 <hr>

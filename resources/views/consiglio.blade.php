@@ -112,7 +112,7 @@
    <div id="div2" class="card-text"><p><h2>Contenuto :</h2> {{$consiglios['contenuto']}}</p></div>
 
     <div class="card-text text-center">
-        <a> <img style="width: 75%; border-radius: 25px" src="{{$consiglios['immagine']}}"></a>
+        <a> <img style="width: 75%; border-radius: 25px" src="{{url('/cons/'.$consiglios['immagine'])}}"></a>
     </div>
 </div>
 @endsection
