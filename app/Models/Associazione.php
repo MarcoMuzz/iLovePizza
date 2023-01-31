@@ -18,6 +18,7 @@ class Associazione extends Model
         'napoletana',
         'resto',
         'internazionale',
+        'descrizione',
         'utente_id',
         ];
 

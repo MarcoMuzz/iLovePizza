@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('napoletana')->default('0');
             $table->boolean('resto')->default('0');
             $table->boolean('internazionale')->default('0');
+            $table->mediumText('descrizione');
             $table->index('utente_id');
             $table->foreignId('utente_id')->references('id')->on('utentes')->onDelete('cascade');
             $table->timestamps();

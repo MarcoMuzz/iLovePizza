@@ -73,6 +73,7 @@ class associazioneController extends Controller
     if($request->romana == 'on') $associazione->romana = 1;
     if($request->resto == 'on') $associazione->resto = 1;
     if($request->internazionale == 'on') $associazione->internazionale = 1;
+    $associazione->descrizione = $request->descrizione;
     $associazione->utente_id = Auth::user()->id;
     $associazione->save();
 

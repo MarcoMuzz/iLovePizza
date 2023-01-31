@@ -21,6 +21,10 @@
                         <label>Nome</label>
                         <input type="text" id="title" name="nome" class="form-control" required>
                     </div>
+                    <div class="form-group">
+                        <label>Descrizione</label>
+                        <input type="text" id="descrizione" name="descrizione" class="form-control" required>
+                    </div>
                     <div class="tipologie">
                         <label>Seleziona la/e tipologia/e di Pizze di cui si occupa la tua Associazione:</label><br>
                     <input type="checkbox" name="napoletana">Napoletana<br>

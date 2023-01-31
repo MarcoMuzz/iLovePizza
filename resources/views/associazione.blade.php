@@ -12,7 +12,12 @@
     </style>
 
     <div class="container">
+
       <div class="text-center"><h1>{{$associaziones['nome']}}<br></h1> </div>
+        <p>{{$associaziones['descrizione']}}
+
+
+        </p>
         <div class="text-center"><h2>Lista Membri<br></h2> </div>
         <table class="table">
             <thead>
