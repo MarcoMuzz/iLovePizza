@@ -15,20 +15,23 @@
             margin: 2%;
         }
 
-        @media screen and (max-width: 950px) {
-            .container-lg {
-                display: inline-block;
+        @media screen and (max-width: 768px) {
+            .container {
+                display:inline-flex;
             }
             .row{
-                width:75%;
+                width:100%;
                 margin-bottom: 3%;
+            }
+            .col{
+                width:100%;
             }
         }
 
     </style>
 
 
-    <div class="container-lg">
+    <div class="container">
 
         @if(session('status'))
             <div class="alert alert-success">
@@ -36,7 +39,7 @@
             </div>
         @endif
         <div class="row">
-            <div class="col text-center">
+            <div class="col-sm text-center">
 
 
         <h1>Ricette</h1>
@@ -73,7 +76,7 @@
             </div>
 
 
-            <div class="col text-center">
+            <div class="col-sm text-center">
                 <h1>Consigli</h1>
 
                 @if($consigli=='[]')

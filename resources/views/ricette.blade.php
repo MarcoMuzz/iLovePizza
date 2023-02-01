@@ -25,9 +25,6 @@
             color: grey;
         }
         @media only screen and (max-width: 768px) {
-            a {
-                display: none;
-            }
             .card-body {
                 padding: 0.5em 1.2em;
             }
@@ -38,7 +35,7 @@
                 width: 100%;
             }
             .card{
-                width: 75%;
+                width: 100%;
                 flex-direction: column;
             }
 

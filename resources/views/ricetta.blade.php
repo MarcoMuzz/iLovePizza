@@ -52,7 +52,7 @@
                             <h2>Il tuo voto: {{$votoPersonale}}</h2>
                         @else
                             <div> <p> Dai un voto </p>
-                                <form method="get" action="{{route('votaRicetta')}}">
+                                <form method="POST" action="{{route('votaRicetta')}}">
                                     <input type="range" name="voto" min="1" max="5" value="4">
                                     <input type="hidden" name="r_id" value={{$ricettas['id']}}>
                                     <button type="submit"  class="btn btn-primary">Vota</button>
@@ -106,11 +106,10 @@
 
 
     <br>
-    <div class="card"> <!-- Inizio Sezione commenti -->
         <h3>Commenti:</h3> <br>
-
+        <div class="card">
         @foreach($commentos as $commento)
-            <div class="card"">
+                <div class="card">
                 <div>
                     <h5>{{$commento['username']}} </h5>
                 </div>
@@ -118,13 +117,13 @@
                 <div class="card-text">
                     {{$commento['contenuto']}} <span style="float: right">{{$commento['created_at']}}</span>
                 </div>
-            </div>
+                </div>
             <br>
         <br>
 
         @endforeach
         @if(Auth::check())
-        <form method="GET" action="{{route('creacommento')}}">
+        <form method="get" action="{{route('creacommento')}}">
             <input type="hidden" name="ricetta_id" class="form-control" required value="{{$ricettas['id']}}">
             <div class="form-group">
                 <input type="text" name="contenuto" class="form-control" value="{{Request::get('contenuto')}}" required placeholder="Scrivi il tuo commento... ">
@@ -133,6 +132,8 @@
             <button type="submit" class="btn btn-primary">Pubblica</button>
         </form>
             @endif
+    </div>
+
 
 
     <br>

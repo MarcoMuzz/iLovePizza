@@ -17,7 +17,7 @@
                 Crea un'Associazione
             </div>
             <div class="card-body">
-                <form method="GET" action="{{route('storeassociazione')}}">
+                <form method="POST" action="{{route('storeassociazione')}}">
                     @csrf
                     <div class="form-group">
                         <label>Nome</label>
@@ -28,7 +28,7 @@
                         <input type="text" id="descrizione" name="descrizione" class="form-control" required>
                     </div>
                     <div class="tipologie">
-                        <label>Seleziona la/e tipologia/e di Pizze di cui si occupa la tua Associazione:</label><br>
+                        <label>Seleziona la/e tipologia/e di Pizze di cui si occupa la tua Associazione(almeno una):</label><br>
                     <input type="checkbox" name="napoletana">Napoletana<br>
                     <input type="checkbox" name="romana">Romana<br>
                     <input type="checkbox" name="resto">Pizze dal resto dell'Italia<br>

@@ -84,7 +84,7 @@
            <div class="diiv">
            @if(Auth::check())
                @if(Auth::user()->Utente_Consiglio->where('consiglio_id',$consiglios['id'])->first()!=null)
-                   <form method="get" action="{{route('rimuoviVotoConsiglio')}}">
+                   <form method="POST" action="{{route('rimuoviVotoConsiglio')}}">
                        <input type="hidden" name="c_id" value={{$consiglios['id']}}>
                        <button type="submit" dusk="bottoneCuore" class="btn btn-danger">
                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
@@ -93,7 +93,7 @@
                        </button>
                    </form>
                @else
-                   <form method="get" action="{{route('votaConsiglio')}}">
+                   <form method="POST" action="{{route('votaConsiglio')}}">
                        <input type="hidden" name="c_id" value={{$consiglios['id']}}>
                        <button type="submit" dusk="bottoneCuore" class="btn btn-outline-danger">
                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">

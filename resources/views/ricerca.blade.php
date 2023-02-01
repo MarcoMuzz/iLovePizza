@@ -5,6 +5,18 @@
     Autore: Musciacchio
     -->
 
+    <style>
+        @media only screen and (max-width: 768px) {
+        .card{
+            width:100%;
+        }
+
+        }
+
+
+
+    </style>
+
 <div class="container-lg">
     <h2>Risultati per "{{$ricerca}}"...</h2><br><br><br>
     <div class="row">
@@ -15,7 +27,7 @@
                 <p>Nessuna ricetta trovata</p>
             @endif
             @foreach($ricettas as $ricetta)
-            <div class="card" style="width: 25rem;display:inline-flex">
+            <div class="card">
                 <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$ricetta['nome']}}</h5>
@@ -38,7 +50,7 @@
                 <p>Nessun consiglio trovato</p>
             @endif
             @foreach($consiglios as $consiglio)
-                <div class="card" style="width: 25rem;display:inline-flex">
+                <div class="card">
                     <img src="{{url('/cons/'.$consiglio['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$consiglio['nome']}}</h5>
@@ -61,7 +73,7 @@
                 <p>Nessuna associazione trovata</p>
             @endif
             @foreach($associaziones as $associazione)
-            <div class="card  text-center" style="flex:40%;margin: 3px">
+            <div class="card  text-center">
                 <div class="card-body">
                     <h3 class="card-title">{{ $associazione['nome']}}</h3>
                     <a href="{{route('associazione',['id'=>$associazione['id']])}}" class="btn btn-primary">Visita</a>

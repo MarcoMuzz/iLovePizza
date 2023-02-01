@@ -10,6 +10,17 @@
             height:250px;
             width:auto;
         }
+
+        .card{
+            display:inline-flex;
+            width:33%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .card {
+                width:100%;
+            }
+        }
     </style>
 
 
@@ -34,7 +45,7 @@
         <h6>La pizza napoletana con pasta morbida e sottile, ma dai bordi alti, è la versione della pizza tonda preparata nella città di Napoli. Dal 5 febbraio 2010 è ufficialmente riconosciuta come Specialità Tradizionale Garantita(STG) dell'Unione Europea e nel 2017 l'arte del pizzaiuolo napoletano, di cui la pizza napoletana è il prodotto tangibile, è stata dichiarata dall'UNESCO come patrimonio immateriale dell'umanità.</h6>
         @foreach($napoletana as $pizzanapoletana)
 
-                <div class="card" style="width: 25rem; display:inline-flex">
+                <div class="card">
                     <img src="{{url('/ricette/'.$pizzanapoletana['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzanapoletana['nome']}}</h5>
@@ -54,7 +65,7 @@
         <div class="container-md">
         <h2>Pizze Romane</h2>
         @foreach($romana as $pizzaromana)
-                <div class="card" style="width: 25rem; display:inline-flex">
+                <div class="card">
                     <img src="{{url('/ricette/'.$pizzaromana['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaromana['nome']}}</h5>
@@ -75,7 +86,7 @@
         <div class="container-md">
             <h2>Pizze resto'dItalia</h2>
         @foreach($resto as $pizzaresto)
-                <div class="card" style="width: 25rem; display:inline-flex">
+                <div class="card">
                     <img src="{{url('/ricette/'.$pizzaresto['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaresto['nome']}}</h5>
@@ -95,7 +106,7 @@
         <div class="container-md">
             <h2>Pizze Internazionali</h2>
         @foreach($internazionale as $pizzaInternazionale)
-                <div class="card" style="width: 25rem;display:inline-flex">
+                <div class="card">
                     <img src="{{url('/ricette/'.$pizzaInternazionale['immagine'])}}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{$pizzaInternazionale['nome']}}</h5>

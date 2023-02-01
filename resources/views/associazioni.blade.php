@@ -9,11 +9,22 @@
     height:250px;
     width:auto;
     }
+
+    .card{
+        flex:40%;
+        margin:3px;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .card {
+            flex:100%;
+        }
+    }
     </style>
-    <div class="container-lg d-flex" style="flex-wrap: wrap">
+    <div class="container d-flex" style="flex-wrap: wrap">
     @foreach($associaziones as $associazione)
             <br>
-            <div class="card  text-center" style="flex:40%;margin: 3px">
+            <div class="card  text-center">
                 <div class="card-body">
                     <h2 class="card-title">{{ $associazione['nome']}}</h2>
                     @foreach($capos as $capo)

@@ -51,10 +51,10 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
     Route::get('/commentocreato', [commentoController::class, 'CreaCommento'])->name('creacommento');//Autore: Venuto
     Route::get('/profilo', [profiloController::class, 'getProfilo'])->name('profilo'); //Autore: Stingi
     Route::get('/creaassociazione', [associazioneController::class, 'creaAssociazione'])->name('creaassociazione');//Autore: Stingi
-    Route::get('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');//Autore: Stingi
-    Route::get('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta'); //Autore: Musciacchio
-    Route::get('/votaConsiglio', [consigliController::class, 'votaConsiglio'])->name('votaConsiglio');//Autore: Venuto
-    Route::get('/rimuoviVotoConsiglio', [consigliController::class, 'rimuoviVotoConsiglio'])->name('rimuoviVotoConsiglio');//Autore: Venuto
+    Route::POST('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');//Autore: Stingi
+    Route::POST('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta'); //Autore: Musciacchio
+    Route::POST('/votaConsiglio', [consigliController::class, 'votaConsiglio'])->name('votaConsiglio');//Autore: Venuto
+    Route::POST('/rimuoviVotoConsiglio', [consigliController::class, 'rimuoviVotoConsiglio'])->name('rimuoviVotoConsiglio');//Autore: Venuto
 
 
 
@@ -75,11 +75,11 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
 
         Route::post('/moderaContenuti/eliminaRicetta', [ricetteController::class, 'eliminaRicetta'])->name('eliminaRicetta');
         Route::get('/moderaContenuti/modificaRicetta/{id}', [ricetteController::class, 'modificaRicetta'])->name('modificaRicetta');
-        Route::get('/moderaContenuti/aggiornaRicetta',[ricetteController::class, 'updateRicetta'])->name('updateRicetta');
+        Route::POST('/moderaContenuti/aggiornaRicetta',[ricetteController::class, 'updateRicetta'])->name('updateRicetta');
 
         Route::post('/moderaContenuti/eliminaConsiglio', [consigliController::class, 'eliminaConsiglio'])->name('eliminaConsiglio');
         Route::get('/moderaContenuti/modificaConsiglio/{id}', [consigliController::class, 'modificaConsiglio'])->name('modificaConsiglio');
-        Route::get('/moderaContenuti/aggiornaConsiglio',[consigliController::class, 'updateConsiglio'])->name('updateConsiglio');
+        Route::POST('/moderaContenuti/aggiornaConsiglio',[consigliController::class, 'updateConsiglio'])->name('updateConsiglio');
     });
 
     Route::group(['middleware' => 'ruolo:3'], function () {  //Gruppo Routes per utenti che sono Capi //Autore: Baso

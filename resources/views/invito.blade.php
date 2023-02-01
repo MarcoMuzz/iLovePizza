@@ -28,6 +28,9 @@
                 width: 50%;
             }
         }
+        .card{
+            width:98%;
+        }
     </style>
 
     <div class="card-text">

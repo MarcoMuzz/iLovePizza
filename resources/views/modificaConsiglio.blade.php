@@ -23,7 +23,7 @@
             Modifica il consiglio
         </div>
         <div class="card-body">
-            <form method="GET" action="{{route('updateConsiglio')}}">
+            <form method="POST" action="{{route('updateConsiglio')}}">
                 @csrf
                 <div class="form-group">
                     <label>Nome</label>

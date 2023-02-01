@@ -24,7 +24,7 @@
             Modifica la ricetta
         </div>
         <div class="card-body">
-            <form method="GET" action="{{route('updateRicetta')}}">
+            <form method="POST" action="{{route('updateRicetta')}}">
                 @csrf
                 <div class="form-group">
                     <label>Nome</label>
