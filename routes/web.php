@@ -52,9 +52,9 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
     Route::get('/profilo', [profiloController::class, 'getProfilo'])->name('profilo'); //Autore: Stingi
     Route::get('/creaassociazione', [associazioneController::class, 'creaAssociazione'])->name('creaassociazione');//Autore: Stingi
     Route::POST('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');//Autore: Stingi
-    Route::POST('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta'); //Autore: Musciacchio
-    Route::POST('/votaConsiglio', [consigliController::class, 'votaConsiglio'])->name('votaConsiglio');//Autore: Venuto
-    Route::POST('/rimuoviVotoConsiglio', [consigliController::class, 'rimuoviVotoConsiglio'])->name('rimuoviVotoConsiglio');//Autore: Venuto
+    Route::get('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta'); //Autore: Musciacchio
+    Route::get('/votaConsiglio', [consigliController::class, 'votaConsiglio'])->name('votaConsiglio');//Autore: Venuto
+    Route::get('/rimuoviVotoConsiglio', [consigliController::class, 'rimuoviVotoConsiglio'])->name('rimuoviVotoConsiglio');//Autore: Venuto
 
 
 

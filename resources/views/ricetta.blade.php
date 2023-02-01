@@ -42,7 +42,7 @@
                     <div class="card"> <!-- Inizio Sezione autore -->
                         <h3>Autore</h3>
                         <div> Username: {{$autore['username']}}</div>
-                        Associazione: {{$associazione['nome']}}
+                        Associazione:<a href="{{route('associazione',['id'=> $associazione['id'] ])}}"> {{$associazione['nome']}}</a>
 
                     </div>
                     <hr>
@@ -52,7 +52,7 @@
                             <h2>Il tuo voto: {{$votoPersonale}}</h2>
                         @else
                             <div> <p> Dai un voto </p>
-                                <form method="POST" action="{{route('votaRicetta')}}">
+                                <form method="get" action="{{route('votaRicetta')}}">
                                     <input type="range" name="voto" min="1" max="5" value="4">
                                     <input type="hidden" name="r_id" value={{$ricettas['id']}}>
                                     <button type="submit"  class="btn btn-primary">Vota</button>

@@ -6,6 +6,11 @@
     Autore: Venuto
     -->
     <style>
+
+        .card-text img{
+
+            width:75%;
+        }
         .card {
             margin: 0 auto;
             font-size: 115%;
@@ -53,6 +58,10 @@
                 display: inline-block;
 
             }
+
+            .card-text img{
+                width:100%;
+            }
         }
 
 
@@ -64,17 +73,13 @@
    <div id="fab" class="card text-center p-2 ">
 
 
-   {{--  <p>Autore : {{$autore['username']}}<span class="vl"></span>Associazione : {{$associazione['nome']}}<span class="vl"></span>Totale like: {{$conto}}
-     </p>
-       --}}
-
        <div id="diiv">
            <div class="diiv">
             Autore : {{$autore['username']}}<span class="vl"></span>
            </div>
 
            <div class="diiv">
-            Associazione : {{$associazione['nome']}}<span class="vl"></span>
+            Associazione :<a href="{{route('associazione',['id'=> $associazione['id'] ])}}">{{$associazione['nome']}}</a><span class="vl"></span>
            </div>
 
            <div class="diiv">
@@ -84,7 +89,7 @@
            <div class="diiv">
            @if(Auth::check())
                @if(Auth::user()->Utente_Consiglio->where('consiglio_id',$consiglios['id'])->first()!=null)
-                   <form method="POST" action="{{route('rimuoviVotoConsiglio')}}">
+                   <form method="get" action="{{route('rimuoviVotoConsiglio')}}">
                        <input type="hidden" name="c_id" value={{$consiglios['id']}}>
                        <button type="submit" dusk="bottoneCuore" class="btn btn-danger">
                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  class="bi bi-heart" viewBox="0 0 16 16">
@@ -93,7 +98,7 @@
                        </button>
                    </form>
                @else
-                   <form method="POST" action="{{route('votaConsiglio')}}">
+                   <form method="get" action="{{route('votaConsiglio')}}">
                        <input type="hidden" name="c_id" value={{$consiglios['id']}}>
                        <button type="submit" dusk="bottoneCuore" class="btn btn-outline-danger">
                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -113,8 +118,10 @@
 
    <div id="div2" class="card-text"><p><h2>Contenuto :</h2> {{$consiglios['contenuto']}}</p></div>
 
+    <div>
     <div class="card-text text-center">
-        <a> <img style="width: 75%; border-radius: 25px" src="{{url('/cons/'.$consiglios['immagine'])}}"></a>
+        <img style="border-radius: 25px" src="{{url('/cons/'.$consiglios['immagine'])}}">
+    </div>
     </div>
 </div>
 @endsection
