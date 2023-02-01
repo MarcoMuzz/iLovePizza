@@ -20,7 +20,7 @@ class InvitaTest extends DuskTestCase
                 ->visit('/')
                 ->click('@user-functions')
                 ->clickLink('Invita membro')
-                ->assertSee('Inserisci l\'email')
+                ->assertSee('Inserisci la mail')
                 ->type('email','InvitaTest@gmail.com')
                 ->press('Invia invito')
                 ->assertSee('Invito inviato!');

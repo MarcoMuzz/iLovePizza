@@ -52,6 +52,9 @@
 
             <div class="col-sm-6 col-md-4">
                 <h1>Ricette:</h1>
+                @if($ricette=='[]')
+                    <p>Non hai ancora scritto nessuna ricetta</p>
+                @endif
                 <div class="scroll">
 
                     @foreach($ricette as $ricetta)
@@ -71,6 +74,9 @@
             <div class="col-sm-6 col-md-4"> </div>
             <div class="col-sm-6 col-md-4">
                 <h1>Consigli:</h1>
+                @if($consigli=='[]')
+                    <p>Non hai ancora scritto nessun consiglio</p>
+                @endif
                 <div class="scroll">
                     @foreach($consigli as $consiglio)
                         <div class="card">

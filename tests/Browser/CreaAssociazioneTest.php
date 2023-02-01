@@ -21,6 +21,7 @@ class CreaAssociazioneTest extends DuskTestCase
                 ->assertSee('Crea Associazione')
                 ->clickLink('Crea Associazione')
                 ->type('nome', 'Nome associazione Test')
+                ->type('descrizione', 'Descrizione Test')
                 ->check('napoletana')
                 ->check('romana')
                 ->press('Continua')

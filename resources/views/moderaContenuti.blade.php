@@ -37,7 +37,12 @@
         @endif
         <div class="row">
             <div class="col text-center">
+
+
         <h1>Ricette</h1>
+                @if($ricette=='[]')
+                    <p>Non ci sono ricette</p>
+                @endif
         @foreach($ricette as $ricetta)
                 <div class="card" style="width: 25rem;display:inline-flex">
             <h2>{{ $ricetta['nome']}}</h2>
@@ -70,6 +75,10 @@
 
             <div class="col text-center">
                 <h1>Consigli</h1>
+
+                @if($consigli=='[]')
+                    <p>Non ci sono consigli</p>
+                @endif
                 @foreach($consigli as $consiglio)
                     <div class="card" style="width: 25rem;display:inline-flex">
                     <h2>{{ $consiglio['nome']}}</h2>

@@ -8,6 +8,9 @@
 
         <div class="col-sm-6 col-md-4 text-center">
         <h2>Ricette</h2>
+            @if($ricettas=='[]')
+                <p>Nessuna ricetta trovata</p>
+            @endif
             @foreach($ricettas as $ricetta)
             <div class="card" style="width: 25rem;display:inline-flex">
                 <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" alt="...">
@@ -28,6 +31,9 @@
         <div class="col-sm-6 col-md-4 text-center">
 
             <h2>Consigli</h2>
+            @if($consiglios=='[]')
+                <p>Nessun consiglio trovato</p>
+            @endif
             @foreach($consiglios as $consiglio)
                 <div class="card" style="width: 25rem;display:inline-flex">
                     <img src="{{url('/cons/'.$consiglio['immagine'])}}" class="card-img-top" alt="...">
@@ -48,6 +54,9 @@
         <div class="col-sm-6 col-md-4 text-center">
 
             <h2>Associazioni</h2>
+            @if($associaziones=='[]')
+                <p>Nessuna associazione trovata</p>
+            @endif
             @foreach($associaziones as $associazione)
             <div class="card  text-center" style="flex:40%;margin: 3px">
                 <div class="card-body">
