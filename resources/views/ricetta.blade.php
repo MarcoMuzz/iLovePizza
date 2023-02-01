@@ -59,9 +59,28 @@
                             </div>
                         @endif
                     @endif
-                    <p> <h3>Numero voti: {{$conto}}</p>
+                       <p> <h3>Numero voti: {{$conto}}</h3> </p>
 
                 </div> <!-- Fine Sezione valutazioni -->
+                    <br>
+                    <div class="card">
+                        <h3>Metodo di cottura:</h3>
+                            @if($ricettas['cottura']=='fornoagas')
+                                Forno a Gas!
+                                @endif
+
+                        @if($ricettas['cottura']=='fornoelettrico')
+                            Forno elettrico!
+                        @endif
+
+                        @if($ricettas['cottura']=='fornoalegna')
+                            Forno a legna!
+                        @endif
+
+                        @if($ricettas['cottura']=='padella')
+                            In Padella!
+                        @endif
+                    </div>
                 </div>
 
 
