@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Invito')
 @section('content')
-
+    <!--
+    Autore: Baso
+    -->
     <style>
         .card {
             margin: 0 auto;

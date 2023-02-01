@@ -7,14 +7,11 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Utente_Ricetta;
 
-
+/**
+ * Autore: Venuto
+ */
 class UtenteRicettaSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
         public function run()
     {
         // ----------- VALUTAZIONE DI UNA RICETTA DA PARTE DI UN UTENTE (OGNI UTENTE VALUTA AL MASSIMO 4 RICETTE) -----------

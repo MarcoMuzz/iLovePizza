@@ -10,6 +10,9 @@ use App\Models\Utente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Autore: Stingi
+ */
 class associazioneController extends Controller
 {
     public function Associazioni(){

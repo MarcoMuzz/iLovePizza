@@ -2,7 +2,9 @@
 @section('title', 'Crea Associazione')
 
 @section('content')
-
+    <!--
+    Autore: Stingi
+    -->
     <html>
     <head>
         <meta name="csrf-token" content="{{ csrf_token() }}">

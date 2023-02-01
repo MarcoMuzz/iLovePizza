@@ -10,6 +10,9 @@ use App\Models\Utente_Consiglio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Autore: Venuto
+ */
 class consigliController extends Controller
 {
 

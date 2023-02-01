@@ -6,11 +6,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
+/**
+ * Autore: Stingi
+ */
 class IscrivitiTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     */
     public function testIscrizione(): void
     {
         $this->browse(function (Browser $browser) {

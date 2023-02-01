@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Modera Membri')
 @section('content')
+    <!--
+    Autore: Baso
+    -->
 <style>
 
     .btn-primary{

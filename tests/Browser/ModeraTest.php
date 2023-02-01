@@ -7,11 +7,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
+/**
+ * Autore: Venuto
+ */
 class ModeraTest extends DuskTestCase
 {
-    /**
-     * A basic browser test example.
-     */
     public function test_Modera(): void
     {
         $this->browse(function (Browser $browser) {

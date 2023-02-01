@@ -7,12 +7,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
+/**
+ * Autore: Baso
+ */
 class EliminaContenutoTest extends DuskTestCase
 {
-    /**
-     * A basic browser test example.
-     */
-    //use DatabaseMigrations;
     public function testBasicExample(): void
     {
         $this->browse(function (Browser $browser) {

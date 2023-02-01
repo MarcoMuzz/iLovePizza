@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Ricetta;
 
+/**
+ * Autore: Venuto
+ */
 class homepageController extends Controller
 {
     public function homepage(){

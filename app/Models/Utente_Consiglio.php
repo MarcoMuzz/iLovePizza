@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Autore: Baso
+ */
 class Utente_Consiglio extends Model
 {
-    //we
-    //use HasFactory;
     protected $table = 'utente_consiglios';
 
     protected $fillable = [

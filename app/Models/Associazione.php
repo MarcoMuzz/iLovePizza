@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Sanctum\HasApiTokens;
 
-
+/**
+ * Autore: Stingi
+ */
 class Associazione extends Model
 {
-    //use HasFactory;
-
-//we
+    protected $table = 'associaziones';
     protected $fillable = [
         'nome',
         'romana',

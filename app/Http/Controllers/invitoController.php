@@ -12,6 +12,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
+/**
+ * Autore: Baso
+ */
 class invitoController extends Controller
 {
     private function checkEmail($email){

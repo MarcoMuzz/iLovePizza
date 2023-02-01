@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\RicercaController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\testController;
 use App\Http\Controllers\homepageController;
 use App\Http\Controllers\ricetteController;
 use App\Http\Controllers\consigliController;
@@ -11,8 +10,6 @@ use App\Http\Controllers\profiloController;
 use App\Http\Controllers\commentoController;
 use App\Http\Controllers\invitoController;
 use Illuminate\Support\Facades\Auth;
-
-use App\Http\Middleware\VerificaRuolo;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,70 +22,52 @@ use App\Http\Middleware\VerificaRuolo;
 |
 */
 
-Route::get('/',[homepageController::class, 'homepage'])->name('homepage');
+Route::get('/',[homepageController::class, 'homepage'])->name('homepage');//Autore: Venuto
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'homepage'])->name('home'); //Autore: Venuto
 
-Route::get('/TipiDiPizze/{tipologia}', [ricetteController::class, 'Ricette'])->name('fabio'); //route per tutte le ricette di x tipologia
+Route::get('/TipiDiPizze/{tipologia}', [ricetteController::class, 'Ricette'])->name('fabio'); //route per tutte le ricette di x tipologia //Autore: Musciacchio
 
-Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli'); //route per tutti i consigli
+Route::get('/consigli', [consigliController::class, 'Consigli'])->name('consigli'); //route per tutti i consigli //Autore: Venuto
 
-Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni');
+Route::get('/associazioni', [associazioneController::class, 'Associazioni'])->name('associazioni'); //Autore: Stingi
 
-Route::get('/associazioni/{id}', [associazioneController::class, 'Associazione'])->name('associazione');
+Route::get('/associazioni/{id}', [associazioneController::class, 'Associazione'])->name('associazione'); //Autore: Stingi
 
-Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route ricette singole
+Route::get('/ricetta/{id}', [ricetteController::class, 'Ricetta'])->name('ricetta');//route ricette singole //Autore: Musciacchio
 
-Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('consiglio');
+Route::get('/consigli/{id}', [consigliController::class, 'Consiglio'])->name('consiglio'); //Autore: Venuto
 
-Route::get('/ricerca', [RicercaController::class, 'Ricerca'])->name('ricerca');//route ricerca
+Route::get('/ricerca', [RicercaController::class, 'Ricerca'])->name('ricerca');//Autore: Musciacchio
 
+Route::get('/register/{token}', [invitoController::class, 'registrazioneInvito']);//Autore: Baso
 
-
+Route::get('/storeInvitato', [invitoController::class, 'storeInvitato'])->name('storeInvitato');//Autore: Baso
 
 Auth::routes();
 
-
-// route di testing
-//Route::get('/profilo', [testController::class, 'Profilo']); //route di test
-//Route::get('/test', [testController::class, 'test']); //route di test
-//Route::get('/modera', [testController::class, 'Modera']); //route di test
-//Route::post('/modera', [testController::class, 'promuoviMembro'])->name('promuoviMembro'); //route di test
-//Route::post('/modera2', [testController::class, 'espelliMembro'])->name('espelliMembro'); //route di test
-//Route::post('/modera3', [testController::class, 'declassaMembro'])->name('declassaMembro'); //route di test
-//
-
-//invito membri
-
-Route::get('/invita', [invitoController::class, 'inserisciMail'])->name('invitaMembro');
-Route::get('/inviaInvito', [invitoController::class, 'inviaInvito'])->name('inviaInvito');
-Route::get('/register/{token}', [invitoController::class, 'registrazioneInvito']);
-Route::get('/storeInvitato', [invitoController::class, 'storeInvitato'])->name('storeInvitato');
-
-
-
 Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti che hanno fatto il login
 
-    Route::get('/commentocreato', [commentoController::class, 'CreaCommento'])->name('creacommento');
-    Route::get('/profilo', [profiloController::class, 'getProfilo'])->name('profilo');
-    Route::get('/creaassociazione', [associazioneController::class, 'creaAssociazione'])->name('creaassociazione');
-    Route::get('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');
-    Route::get('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta');
-    Route::get('/votaConsiglio', [consigliController::class, 'votaConsiglio'])->name('votaConsiglio');
-    Route::get('/rimuoviVotoConsiglio', [consigliController::class, 'rimuoviVotoConsiglio'])->name('rimuoviVotoConsiglio');
+    Route::get('/commentocreato', [commentoController::class, 'CreaCommento'])->name('creacommento');//Autore: Venuto
+    Route::get('/profilo', [profiloController::class, 'getProfilo'])->name('profilo'); //Autore: Stingi
+    Route::get('/creaassociazione', [associazioneController::class, 'creaAssociazione'])->name('creaassociazione');//Autore: Stingi
+    Route::get('/storeAssociazione', [associazioneController::class, 'storeAssociazione'])->name('storeassociazione');//Autore: Stingi
+    Route::get('/votaRicetta', [ricetteController::class, 'votaRicetta'])->name('votaRicetta'); //Autore: Musciacchio
+    Route::get('/votaConsiglio', [consigliController::class, 'votaConsiglio'])->name('votaConsiglio');//Autore: Venuto
+    Route::get('/rimuoviVotoConsiglio', [consigliController::class, 'rimuoviVotoConsiglio'])->name('rimuoviVotoConsiglio');//Autore: Venuto
 
 
 
     Route::group(['middleware' => 'ruolo:1'], function () {  //Gruppo Routes per utenti che sono Membri
-        Route::get('/crearicetta', [ricetteController::class, 'creaRicetta'])->name('crearicetta');
-        Route::POST('/storericetta', [ricetteController::class, 'storeRicetta'])->name('storericetta');
+        Route::get('/crearicetta', [ricetteController::class, 'creaRicetta'])->name('crearicetta'); //Autore: Musciacchio
+        Route::POST('/storericetta', [ricetteController::class, 'storeRicetta'])->name('storericetta'); //Autore: Musciacchio
 
-        Route::get('/creaconsiglio', [consigliController::class, 'creaConsiglio'])->name('creaconsiglio');
-        Route::POST('/storeconsiglio', [consigliController::class, 'storeConsiglio'])->name('storeconsiglio');
+        Route::get('/creaconsiglio', [consigliController::class, 'creaConsiglio'])->name('creaconsiglio');//Autore: Venuto
+        Route::POST('/storeconsiglio', [consigliController::class, 'storeConsiglio'])->name('storeconsiglio');//Autore: Venuto
 
     });
 
-    Route::group(['middleware' => 'ruolo:2'], function () {  //Gruppo Routes per utenti che sono Moderatori
+    Route::group(['middleware' => 'ruolo:2'], function () {  //Gruppo Routes per utenti che sono Moderatori //Autore: Baso
         Route::get('/modera', [associazioneController::class, 'moderaMembri'])->name('moderaMembri');
         Route::post('/modera/espelli', [associazioneController::class, 'espelliMembro'])->name('espelliMembro');
 
@@ -103,9 +82,11 @@ Route::group(['middleware' => 'auth'], function () { //Gruppo Routes per utenti 
         Route::get('/moderaContenuti/aggiornaConsiglio',[consigliController::class, 'updateConsiglio'])->name('updateConsiglio');
     });
 
-    Route::group(['middleware' => 'ruolo:3'], function () {  //Gruppo Routes per utenti che sono Capi
+    Route::group(['middleware' => 'ruolo:3'], function () {  //Gruppo Routes per utenti che sono Capi //Autore: Baso
         Route::post('/modera/declassa', [associazioneController::class, 'declassaMembro'])->name('declassaMembro');
         Route::post('/modera/promuovi', [associazioneController::class, 'promuoviMembro'])->name('promuoviMembro');
+        Route::get('/invita', [invitoController::class, 'inserisciMail'])->name('invitaMembro');
+        Route::get('/inviaInvito', [invitoController::class, 'inviaInvito'])->name('inviaInvito');
     });
 
 });

@@ -7,6 +7,9 @@ use App\Models\Ricetta;
 use App\Models\Consiglio;
 use App\Models\Associazione;
 
+/**
+ * Autore: Musciacchio
+ */
 class RicercaController extends Controller
 {
     public function Ricerca(Request $request){

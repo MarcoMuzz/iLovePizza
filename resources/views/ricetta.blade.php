@@ -2,7 +2,9 @@
 @section('title', 'Ricetta')
 
 @section('content')
-
+    <!--
+    Autore: Musciacchio
+    -->
     <style>
 
         .card

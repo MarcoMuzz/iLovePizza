@@ -7,11 +7,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
+/**
+ * Autore: Stingi
+ */
 class ValutaConsiglioTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     */
     public function test_valuta_consiglio(): void
     {
         $this->browse(function (Browser $browser) {

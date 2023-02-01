@@ -2,6 +2,9 @@
 @section('title', 'associazione')
 
 @section('content')
+    <!--
+    Autore: Stingi
+    -->
     <style>
         .scroll{
 

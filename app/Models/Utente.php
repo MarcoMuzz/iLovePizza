@@ -10,9 +10,11 @@ use Illuminate\Support\Facades\Auth;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * Autore: Venuto
+ */
 class Utente extends Authenticatable
 {
-    //we
     use HasFactory;
 
     protected $fillable =[

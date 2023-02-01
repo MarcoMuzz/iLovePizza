@@ -7,11 +7,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
+/**
+ * Autore: Musciacchio
+ */
 class RicettaTest extends DuskTestCase
 {
-    /**
-     * A Dusk test example.
-     */
     public function test_Ricetta(): void
     {
         $this->browse(function (Browser $browser) {

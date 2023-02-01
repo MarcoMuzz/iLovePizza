@@ -10,7 +10,9 @@ use App\Models\Commento;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
+/**
+ * Autore: Musciacchio
+ */
 class ricetteController extends Controller
 {
 

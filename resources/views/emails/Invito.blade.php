@@ -1,3 +1,6 @@
+<!--
+Autore: Stingi
+-->
 <x-mail::message>
 # Aderisci alla mia associazione!!!
 

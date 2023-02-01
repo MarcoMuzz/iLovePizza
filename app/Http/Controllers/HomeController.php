@@ -16,13 +16,4 @@ class HomeController extends homepageController
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
-   public function creaContenuto()
-   {
-       return view('test');
-   }
 }

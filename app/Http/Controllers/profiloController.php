@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Autore: Stingi
+ */
 class profiloController extends Controller
 {
     public function getProfilo()

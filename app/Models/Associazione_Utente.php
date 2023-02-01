@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Autore: Stingi
+ */
 class Associazione_Utente extends Model
 {
-    //we
     protected $table = 'associazione_utentes';
 
     protected $fillable =[

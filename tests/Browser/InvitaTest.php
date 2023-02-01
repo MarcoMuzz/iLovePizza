@@ -7,11 +7,11 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
+/**
+ * Autore: Baso
+ */
 class InvitaTest extends DuskTestCase
 {
-    /**
-     * A basic browser test example.
-     */
     public function test_Invita(): void
     {
         $this->browse(function (Browser $browser) {

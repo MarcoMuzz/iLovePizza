@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Consiglio')
 @section('content')
+    <!--
+    Autore: Stingi
+    -->
     <style>
     .card-img-top{
     height:250px;

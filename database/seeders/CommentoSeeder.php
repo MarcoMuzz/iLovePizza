@@ -6,13 +6,11 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Commento;
 
+/**
+ * Autore: Baso
+ */
 class CommentoSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {   for($i=1;$i<=20;$i++){
         Commento::create([

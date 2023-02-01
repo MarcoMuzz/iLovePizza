@@ -59,7 +59,7 @@
             <a href="{{route('ricetta',['id'=>$ricetta['id']])}}">Continua a leggere</a>
             <br>
 
-                <a class="button" href=" {{route('modificaRicetta',['id'=>$ricetta['id']])}}">Modifica</a>
+                <a class="btn btn-primary m-auto" href=" {{route('modificaRicetta',['id'=>$ricetta['id']])}}">Modifica</a>
                 <br>
             <form action="{{route('eliminaRicetta')}}" method="post">
                 @csrf
@@ -86,7 +86,7 @@
                     <p><img style="max-width: 80%" src="{{url('/cons/'.$consiglio['immagine'])}}"><br/></p>
                     <a href="{{route('consiglio',['id'=>$consiglio['id']])}}">Continua a leggere</a>
                     <br>
-                    <a class="button" href=" {{route('modificaConsiglio',['id'=>$consiglio['id']])}}">Modifica</a>
+                    <a class="btn btn-primary m-auto" href=" {{route('modificaConsiglio',['id'=>$consiglio['id']])}}">Modifica</a>
                     <br>
                     <form action="{{route('eliminaConsiglio')}}" method="post">
                         @csrf

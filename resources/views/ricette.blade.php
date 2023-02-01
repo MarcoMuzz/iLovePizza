@@ -2,6 +2,10 @@
 @section('title', 'Ricetta')
 
 @section('content')
+    <!--
+    Autore: Musciacchio
+    -->
+
     <style>
         .card {
             flex-direction: row;

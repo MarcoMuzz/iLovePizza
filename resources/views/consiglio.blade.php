@@ -2,7 +2,9 @@
 @section('title', 'Consiglio')
 
 @section('content')
-
+    <!--
+    Autore: Venuto
+    -->
     <style>
         .card {
             margin: 0 auto;

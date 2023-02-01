@@ -2,8 +2,9 @@
 @section('title', 'Crea Consiglio')
 
 @section('content')
-
-{{--$associazione--}}
+    <!--
+    Autore: Venuto
+    -->
 
 <html>
 <head>

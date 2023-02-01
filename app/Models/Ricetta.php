@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Autore: Musciacchio
+ */
 class Ricetta extends Model
 {
-    //we
     protected $table = 'ricettas';
-    //use HasFactory;
+
     protected $fillable =[
         'nome',
         'ingredienti',
@@ -18,10 +20,6 @@ class Ricetta extends Model
         'napoletana',
         'resto',
         'internazionale',
-        'light',
-        'vegetariano',
-        'senzaglutine',
-        'senzalattosio',
         'cottura',
         'immagine',
         'utente_id',

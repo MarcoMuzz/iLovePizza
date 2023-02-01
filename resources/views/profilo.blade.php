@@ -2,6 +2,9 @@
 @section('title', 'profilo')
 
 @section('content')
+    <!--
+    Autore: Stingi
+    -->
     <div class="container">
         <h1>Profilo Personale</h1>
         <table class="table">

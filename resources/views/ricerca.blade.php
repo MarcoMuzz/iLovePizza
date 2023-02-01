@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Ricerca')
 @section('content')
+    <!--
+    Autore: Musciacchio
+    -->
 
 <div class="container-lg">
     <h2>Risultati per "{{$ricerca}}"...</h2><br><br><br>

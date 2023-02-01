@@ -2,6 +2,9 @@
 @section('title', 'Home')
 
 @section('content')
+    <!--
+    Autore: Venuto
+    -->
     <style>
         .card-img-top{
             height:250px;
