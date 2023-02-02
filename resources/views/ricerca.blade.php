@@ -6,6 +6,17 @@
     -->
 
     <style>
+
+        .card-img-top{
+            object-fit: cover;
+            height: 250px;
+        }
+
+        .card{
+            margin-bottom: 7%;
+        }
+
+
         @media only screen and (max-width: 768px) {
         .card{
             width:100%;
@@ -35,7 +46,7 @@
                     <a href="{{route('ricetta',['id'=> $ricetta['id'] ])}}" class="btn btn-primary">Guarda</a>
                 </div>
             </div>
-                <hr>
+
             @endforeach
 
 
@@ -58,7 +69,7 @@
                         <a href="{{route('consiglio',['id'=> $consiglio['id'] ])}}" class="btn btn-primary">Guarda</a>
                     </div>
                 </div>
-                <hr>
+
             @endforeach
 
 

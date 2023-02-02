@@ -5,6 +5,13 @@
     <!--
     Autore: Stingi
     -->
+    <style>
+        .card-img-top {
+            object-fit: cover;
+            height: 250px;
+        }
+    </style>
+
     <div class="container">
         <h1>Profilo Personale</h1>
         <table class="table">
