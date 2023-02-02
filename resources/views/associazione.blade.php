@@ -15,6 +15,10 @@
         #p1 {
             color: grey;
         }
+         .card-img-top {
+             object-fit: cover;
+             height: 250px;
+         }
 
         @media only screen and (max-width: 768px) {
             .table{
