@@ -17,7 +17,7 @@
         }
         .card img {
             object-fit: cover;
-            width:35%;
+            width:100%;
         }
         p {
             margin-top: 2%;
@@ -54,7 +54,7 @@
             }
         }
         .pagi nav{
-            background-color:#f8fafc;
+            background-color:rgb(0,0,0,0);
             box-shadow: none;
         }
 
