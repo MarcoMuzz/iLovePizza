@@ -65,7 +65,7 @@
                             <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$ricetta['nome']}}</h5>
-                                <p class="card-text">Lorem Ipssum dolor</p>
+                                <p style="color: grey;"> {{$ricetta['preparazione']}}</p>
                                 <a href="{{route('ricetta',['id'=> $ricetta['id'] ])}}" class="btn btn-primary">Guarda</a>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                             <img src="{{url('/cons/'.$consiglio['immagine'])}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">{{$consiglio['nome']}}</h5>
-                                <p class="card-text">Lorem Ipssum dolor</p>
+                                <p style="color: grey;"> {{$consiglio['contenuto']}}</p>
                                 <a href="{{route('consiglio',['id'=> $consiglio['id'] ])}}" class="btn btn-primary">Guarda</a>
                             </div>
                         </div>

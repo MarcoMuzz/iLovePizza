@@ -37,7 +37,7 @@
                 <br>
                 <div class="form-group">
                     <label>Immagine</label>
-                    <input type="file" name="immagine" class="form-control" required>
+                    <input type="file" accept="image/*" name="immagine" class="form-control" required>
                 </div>
                 <br>
                 <button type="submit" class="btn btn-primary">Pubblica</button>
