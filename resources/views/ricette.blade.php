@@ -10,6 +10,7 @@
         .card {
             flex-direction: row;
             margin-bottom: 2%;
+            max-height: 350px;
         }
         .card-title {
             font-weight: bold;
@@ -33,14 +34,17 @@
             }
             .card img {
                 width: 100%;
+                object-fit: cover;
+                border-top-right-radius: 4px;
+                border-top-left-radius: 4px;
             }
             .card{
                 width: 100%;
                 flex-direction: column;
+                max-height: 0%;
             }
 
             #p1{
-
                 font-size: 95%;
                 width: 250px;
                 margin-top: 5%;
@@ -61,18 +65,20 @@
     @foreach($ricettas as $ricetta)
         <br>
         <div class="card">
-            <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" />
+            <img src="{{url('/ricette/'.$ricetta['immagine'])}}" />
             <div class="card-body">
                 <h2 class="card-title">{{ $ricetta['nome']}}</h2>
                 <h5 class="card-text">
                     @foreach($autores as $autore)
                         @if($autore['id'] == $ricetta['utente_id'])
                            <strong> Scritta da: {{$autore['username']}} </strong>
+                            <p id="p1"> {{$ricetta['preparazione']}}</p>
                         @endif
+
                     @endforeach
-                        <p id="p1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                      {{--   <p id="p1"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                            exercitation ullamco laboris nisi ut aliquip ex ea commodo.... <br> </p>
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo.... <br> </p>--}}
                 </h5>
                 <p>
                     @if($ricetta['napoletana'] == 1) Pizza Napoletana

@@ -12,6 +12,10 @@
             height:600px;
         }
 
+        #p1 {
+            color: grey;
+        }
+
         @media only screen and (max-width: 768px) {
             .table{
                 width:100%;
@@ -72,7 +76,7 @@
                         <img src="{{url('/ricette/'.$ricetta['immagine'])}}" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{$ricetta['nome']}}</h5>
-                            <p class="card-text">Lorem Ipssum dolor</p>
+                            <p id="p1"> {{$ricetta['preparazione']}}</p>
                             <a href="{{route('ricetta',['id'=> $ricetta['id'] ])}}" class="btn btn-primary">Guarda</a>
                         </div>
                     </div>
