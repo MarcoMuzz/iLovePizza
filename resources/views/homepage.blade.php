@@ -64,6 +64,15 @@
 
         <div class="container-md">
         <h2>Pizze Romane</h2>
+            <h6>La Pizza alla Romana è una delle più amate specialità di Roma.
+                La si riconosce fin dal primo boccone e conquista il nostro palato
+                grazie alla bontà dei suoi ingredienti e la sua particolare croccantezza.
+                La sua particolarità sta nel suo elevato contenuto d’acqua: non a caso per
+                la sua preparazione viene utilizzata una farina con elevata capacità
+                di assorbimento. Ovviamente, non è solo una questione di materie prime, ma
+                anche di tecnica di lavorazione e, soprattutto, di lievitazione: la
+                lievitazione dura da un minimo di 24 ore ad un massimo di 100.
+            </h6>
         @foreach($romana as $pizzaromana)
                 <div class="card">
                     <img src="{{url('/ricette/'.$pizzaromana['immagine'])}}" class="card-img-top" alt="...">
@@ -84,7 +93,8 @@
 
         <div class="container-fluid">
         <div class="container-md">
-            <h2>Pizze resto'dItalia</h2>
+            <h2>Pizze resto d'Italia</h2>
+            <h6>In questa sezione sono raggruppate tutte le altre tradizioni di pizze regionali italiane, come la siciliana e la pugliese</h6>
         @foreach($resto as $pizzaresto)
                 <div class="card">
                     <img src="{{url('/ricette/'.$pizzaresto['immagine'])}}" class="card-img-top" alt="...">
@@ -105,6 +115,11 @@
         <div class="container-fluid">
         <div class="container-md">
             <h2>Pizze Internazionali</h2>
+            <h6>La sezione di pizze a tradizione internazionale offre una vasta gamma di opzioni
+                per i amanti della pizza di tutto il mondo come la pizza Hawaiana americana, c'è una pizza per soddisfare i gusti di tutti.
+                Ci sono anche pizze con influenze culinarie da paesi come Giappone, India e
+                persino Australia. Questa sezione offre l'opportunità di esplorare nuovi sapori
+                e tradizioni culinarie di tutto il mondo.</h6>
         @foreach($internazionale as $pizzaInternazionale)
                 <div class="card">
                     <img src="{{url('/ricette/'.$pizzaInternazionale['immagine'])}}" class="card-img-top" alt="...">
