@@ -32,7 +32,7 @@
             width:98%;
         }
     </style>
-
+<div class="container">
     <div class="card-text">
         @if(session('status'))
             <div class="alert alert-success">
@@ -88,7 +88,7 @@
     </div>
 
 
-
+</div>
 
 @endsection
 
