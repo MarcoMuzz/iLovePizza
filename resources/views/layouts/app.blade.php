@@ -25,11 +25,10 @@ Autore: Baso
 
     <style>
 
-{{--   body
+   body
   {
-      background-image: url("https://images2.imgbox.com/76/5e/2s9aOgkS_o.jpg");
-
-  }--}}
+   background-image: url("{{asset('sfondopizza.jpg')}}");
+   }
 
   nav
   {

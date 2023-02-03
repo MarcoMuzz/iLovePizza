@@ -61,7 +61,7 @@
         </div>
     </div>
 <br>
-    <div class="card align-content-center">
+    <div class="text-center">
 
         <p >Inviti in attesa di essere accettati:</p>
         <table class="table">

@@ -17,7 +17,7 @@
         }
         .card img {
             object-fit: cover;
-            width:100%;
+            width:400px;
         }
         p {
             margin-top: 2%;
@@ -59,6 +59,7 @@
         }
 
     </style>
+
     <div class="container">
 
         <div class="pagi">{!!$ricettas->links()!!} </div>
