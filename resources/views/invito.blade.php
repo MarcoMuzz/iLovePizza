@@ -47,7 +47,6 @@
     </div>
 
     <br>
-    <div class="container">
         <div class="card align-content-center">
 
             <h5>Inserisci la mail della persona che desideri invitare: </h5>
@@ -59,7 +58,6 @@
                 <button  type="submit" class="btn btn-primary">Invia invito</button>
             </form>
         </div>
-    </div>
 <br>
     <div class="text-center">
 
